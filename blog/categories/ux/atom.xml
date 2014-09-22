@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ux | Torstein Skulbru]]></title>
   <link href="http://tskulbru.github.io/blog/categories/ux/atom.xml" rel="self"/>
   <link href="http://tskulbru.github.io/"/>
-  <updated>2014-09-22T16:14:41+02:00</updated>
+  <updated>2014-09-22T18:08:21+02:00</updated>
   <id>http://tskulbru.github.io/</id>
   <author>
     <name><![CDATA[Torstein Skulbru]]></name>
@@ -29,6 +29,9 @@ At this year&rsquo;s Google I/O, Google&rsquo;s design team presented the thing 
 Android apps used to be extremely fragmented when it came to design quality, but over the years as Holo has existed, more and more apps have that &ldquo;natural android look and feel&rdquo;. Most Android apps has moved away from the
 &ldquo;no-design and shitty&rdquo; or &ldquo;ios-look-a-like&rdquo; infamous design quality in which the early apps had on the platform. Before this years Google I/O we all got a sneak peek at what we could expect from the design team with the release
 of the new Google+ app, which drastically changed the look and feel of an Android app which we were so accustomed to.</p>
+
+<!--more-->
+
 
 <p><span class='caption-wrapper'><img class='caption' src='/images/old-shitty-app.png' width='' height='' title='Shitty App Interface'><span class='caption-text'>Shitty App Interface</span></span></p>
 
