@@ -4,7 +4,7 @@
   <title><![CDATA[Torstein Skulbru]]></title>
   <link href="http://tskulbru.github.io/atom.xml" rel="self"/>
   <link href="http://tskulbru.github.io/"/>
-  <updated>2014-09-22T21:45:49+02:00</updated>
+  <updated>2014-09-23T10:25:18+02:00</updated>
   <id>http://tskulbru.github.io/</id>
   <author>
     <name><![CDATA[Torstein Skulbru]]></name>
@@ -24,14 +24,14 @@
 
 <p>This quote by Kahlil Gibran suits the rapid development in design quality we&rsquo;ve
 seen in the digital space over the past years, we continue to see and experience
-really beautiful and contemplated design.At this year&rsquo;s Google I/O, Google&rsquo;s design
-team presented the thing they&rsquo;ve been spending all their time on, &ldquo;Material Design&rdquo;.</p>
+really beautiful and contemplated design. At this year&rsquo;s Google I/O, Google&rsquo;s design
+team presented the thing they&rsquo;ve been spending all their time on, Material Design.</p>
 
-<p>It&rsquo;s been almost three years since Google presented their last UI change, &ldquo;Holo&rdquo;,
+<p>It&rsquo;s been almost three years since Google presented their last UI change, Holo,
 which many of the popular apps on Android has tried to adopt. Android apps used
 to be extremely fragmented when it came to design quality, but over the years as
-Holo has existed, more and more apps have that &ldquo;natural android look and feel&rdquo;.
-Most Android apps has moved away from the &ldquo;no-design and shitty&rdquo; or
+Holo has existed, more and more apps have that natural android look and feel.
+Most Android apps have moved away from the &ldquo;no-design and shitty&rdquo; or
 &ldquo;ios-look-a-like&rdquo; infamous design quality in which the early apps had on the platform.
 Before this years Google I/O we all got a sneak peek at what we could expect from
 the design team with the release of the new Google+ app, which drastically
@@ -51,11 +51,11 @@ changed the look and feel of an Android app which we were so accustomed to.</p>
 
 <p>The entire interface is based on what Google calls a &ldquo;unifying theory of rationalized
 space and a system of motion&rdquo;. So what does all of this actually mean? Well what it
-essenctialy boils down to is bringing the interface in line with reality.
+essentially boils down to is bringing the interface in line with reality.
 &ldquo;Material Design&rdquo; reacts to your touch by displaying a &ldquo;water ripple-like&rdquo; effect
-on touchable areas, it presents you with a feeling of depth by using z-index on
-certain elements. Animations are also heavily used (where appropiate of course),
-which is a big change as Holo didn&rsquo;t really have any animations, and it was more
+on touchable areas. It presents you with a feeling of depth by using z-index on
+certain elements. Animations are also heavily used (where appropriate of course),
+which is a big change as Holo didn&rsquo;t really have any animations, where it was more
 up to each developer to include animations. I&rsquo;ve already mentioned the water
 ripple animation on touch, but there&rsquo;s so much more. I&rsquo;ll let the pictures explain
 for themselves.</p>
@@ -64,9 +64,9 @@ for themselves.</p>
 
 <p><span class='caption-wrapper'><img class='caption' src='http://tskulbru.github.io/images/Menu---Back-Arrow.gif' width='' height='' title='<a href="https://plus.google.com/photos/+TaylorLing/albums/6037414075173412353">Actionbar Icon Animation, by Taylor Ling</a>&lsquo;><span class='caption-text'><a href="https://plus.google.com/photos/+TaylorLing/albums/6037414075173412353">Actionbar Icon Animation, by Taylor Ling</a></span></span></p>
 
-<p>Everytime I use an app which has Material Design, i smile. It&rsquo;s the coloring,
+<p>Every time I use an app which has Material Design, i smile. It&rsquo;s the coloring,
 the animations, the attention to details, just look at the blown up picture above
-of the menubar buttons. The animations are subtle, and Google really has put a
+of the menubar buttons. The animations are subtle and Google really has put a
 lot of effort into documenting just how, when, and for how long animation should
 be displayed.</p>
 
@@ -84,7 +84,7 @@ of Holo goodies, the
 <a href="http://androiduiux.com/2014/01/10/android-ui-design-kit-for-photoshop-4-4-free-download/">Android UI Design Kit</a>.
 This really brought prototyping Android design to a whole new level. Suddenly you
 could quick and easily create prototypes which really looked like the end-product.
-This guy almost single-handidly changed the way designers prototype apps for Android.</p>
+This guy almost single-handedly changed the way designers prototype apps for Android.</p>
 
 <p>It seems that Google and the Android team really saw something in all of this,
 and eventually not only made him a GDE, but with their announcement of
@@ -94,9 +94,12 @@ resources, <a href="http://www.google.com/design/spec/resources/layout-templates
 It&rsquo;s really simple, you just drag and drop the elements you want for the app you
 are prototyping, change some colors, and suddenly you have a beautiful prototype.</p>
 
-<p>Using these resources, together with a little photoshop magic to create animations
+<p>Using these resources, together with a little Photoshop magic to create animations
 together with my prototypes, I&rsquo;ve been able to both shock, and awe clients.
-Material Design is so thouhgt-through that I don&rsquo;t really need to think that
+The reason for this isn’t necessarily because the design is so amazingly good,
+but more the fact that they don’t expect an app to look that good almost out of the box,
+without spending a ton of money for research and design.
+Material Design is so thought-through that I don&rsquo;t really need to think that
 much on design, colors, and structure as I used to, as long as I follow the
 guide presented to me. Eventually I will of course need to slightly diverge from
 the guide to suit the needs of my clients, but still, building on top of
@@ -109,13 +112,13 @@ Material Design I can still easily achieve a beautiful app.</p>
 <p>Google obviously wanted to close the gap between Web, Android and iOS design.
 I feel like Apple wanted to catch-up with the &ldquo;flatness&rdquo; of Windows Phone and
 Android with their iOS7 release last year, and now Google wanted to try and
-stabilize the different platforms. Thats the beauty of Material Design, it works
-seemlessly on all platforms. It&rsquo;s not as it used to be where if an app on Android
+stabilize the different platforms. That&rsquo;s the beauty of Material Design, it works
+seamlessly on all platforms. It&rsquo;s not as it used to be where if an app on Android
 had iOS design it would stand out like a sore thumb, not to mention if anyone
 would be ballsy enough to have Android design on iOS.</p>
 
 <p>The future of app design is indeed exciting, and I personally can&rsquo;t wait to see
-all the innovating and beautful designs to come.</p>
+all the innovating and beautiful designs to come.</p>
 ]]></content>
   </entry>
   
