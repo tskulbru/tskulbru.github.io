@@ -7,12 +7,10 @@ author: "Torstein Skulbru"
 isPinned: false
 excerpt: "Discover how to harness Azure Spot VMs in your AKS clusters to dramatically reduce compute costs. This comprehensive guide covers everything from understanding spot capacity economics to implementing production-ready configurations with proper failover mechanisms."
 image:
-  src: "../images/spot-vms.webp"
+  src: "/images/spot-vms.webp"
   alt: "Cloud money clipart"
 tags: ["azure", "kubernetes", "aks", "spot-vms", "devops"]
 ---
-
-# Azure Spot VMs in AKS: Complete Guide to Cost-Effective Kubernetes Workloads
 
 Cloud computing costs can quickly spiral out of control, especially when running compute-intensive workloads at scale. For organizations using Azure Kubernetes Service (AKS), Azure Spot Virtual Machines present a compelling opportunity to slash compute expenses by up to 90% compared to standard pay-as-you-go pricing. However, successfully implementing spot instances in production requires understanding their mechanics, limitations, and the proper architectural patterns to ensure reliability.
 
@@ -27,6 +25,7 @@ Azure Spot VMs represent unused compute capacity that Microsoft makes available 
 The fundamental principle behind spot pricing is based on supply and demand economics in cloud infrastructure. Cloud providers like Azure experience fluctuating demand for their compute resources throughout the day, week, and season. During periods of lower demand, this excess capacity would otherwise sit idle. Instead of letting these resources go unused, Azure offers them at steep discounts to customers willing to accept the possibility of interruption.
 
 **Key Economic Benefits:**
+
 - Cost savings of up to 90% compared to pay-as-you-go pricing
 - Access to the same high-performance infrastructure at fraction of the cost
 - Ability to run larger workloads within existing budget constraints
@@ -42,18 +41,21 @@ Not all applications are good candidates for spot capacity. Understanding which 
 ### Ideal Candidates for Spot VMs
 
 **Fault-Tolerant Applications:**
+
 - Stateless web servers and API endpoints
 - Microservices architectures with proper health checks
 - Containerized applications designed for horizontal scaling
 - Applications that can gracefully handle node failures
 
 **Batch and Analytics Workloads:**
+
 - Big data processing jobs that can checkpoint progress
 - Machine learning training workloads
 - CI/CD pipelines and build systems
 - Data transformation and ETL processes
 
 **Development and Testing:**
+
 - Development environments
 - Automated testing suites
 - Staging environments
@@ -62,12 +64,14 @@ Not all applications are good candidates for spot capacity. Understanding which 
 ### Workloads to Avoid on Spot VMs
 
 **Mission-Critical Systems Without Failover:**
+
 - Single-instance databases without replication
 - Legacy monolithic applications
 - Systems requiring guaranteed uptime
 - Applications with strict latency requirements
 
 **Stateful Workloads Without Proper Backup:**
+
 - Applications that maintain critical state locally
 - Systems without external state management
 - Workloads that cannot checkpoint progress
@@ -80,6 +84,7 @@ Azure Kubernetes Service provides native support for spot instances through dedi
 ### Key Characteristics of Spot Node Pools
 
 **Architectural Constraints:**
+
 - Can only be used as secondary or user node pools
 - Cannot serve as system node pools (which host critical Kubernetes components)
 - Come with specific Kubernetes taints and labels
@@ -87,6 +92,7 @@ Azure Kubernetes Service provides native support for spot instances through dedi
 
 **Automatic Labeling and Tainting:**
 When you create a spot node pool, AKS automatically applies:
+
 - Label: `kubernetes.azure.com/scalesetpriority:spot`
 - Taint: `kubernetes.azure.com/scalesetpriority=spot:NoSchedule`
 - Anti-affinity rules for system pods
@@ -128,12 +134,14 @@ az aks nodepool add \
 ### Understanding Eviction Policies
 
 **Delete Policy (Recommended):**
+
 - Completely removes the VM when evicted
 - Faster cleanup and lower costs
 - No charges for deallocated VMs
 - Suitable for stateless workloads
 
 **Deallocate Policy:**
+
 - Stops the VM but preserves the disk
 - Allows for potential restart if capacity becomes available
 - Continues to incur storage costs
@@ -458,6 +466,7 @@ While spot VMs offer the most dramatic cost savings, they work best as part of a
 **Scheduled Shutdowns:** Development and test environments can achieve 73% cost reduction by running only during business hours (e.g., weekdays 8 AM - 6 PM, weekends off).
 
 **Right-Sized Node Pools:** Instead of using one VM type for everything, create specialized node pools:
+
 - CPU-optimized (Standard_F series) for compute workloads  
 - Memory-optimized (Standard_E series) for data processing
 - General-purpose (Standard_D series) for balanced workloads
@@ -473,6 +482,7 @@ These strategies, combined with spot VMs, can reduce your total AKS costs by 70-
 Azure Spot VMs in AKS offer a powerful way to dramatically reduce compute costs while maintaining production reliability when implemented correctly. The key to success lies in understanding the trade-offs, designing applications for resilience, and implementing proper monitoring and alerting.
 
 By following the patterns and practices outlined in this guide, you can:
+
 - Achieve cost savings of up to 90% on compute resources
 - Maintain high availability through intelligent workload scheduling
 - Build resilient applications that gracefully handle node evictions
@@ -484,4 +494,4 @@ The combination of proper configuration, monitoring, and application design will
 
 ---
 
-*For more advanced patterns including automatic failback to spot instances and priority-based cluster autoscaling, check out our follow-up guide on "Advanced AKS Spot VM Strategies for Mission-Critical Workloads."* 
+*For more advanced patterns including automatic failback to spot instances and priority-based cluster autoscaling, check out our follow-up guide on [Slash Your AKS Costs: Run Resilient Production Workloads on Azure Spot VMs](/posts/slash-aks-costs-production-workload-spot-vms)*

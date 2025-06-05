@@ -7,19 +7,17 @@ author: "Torstein Skulbru"
 isPinned: false
 excerpt: "Since you are here, I'm guessing you've tumbled into the black abyss that is fitSystemWindows once or twice in the past. Learn what system windows are, why we want to fit them, and how to properly handle WindowInsets in Android development."
 image:
-  src: "../images/fitsystemwindows-hero.webp"
+  src: "/images/fitsystemwindows-hero.webp"
   alt: "Photo by Vidar Nordli-Mathisen on Unsplash, picture of a beatuiful lake view from inside a cabin"
 tags: ["android", "ui", "system-windows", "mobile-development"]
 ---
-
-# What is and how do I even fitSystemWindows?
 
 Since you are here, I'm guessing you've tumbled into the black abyss that is `fitSystemWindows` once or twice in the past. I know I have spent hours blindly adding `android:fitSystemWindows="true"` without understanding why my views _refused_ to adhere to this magical setting.
 
 To understand this setting we first need to understand what system windows are, and why we want to _fit_ them. Basically system windows are system UI components, status bar and navigation bar (amongst others).
 
 > System windows are the parts of the screen where the system is drawing either non-interactive (in the case of the status bar) or interactive (in the case of the navigation bar) content.
-> 
+>
 > Ian Lake — Why would I want to fitsSystemWindows?
 
 Usually you don't want to draw or show some of your views underneath them. When you do however, you need to make sure that your _interactive elements_ (things that users click on, such as buttons) aren't partially or completely hidden underneath them.
@@ -67,4 +65,4 @@ I highly suggest you continue reading about both `fitSystemWindows` and `applyWi
 - [Windows Insets + Fragment Transitions](https://medium.com/@chrisbanes/windows-insets-fragment-transitions-9024b239a436) - A tale of woe by Chris Banes
 - [Becoming a master window fitter 🔧](https://chris.banes.dev/2019/04/12/insets-listeners/) - Window insets have long been a source of confusion to developers, and that's because they are indeed very confusing…
 
-Understanding and properly implementing window insets handling is crucial for creating polished Android applications that work seamlessly across different devices and screen configurations. While `fitSystemWindows` can be a quick solution in some cases, mastering `OnApplyWindowInsetsListener` gives you the flexibility and control needed for complex UI scenarios. 
+Understanding and properly implementing window insets handling is crucial for creating polished Android applications that work seamlessly across different devices and screen configurations. While `fitSystemWindows` can be a quick solution in some cases, mastering `OnApplyWindowInsetsListener` gives you the flexibility and control needed for complex UI scenarios.

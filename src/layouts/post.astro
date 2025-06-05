@@ -3,6 +3,7 @@ import { AppConfig } from '@/utils/AppConfig';
 import Base from '@/layouts/Base.astro';
 import PostHeader from '@/components/PostHeader.astro';
 import PostContent from '@/components/PostContent.astro';
+import CommentSection from '@/components/CommentSection.astro';
 
 const { description } = AppConfig;
 
@@ -21,5 +22,6 @@ const { frontmatter } = Astro.props;
 			img={{ src: frontmatter.image.src, alt: frontmatter.image.alt }}
 		/>
 		<PostContent><slot /></PostContent>
+		{frontmatter.blueskyUri && <CommentSection uri={frontmatter.blueskyUri} /> }
 	</div>
 </Base>
