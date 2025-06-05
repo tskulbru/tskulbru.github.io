@@ -6,6 +6,7 @@ description: "Learn how to leverage Azure Spot VMs in AKS to reduce costs by up 
 author: "Torstein Skulbru"
 isPinned: false
 excerpt: "Discover how to harness Azure Spot VMs in your AKS clusters to dramatically reduce compute costs. This comprehensive guide covers everything from understanding spot capacity economics to implementing production-ready configurations with proper failover mechanisms."
+blueskyUri: "at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3lqve4uf5nk2u"
 image:
   src: "/images/spot-vms.webp"
   alt: "Cloud money clipart"
