@@ -2,7 +2,7 @@ import rss, {pagesGlobToRssItems} from '@astrojs/rss';
 
 export async function GET(context) {
   return rss({
-    title: 'tskulbru.dev - blog',
+    title: 'tskulbru.github.io - blog',
     description: 'Blog and stuff',
     site: context.site,
     items: await pagesGlobToRssItems(

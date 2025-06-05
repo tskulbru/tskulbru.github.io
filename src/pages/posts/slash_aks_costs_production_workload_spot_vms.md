@@ -41,6 +41,478 @@ While setting up basic spot node pools is straightforward, the real complexity e
 
 The challenge isn't just moving workloads off spot nodes during evictions—it's ensuring they automatically return to spot nodes when capacity becomes available again, and doing so in a way that triggers the cluster autoscaler appropriately.
 
-## Advanced Spot VM Strategies for Production
+## Implementation Overview
 
-[Continue with the advanced content about priority expanders, descheduler, failback mechanisms, etc.]
+This guide will walk you through implementing the following components to create a production-ready spot VM architecture:
+
+### Helm Charts to Install
+
+**AKS Node Termination Handler**
+- **Chart**: `aks-node-termination-handler`
+- **Purpose**: Responsible for shutting down applications if node or pools are shutdown or becomes unavailable
+- **Repository**: `https://maksim-paskal.github.io/aks-node-termination-handler/`
+
+**Cluster Overprovisioner**
+- **Chart**: `deliveryhero/cluster-overprovisioner`
+- **Purpose**: Creates low-priority placeholder pods that provide instant failover capacity
+- **Repository**: `https://charts.deliveryhero.io/`
+
+**Kubernetes Descheduler**
+- **Chart**: `descheduler/descheduler`
+- **Purpose**: Evicts pods from suboptimal nodes to enable intelligent failback to spot nodes
+- **Repository**: `https://kubernetes-sigs.github.io/descheduler/`
+
+### Kubernetes Resources to Configure
+- `cluster-autoscaler-priority-expander` - Defines node pool priority for cost optimization
+- Application deployments with spot node affinity and anti-affinity rules
+- Pod Disruption Budgets (PDBs): Service availability protection during node drains and evictions
+
+
+### Azure CLI Commands
+
+**Cluster Autoscaler Configuration**
+- Update AKS cluster to use priority expander strategy
+- Configure node pool scaling parameters
+
+**Node Pool Management**
+- Spot node pool configuration and scaling limits
+- On-demand node pool setup for failover capacity
+
+## Prerequisites
+
+Before implementing advanced Spot VM strategies, ensure you have:
+
+- An operational AKS cluster with cluster autoscaler enabled
+- Two user node pools: one Spot pool (e.g., `worker-spot-pool`) and one on-demand pool (e.g., `worker-on-demand-pool`)
+- Appropriate RBAC permissions to modify cluster autoscaler configuration
+
+## Cluster Autoscaler Priority Configuration
+
+To maximize cost savings, configure the Cluster Autoscaler to prefer Spot node pools over more expensive on-demand pools using the `priority` expander strategy.
+
+First, update your AKS cluster to use the priority expander:
+
+```bash
+az aks update -g myResourceGroup -n myAKSCluster --cluster-autoscaler-profile expander=priority
+```
+
+Next, create a ConfigMap that defines the priority order. **The ConfigMap name must be exactly as shown below:**
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-autoscaler-priority-expander
+  namespace: kube-system
+data:
+  priorities: |-
+    20:
+    - .*spot.*
+    10:
+    - .*
+```
+
+This configuration instructs the Cluster Autoscaler to:
+1. **First priority (20)**: Scale up any node pool with "spot" in its name
+2. **Second priority (10)**: Fall back to any other node pool if Spot capacity is unavailable
+
+AKS automatically tags nodes in Spot node pools with `kubernetes.azure.com/scalesetpriority: spot`, enabling the regex pattern matching. With this setup, your workloads will automatically benefit from Spot pricing when capacity is available, with seamless fallback to on-demand instances when needed.
+
+## Node Termination Handling
+
+Azure Spot VMs can be evicted with a 30-second notice when Azure needs the capacity back. To handle these evictions gracefully, we need to ensure pods are properly drained from nodes before termination.
+
+### Termination Grace Period
+
+Configure appropriate `terminationGracePeriodSeconds` in your pod specifications to allow applications time to shut down cleanly:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  template:
+    spec:
+      terminationGracePeriodSeconds: 60  # Allow 60 seconds for graceful shutdown
+      containers:
+      - name: my-app
+        # ... container spec
+```
+
+### AKS Node Termination Handler
+
+For production environments, consider implementing the [AKS Node Termination Handler](https://github.com/Azure/aks-node-termination-handler) to proactively drain nodes when eviction notices are received. This handler monitors Azure's scheduled events and initiates pod eviction before the node is forcibly terminated.
+
+## Pod Affinity and Anti-Affinity Rules
+
+Affinity rules are crucial for distributing workloads across failure domains, minimizing the impact of simultaneous Spot VM evictions. Use `podAntiAffinity` to spread replicas strategically:
+
+### Distribution Strategies
+
+- **Across Availability Zones**: Use `topology.kubernetes.io/zone` to distribute pods across different zones
+- **Across Nodes**: Use `kubernetes.io/hostname` to ensure replicas don't colocate on the same node
+- **Across Node Pools**: Use node pool labels to spread across different VM series
+
+### Example Configuration
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-critical-app
+spec:
+  replicas: 3
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          # Prefer Spot nodes but allow on-demand as fallback
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: kubernetes.azure.com/scalesetpriority
+                operator: In
+                values:
+                - spot
+        podAntiAffinity:
+          # Strongly prefer spreading across zones
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - my-critical-app
+              topologyKey: topology.kubernetes.io/zone
+          # Secondary preference: spread across nodes
+          - weight: 50
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - my-critical-app
+              topologyKey: kubernetes.io/hostname
+      tolerations:
+      # Allow scheduling on Spot nodes
+      - key: "kubernetes.azure.com/scalesetpriority"
+        operator: "Equal"
+        value: "spot"
+        effect: "NoSchedule"
+```
+
+## Pod Disruption Budgets
+
+Pod Disruption Budgets (PDBs) limit the number of pods that can be simultaneously evicted, preventing service outages during node drains. This is essential when multiple Spot nodes are evicted simultaneously.
+
+```yaml
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: my-critical-app-pdb
+spec:
+  minAvailable: 2  # Ensure at least 2 pods remain available
+  selector:
+    matchLabels:
+      app: my-critical-app
+```
+
+Alternative configuration using percentage:
+
+```yaml
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: my-critical-app-pdb
+spec:
+  maxUnavailable: 25%  # Allow up to 25% of pods to be unavailable
+  selector:
+    matchLabels:
+      app: my-critical-app
+```
+
+PDBs work with the eviction API to ensure that when nodes are drained (either due to Spot evictions or maintenance), your services maintain minimum availability requirements.
+
+## Cluster Overprovisioning for Instant Failover
+
+When Spot nodes are evicted, evicted pods need somewhere to land immediately. Cluster overprovisioning creates "headroom" by running low-priority placeholder pods that can be quickly evicted to make room for your critical workloads.
+
+### Implementation with Helm
+
+Use the [cluster-overprovisioner](https://github.com/deliveryhero/helm-charts/tree/master/stable/cluster-overprovisioner) Helm chart:
+
+```bash
+helm repo add deliveryhero https://charts.deliveryhero.io/
+helm install cluster-overprovisioner deliveryhero/cluster-overprovisioner -f overprovisioner-values.yaml
+```
+
+### Configuration Example
+
+```yaml
+# overprovisioner-values.yaml
+fullnameOverride: "overprovision"
+
+deployments:
+- name: spot
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 2      # Reserve 1 CPU core
+      memory: 4Gi     # Reserve 2GB memory
+  nodeSelector:
+    kubernetes.azure.com/scalesetpriority: spot
+  tolerations:
+  - key: "kubernetes.azure.com/scalesetpriority"
+    operator: "Equal"
+    value: "spot"
+    effect: "NoSchedule"
+```
+
+### How It Works
+
+1. **Placeholder pods** run with very low priority, consuming resources but doing nothing
+2. **When Spot eviction occurs**, critical pods are scheduled and evict the placeholder pods
+3. **Placeholder pods become pending**, triggering cluster autoscaler to add new nodes
+4. **Critical workloads get immediate placement** instead of waiting for new nodes
+
+### (Optional) Dynamic Scaling with Cluster Proportional Autoscaler
+
+For environments with varying cluster sizes, automatically scale overprovisioning based on the number of Spot nodes:
+
+```bash
+# Install cluster-proportional-autoscaler
+kubectl apply -f https://github.com/kubernetes-sigs/cluster-proportional-autoscaler/releases/latest/download/cluster-proportional-autoscaler.yaml
+```
+
+Configure it to scale overprovisioning pods:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: overprovision-scaler
+  namespace: kube-system
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: autoscaler
+        image: registry.k8s.io/cpa/cluster-proportional-autoscaler:1.8.8
+        command:
+        - /cluster-proportional-autoscaler
+        - --namespace=default
+        - --configmap=overprovision-config
+        - --target=deployment/overprovision-spot
+        - --nodelabels=kubernetes.azure.com/scalesetpriority=spot
+        - --logtostderr=true
+        - --v=2
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: overprovision-config
+  namespace: default
+data:
+  linear: |-
+    {
+      "coresPerReplica": 4,
+      "nodesPerReplica": 1,
+      "preventSinglePointFailure": true,
+      "includeUnschedulableNodes": true
+    }
+```
+
+This configuration creates one overprovisioning pod for every 4 CPU cores of Spot nodes, ensuring proportional headroom as your cluster scales.
+
+## Intelligent Failback with Kubernetes Descheduler
+
+While the Cluster Autoscaler Priority Expander ensures new workloads prefer spot nodes, it doesn't automatically move existing pods from on-demand nodes back to spot nodes when spot capacity becomes available again. This is where the [Kubernetes Descheduler](https://github.com/kubernetes-sigs/descheduler) becomes essential.
+
+The Descheduler is a Kubernetes component that identifies and evicts pods that are running on suboptimal nodes based on configurable policies. In our spot VM architecture, it serves as the intelligent failback mechanism that moves workloads from expensive on-demand nodes back to cost-effective spot nodes when capacity returns.
+
+### How Descheduler Enables Cost Optimization
+
+When spot nodes become available again after an eviction event, your workloads may still be running on more expensive on-demand nodes. The Descheduler continuously monitors the cluster and identifies pods that violate node affinity preferences—specifically, pods that prefer spot nodes but are currently running on on-demand nodes.
+
+By evicting these pods, the Descheduler forces the Kubernetes scheduler to re-evaluate their placement according to their affinity rules, which will prefer the newly available spot nodes. Combined with cluster overprovisioning, this creates a cascading effect:
+
+1. **Descheduler evicts pods** from on-demand nodes that prefer spot nodes
+2. **Evicted pods get rescheduled** to available spot node capacity
+3. **If spot capacity is insufficient**, pods land on overprovisioning placeholder pods
+4. **Placeholder pods become pending**, triggering cluster autoscaler to add more spot nodes
+5. **Process continues** until optimal cost distribution is achieved
+
+### Installation and Configuration
+
+Install the Descheduler using Helm:
+
+```bash
+helm repo add descheduler https://kubernetes-sigs.github.io/descheduler/
+helm install descheduler descheduler/descheduler --namespace kube-system -f descheduler-values.yaml --set kind=Deployment
+```
+
+### Descheduler Configuration for Spot Failback
+
+Create a values file (`descheduler-values.yaml`) that configures the Descheduler to run on spot nodes and target pods violating node affinity preferences:
+
+```yaml
+deschedulerPolicyAPIVersion: "descheduler/v1alpha2"
+
+kind: Deployment
+
+# Run descheduler itself on spot nodes to save costs
+tolerations:
+- key: "kubernetes.azure.com/scalesetpriority"
+  operator: "Equal"
+  value: "spot"
+  effect: "NoSchedule"
+
+deschedulerPolicy:
+  profiles:
+    - name: nodeAffinity-profile
+      pluginConfig:
+      - args:
+          nodeAffinityType:
+          - preferredDuringSchedulingIgnoredDuringExecution
+        name: RemovePodsViolatingNodeAffinity
+      - args:
+          evictLocalStoragePods: true
+        name: DefaultEvictor
+      plugins:
+        deschedule:
+          enabled:
+          - RemovePodsViolatingNodeAffinity
+```
+
+### Key Configuration Explained
+
+**RemovePodsViolatingNodeAffinity Plugin**
+- Identifies pods that violate their node affinity preferences
+- Targets pods with `preferredDuringSchedulingIgnoredDuringExecution` affinity rules
+- Perfect for moving workloads back to preferred spot nodes
+
+**DefaultEvictor Configuration**
+- `evictLocalStoragePods: true` allows eviction of pods with local storage
+- Ensures comprehensive coverage of workloads that can be safely moved
+
+**Descheduler Placement**
+- Runs on spot nodes to practice what it preaches about cost optimization
+- Uses tolerations to handle spot node taints
+- Includes node affinity to prefer spot nodes for its own placement
+
+### Monitoring Descheduler Activity
+
+The Descheduler provides metrics to monitor its effectiveness:
+
+```bash
+# Check descheduler logs
+kubectl logs -n kube-system deployment/descheduler
+
+# Monitor pod evictions
+kubectl get events --field-selector reason=Evicted
+```
+
+Key metrics to watch:
+- **pods_evicted**: Total number of pods evicted by the descheduler
+- **descheduler_loop_duration_seconds**: Time taken for each descheduling cycle
+- **descheduler_strategy_duration_seconds**: Time taken for each strategy execution
+
+### Integration with Overprovisioning: The Critical Missing Piece
+
+The Descheduler works synergistically with cluster overprovisioning, and this integration is absolutely essential for the system to function properly. Here's why overprovisioning is the final missing piece of the puzzle:
+
+**Without Overprovisioning - The Infinite Loop Problem:**
+1. Descheduler evicts a pod from an on-demand node
+2. No spot node capacity is available (cluster needs to scale)
+3. Pod gets rescheduled back to the same on-demand node it was evicted from
+4. Descheduler detects the violation again and evicts the pod
+5. Process repeats infinitely - no progress is made
+
+**With Overprovisioning - The Solution:**
+1. **Descheduler evicts pods** from on-demand nodes
+2. **Evicted pods compete** with overprovisioning pods for spot node capacity
+3. **If spot capacity is full**, evicted pods displace overprovisioning pods
+4. **Displaced overprovisioning pods** become pending, triggering autoscaler
+5. **New spot nodes are added**, providing capacity for both workloads and overprovisioning
+
+The key insight is that the Descheduler itself doesn't trigger autoscaling events - it only evicts pods. Without overprovisioning to create the necessary "landing space" and trigger scaling, the Descheduler would be stuck in an endless eviction-reschedule loop, making no actual progress toward cost optimization.
+
+This creates a self-regulating system that automatically optimizes cost distribution while maintaining the safety net of overprovisioning.
+
+## Summary: Technologies and Architecture Decisions
+
+Building a production-ready Azure Spot VM solution requires orchestrating multiple Kubernetes and Azure technologies. Here's a breakdown of what we used and why each component is essential:
+
+### Core Infrastructure Components
+
+**Azure Kubernetes Service (AKS) with Cluster Autoscaler**
+- **What**: Managed Kubernetes service with automatic node scaling
+- **Why**: Provides the foundation for dynamic scaling between spot and on-demand node pools, automatically adding capacity when needed
+
+**Azure Spot VMs**
+- **What**: Discounted compute instances using Azure's excess capacity
+- **Why**: Delivers up to 90% cost savings compared to on-demand pricing, making them ideal for cost-sensitive production workloads
+
+**Mixed Node Pool Architecture**
+- **What**: Separate node pools for spot (`worker-spot-pool`) and on-demand (`worker-on-demand-pool`) instances
+- **Why**: Enables intelligent workload distribution and failover capabilities while maintaining cost optimization
+
+### Intelligent Scheduling and Failover
+
+**Cluster Autoscaler Priority Expander**
+- **What**: ConfigMap-driven priority system for node pool selection
+- **Why**: Ensures workloads prefer cost-effective spot nodes first, with automatic fallback to on-demand nodes when spot capacity is unavailable
+
+**Node Affinity and Anti-Affinity Rules**
+- **What**: Kubernetes scheduling constraints that control pod placement
+- **Why**: Distributes workloads across availability zones and nodes to minimize blast radius during simultaneous spot evictions
+
+**Pod Disruption Budgets (PDBs)**
+- **What**: Kubernetes policy objects that limit concurrent pod evictions
+- **Why**: Maintains service availability during node drains by ensuring minimum replica counts are preserved
+
+### High Availability and Resilience
+
+**Cluster Overprovisioning with Helm**
+- **What**: Low-priority placeholder pods that reserve cluster capacity
+- **Why**: Provides instant failover capability by creating "headroom" that critical workloads can immediately claim during spot evictions
+
+**Cluster Proportional Autoscaler**
+- **What**: Dynamic scaling system that adjusts overprovisioning based on cluster size
+- **Why**: Maintains optimal resource headroom as the cluster scales, preventing both over-provisioning waste and under-provisioning risks
+
+**Kubernetes Descheduler**
+- **What**: Policy-driven pod eviction system that identifies and evicts pods from nodes that violate their scheduling preferences
+- **Why**: Enables intelligent failback by evicting workloads from expensive on-demand nodes, forcing the scheduler to re-evaluate placement and reschedule them to preferred spot nodes when capacity returns
+
+**AKS Node Termination Handler**
+- **What**: Proactive node drain system that monitors Azure scheduled events
+- **Why**: Provides graceful pod eviction before forced node termination, reducing service disruption during spot evictions
+
+### Configuration Management
+
+**Tolerations and Taints**
+- **What**: Kubernetes mechanisms for controlling pod-to-node assignment
+- **Why**: Enables workloads to run on spot nodes while maintaining scheduling flexibility for failover scenarios
+
+**Termination Grace Periods**
+- **What**: Configurable timeouts for pod shutdown processes
+- **Why**: Allows applications to complete in-flight requests and perform cleanup before forced termination
+
+### Why This Architecture Works
+
+This multi-layered approach addresses the three critical challenges of production spot VM adoption:
+
+1. **Automatic Failover**: When spot nodes are evicted, pod disruption budgets and affinity rules ensure workloads immediately land on available capacity
+2. **Intelligent Failback**: The Descheduler evicts pods from nodes that don't match their affinity preferences, forcing the scheduler to re-evaluate placement and reschedule them to preferred spot nodes when capacity returns
+3. **Cost Optimization**: The system maximizes spot usage while maintaining reliability through strategic redundancy, automated failover mechanisms, and continuous cost optimization
+
+The Descheduler and overprovisioning work together as the critical missing pieces that complete the cost optimization cycle. Without the Descheduler, workloads would remain on expensive on-demand nodes even after spot capacity returns. Without overprovisioning, the Descheduler would be stuck in an infinite eviction-reschedule loop, unable to trigger the scaling needed for actual cost optimization. Together, they ensure the system automatically returns to the most cost-effective state.
+
+The result is a resilient, self-healing infrastructure that can achieve significant savings (up to 90%) while maintaining production-grade availability and performance. Each technology serves a specific purpose in the overall orchestration, creating a system that's greater than the sum of its parts.

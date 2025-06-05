@@ -31,7 +31,7 @@ const options = {
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://tskulbru.dev/',
+	site: 'https://tskulbru.github.io',
 
 	markdown: {
 		syntaxHighlight: false,
