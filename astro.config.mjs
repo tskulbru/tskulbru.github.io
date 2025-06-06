@@ -52,11 +52,6 @@ export default defineConfig({
 	],
     output: 'static',
 
-    // adapter: vercelStatic({
-    // 	webAnalytics: {
-    // 		enabled: true
-    // 	}
-    // }),
     vite: {
         plugins: [tailwindcss()]
     }
