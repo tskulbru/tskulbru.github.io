@@ -58,6 +58,11 @@ These styles are for code highlighting that can't be easily implemented with jus
     .content code[data-line-numbers-max-digits='3'] > span[data-line]::before {
         @apply w-12;
     }
+
+    video {
+        object-fit: cover !important;
+        border-radius: 10px !important;
+    }
 }
 
 @utility prose {
