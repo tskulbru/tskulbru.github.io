@@ -6,7 +6,7 @@ description: "Why I decided to use Bluesky as the comment section for my blog, a
 author: "Torstein Skulbru"
 isPinned: false
 excerpt: "I've always wanted a comment section that felt more like a conversation and less like a chore. Here's why I let Bluesky take over my blog comments."
-blueskyUri: "" # Fill this in after you share the post on Bluesky!
+blueskyUri: "at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3lr7boayidk2k"
 image:
   src: "/images/bsky-comment.png"
   alt: "An example comment on a blog post"
