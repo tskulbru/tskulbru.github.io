@@ -10,6 +10,7 @@ image:
   src: "/images/migration.jpg"
   alt: "Birds migrating during sunset"
 tags: ["golang", "kubernetes", "mongodb", "devops"]
+blueskyUri: "at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3lrzybbc6y22u"
 ---
 
 ## Why Database Migrations Matter
