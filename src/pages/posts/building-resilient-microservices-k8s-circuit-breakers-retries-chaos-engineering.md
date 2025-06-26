@@ -10,6 +10,7 @@ image:
   src: "/images/interconnected-microservices.jpg"
   alt: "Network of interconnected nodes representing resilient microservices architecture"
 tags: ["kubernetes", "microservices", "resilience", "chaos-engineering", "golang"]
+blueskyUri: "at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3lsijet3s322p"
 ---
 
 Distributed systems fail in fascinating ways. A single service timeout can cascade through your entire platform if you're not careful. A naive retry loop can turn a minor hiccup into a system-wide outage. A service that appears healthy can actually be failing every request because its dependencies are down.
