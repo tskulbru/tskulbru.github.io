@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
+
 const options = {
     // Specify the theme to use or a custom theme json, in our case
     // it will be a moonlight-II theme from
@@ -42,7 +43,20 @@ export default defineConfig({
 
     integrations: [
 		react(),
-		sitemap(),
+		sitemap({
+			filter: (page) => {
+				// Exclude draft pages or any pages you don't want indexed
+				return !page.includes('/draft/');
+			},
+			changefreq: 'weekly',
+			priority: 0.7,
+			lastmod: new Date(),
+			// Add custom entries for dynamic pages
+			customPages: [
+				'https://tskulbru.dev/posts',
+				'https://tskulbru.dev/tags'
+			]
+		}),
 		partytown({
 			config: {
 				// Add the "dataLayer.push" as a forwarding-event.

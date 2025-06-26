@@ -19,6 +19,7 @@
 		"@types/react": "19.1.6",
 		"@types/react-dom": "19.1.6",
 		"astro": "5.7.14",
+		"astro-seo": "^0.8.4",
 		"canvas-confetti": "1.9.3",
 		"mdast-util-to-string": "4.0.0",
 		"react": "19.1.0",

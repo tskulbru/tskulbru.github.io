@@ -3,12 +3,29 @@ import Base from '@/layouts/Base.astro';
 import PostHeader from '@/components/PostHeader.astro';
 import PostContent from '@/components/PostContent.astro';
 import CommentSection from '@/components/CommentSection.astro';
-
+import { generateSocialShareUrls } from '@/utils/seo';
 
 const { frontmatter } = Astro.props;
+
+// Prepare SEO data for the post
+const seoData = {
+	title: frontmatter.title,
+	description: frontmatter.description,
+	image: frontmatter.image?.src,
+	imageAlt: frontmatter.image?.alt,
+	type: 'article' as const,
+	publishedTime: new Date(frontmatter.pubDate).toISOString(),
+	modifiedTime: frontmatter.modifiedDate ? new Date(frontmatter.modifiedDate).toISOString() : new Date(frontmatter.pubDate).toISOString(),
+	tags: frontmatter.tags || [],
+	author: frontmatter.author
+};
+
+// Generate social share URLs
+const currentURL = new URL(Astro.url.pathname, Astro.site || 'https://tskulbru.dev').toString();
+const shareUrls = generateSocialShareUrls(currentURL, frontmatter.title, frontmatter.blueskyUri);
 ---
 
-<Base head={{ title: frontmatter.title, description: frontmatter.description }}>
+<Base head={seoData}>
 	<div class="mx-auto w-full max-w-screen-md">
 		<PostHeader
 			title={frontmatter.title}

@@ -3,34 +3,177 @@ import Footer from '@/components/Footer.astro';
 import Navbar from '@/components/Navbar.astro';
 import { AppConfig } from '@/utils/AppConfig';
 import '@/styles/global.css';
+import { SEO } from 'astro-seo';
 
 export interface Props {
 	head: {
 		title: string;
 		description: string;
+		image?: string;
+		imageAlt?: string;
+		type?: 'website' | 'article';
+		publishedTime?: string;
+		modifiedTime?: string;
+		tags?: string[];
+		author?: string;
+		canonicalURL?: string;
 	};
 }
 
 const {
-	head: { title, description }
+	head: { 
+		title, 
+		description, 
+		image, 
+		imageAlt, 
+		type = 'website', 
+		publishedTime, 
+		modifiedTime, 
+		tags = [], 
+		author = AppConfig.author,
+		canonicalURL 
+	}
 } = Astro.props as Props;
+
+const siteURL = Astro.site?.toString() || 'https://tskulbru.dev';
+const currentURL = canonicalURL || new URL(Astro.url.pathname, siteURL).toString();
+const ogImage = image ? new URL(image, siteURL).toString() : `${siteURL}/images/profile.png`;
+const ogImageAlt = imageAlt || `${AppConfig.site_name} - ${title}`;
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<meta name="author" content={AppConfig.author} />
-
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<link rel="alternate" type="application/rss+xml" href="/rss.xml" />
-		<link
-			rel="icon"
-			type="image/svg+xml"
-			href="/favicon.svg"
+		
+		<SEO
+			title={title}
+			description={description}
+			canonical={currentURL}
+			openGraph={{
+				basic: {
+					title: title,
+					type: type,
+					image: ogImage,
+					url: currentURL
+				},
+				optional: {
+					description: description,
+					siteName: AppConfig.site_name,
+					locale: 'en_US'
+				},
+				image: {
+					alt: ogImageAlt,
+					width: 1200,
+					height: 630
+				},
+				article: type === 'article' ? {
+					publishedTime: publishedTime,
+					modifiedTime: modifiedTime || publishedTime,
+					authors: [author],
+					section: 'Technology',
+					tags: tags
+				} : undefined
+			}}
+			twitter={{
+				card: 'summary_large_image',
+				site: AppConfig.social.twitter,
+				creator: AppConfig.social.twitter,
+				title: title,
+				description: description,
+				image: ogImage,
+				imageAlt: ogImageAlt
+			}}
+			extend={{
+				meta: [
+					{ name: 'author', content: author },
+					{ name: 'theme-color', content: '#ea580c' },
+					{ name: 'keywords', content: [...tags, ...AppConfig.keywords].join(', ') }
+				],
+				link: [
+					{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+					{ rel: 'sitemap', href: '/sitemap-index.xml' },
+					{ rel: 'alternate', type: 'application/rss+xml', href: '/rss.xml', title: `${AppConfig.site_name} RSS Feed` },
+					{ rel: 'preconnect', href: 'https://www.googletagmanager.com' }
+				]
+			}}
 		/>
+		
+		<!-- Structured Data for Website/Person/Article -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "WebSite",
+					"@id": `${siteURL}/#website`,
+					"url": siteURL,
+					"name": AppConfig.site_name,
+					"description": AppConfig.description,
+					"publisher": {
+						"@id": `${siteURL}/#person`
+					},
+					"potentialAction": [
+						{
+							"@type": "SearchAction",
+							"target": {
+								"@type": "EntryPoint",
+								"urlTemplate": `${siteURL}/tags/{search_term_string}`
+							},
+							"query-input": "required name=search_term_string"
+						}
+					]
+				},
+				{
+					"@type": "Person",
+					"@id": `${siteURL}/#person`,
+					"name": AppConfig.author,
+					"image": {
+						"@type": "ImageObject",
+						"url": `${siteURL}/images/profile.png`,
+						"width": 400,
+						"height": 400
+					},
+					"description": "Technical lead and fullstack developer specializing in Kubernetes, microservices, cloud architecture, and mobile development",
+					"jobTitle": "Technical Lead & Fullstack Developer",
+					"url": siteURL,
+					"sameAs": [
+						AppConfig.social.github,
+						AppConfig.social.linkedin,
+						AppConfig.social.bluesky
+					],
+					"knowsAbout": AppConfig.expertise
+				},
+				...(type === 'article' && publishedTime ? [{
+					"@type": "Article",
+					"@id": `${currentURL}/#article`,
+					"isPartOf": {
+						"@id": `${siteURL}/#website`
+					},
+					"author": {
+						"@id": `${siteURL}/#person`
+					},
+					"headline": title,
+					"description": description,
+					"datePublished": publishedTime,
+					"dateModified": modifiedTime || publishedTime,
+					"mainEntityOfPage": {
+						"@id": currentURL
+					},
+					"url": currentURL,
+					"image": {
+						"@type": "ImageObject",
+						"url": ogImage,
+						"width": 1200,
+						"height": 630
+					},
+					"keywords": tags.join(', '),
+					"articleSection": "Technology",
+					"inLanguage": "en-US"
+				}] : [])
+			]
+		})} />
+		
+		<!-- Google Analytics -->
 		<script
 			type="text/partytown"
 			src="https://www.googletagmanager.com/gtag/js?id=G-BY464V4TCN"></script>
