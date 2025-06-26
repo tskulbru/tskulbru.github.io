@@ -320,23 +320,31 @@ Enhanced social sharing with platform-specific optimizations:
 - **Facebook**: Social media sharing
 - **Reddit**: Community-focused sharing with title optimization
 - **Hacker News**: Tech community sharing
-- **Bluesky**: Advanced integration with quote post functionality
+- **Bluesky**: Smart integration with original post linking
 
-#### Bluesky Quote Post Feature
+#### Bluesky Integration Strategy
 For posts with existing Bluesky URIs (`blueskyUri` in frontmatter):
-- **Quote Posts**: Creates a share URL that opens Bluesky with your original post ready to be quoted
-- **Engagement**: Encourages interaction with your existing Bluesky posts rather than creating new ones
-- **Format**: Uses AT Protocol URIs to link to specific posts
-- **Fallback**: Regular Bluesky sharing for posts without existing Bluesky posts
+- **Direct Post Linking**: Links directly to the original Bluesky post for easy quoting
+- **User-Friendly Experience**: Users can see the original post and manually create quote posts
+- **Engagement**: Encourages interaction with your existing Bluesky posts
+- **AT Protocol Integration**: Converts AT Protocol URIs to web URLs automatically
+- **Fallback**: Regular Bluesky compose intent for posts without existing Bluesky posts
 
 Example implementation:
 ```typescript
-// For posts with blueskyUri
-blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(`Check out this great post: "${title}"`)}&url=${encodedUrl}&quote=at://${did}/app.bsky.feed.post/${postId}`;
+// For posts with blueskyUri - links to original post
+// AT URI: at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3lqwaglsecc2j
+// Becomes: https://bsky.app/profile/did:plc:rmnykyqh3zleost7ii4qe5nc/post/3lqwaglsecc2j
 
-// For posts without blueskyUri  
-blueskyUrl = `https://bsky.app/intent/compose?text=${encodedTitle}&url=${encodedUrl}`;
+// For posts without blueskyUri - regular sharing
+blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(shareText)}`;
 ```
+
+**Why This Approach:**
+According to the [Bluesky Action Intent Links documentation](https://docs.bsky.app/docs/advanced-guides/intent-links), the current intent URL implementation only supports a `text` parameter. Quote post functionality through web intents is not yet available. Our approach provides the best user experience by:
+1. Taking users directly to the original post when available
+2. Allowing them to easily create quote posts using Bluesky's native interface
+3. Falling back to compose intents for new posts
 
 ### 5. Sitemap Enhancement
 - **Priority System**: Home page (1.0), posts (0.9), tag pages (0.7), other pages (0.5)
@@ -360,7 +368,7 @@ blueskyUrl = `https://bsky.app/intent/compose?text=${encodedTitle}&url=${encoded
 - `astro.config.mjs` - Sitemap and technical configuration
 
 ### Utility Functions
-- `generateSocialShareUrls()` - Creates platform-specific sharing URLs with Bluesky quote post support
+- `generateSocialShareUrls()` - Creates platform-specific sharing URLs with Bluesky original post linking
 - `generateBreadcrumbStructuredData()` - Creates breadcrumb schema
 - `generateFAQStructuredData()` - Creates FAQ schema
 - `getEstimatedReadingTime()` - Calculates reading time
@@ -369,7 +377,7 @@ blueskyUrl = `https://bsky.app/intent/compose?text=${encodedTitle}&url=${encoded
 
 ### Short Term (1-2 months)
 - Improved social media click-through rates from better previews
-- Enhanced Bluesky engagement through quote post functionality
+- Enhanced Bluesky engagement through direct post linking
 - Better search engine indexing with structured data
 
 ### Medium Term (3-4 months)
@@ -390,7 +398,7 @@ blueskyUrl = `https://bsky.app/intent/compose?text=${encodedTitle}&url=${encoded
 
 ### Key Metrics to Track
 1. **Organic Search Traffic** (Google Analytics)
-2. **Social Media Referrals** (especially Bluesky quote posts)
+2. **Social Media Referrals** (especially Bluesky interactions)
 3. **Click-through Rates** from search results
 4. **Average Session Duration**
 5. **Pages per Session**
@@ -400,7 +408,7 @@ blueskyUrl = `https://bsky.app/intent/compose?text=${encodedTitle}&url=${encoded
 - Google Search Console for search performance
 - Google Analytics for traffic analysis
 - Social media analytics for sharing performance
-- Bluesky analytics for quote post engagement
+- Bluesky analytics for post engagement
 
 ## Future Enhancements
 
@@ -417,7 +425,7 @@ blueskyUrl = `https://bsky.app/intent/compose?text=${encodedTitle}&url=${encoded
 4. **AMP**: Evaluate AMP implementation for mobile performance
 
 ### Social Media Strategy
-1. **Bluesky Integration**: Leverage the quote post feature for community building
+1. **Bluesky Integration**: Monitor for quote post intent support and update when available
 2. **Cross-Platform**: Consistent posting across Twitter, LinkedIn, and Bluesky
 3. **Community Engagement**: Active participation in tech communities
 4. **Content Repurposing**: Turn blog posts into Twitter threads, LinkedIn articles

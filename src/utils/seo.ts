@@ -18,13 +18,17 @@ export function generateSocialShareUrls(url: string, title: string, blueskyUri?:
 	// Generate Bluesky share URL
 	let blueskyUrl = '';
 	if (blueskyUri) {
-		// For quote posts, we need to pass the AT URI to the compose intent
-		// The Bluesky web client will handle embedding the original post
-		const quoteText = `Check out this great post: "${title}" ${url}`;
-		blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(quoteText)}&quote=${encodeURIComponent(blueskyUri)}`;
+		// Convert AT URI to web URL for the original post
+		// AT URI format: at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3lqwaglsecc2j
+		const parts = blueskyUri.split('/');
+		const did = parts[2];
+		const postId = parts[4];
+		// Link directly to the original post so users can quote it manually
+		blueskyUrl = `https://bsky.app/profile/${did}/post/${postId}`;
 	} else {
-		// Fallback to regular post
-		blueskyUrl = `https://bsky.app/intent/compose?text=${encodedTitle}&url=${encodedUrl}`;
+		// Fallback to regular compose intent
+		const shareText = `${title} ${url}`;
+		blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(shareText)}`;
 	}
 	
 	return {
