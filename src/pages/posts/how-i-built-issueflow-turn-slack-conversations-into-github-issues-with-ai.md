@@ -10,6 +10,7 @@ image:
   src: "/images/totally-serious-working-pic.png"
   alt: "Cloud money clipart"
 tags: ["side-project", "ai", "slack", "github", "developer-tools"]
+blueskyUri: "at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3m3tszzv3o22n"
 ---
 
 Three weeks ago, I lost a critical bug report in Slack.
