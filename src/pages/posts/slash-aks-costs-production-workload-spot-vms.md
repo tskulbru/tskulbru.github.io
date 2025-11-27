@@ -1,16 +1,16 @@
 ---
 layout: ../../layouts/post.astro
-title: "Slash Your AKS Costs: Run Resilient Production Workloads on Azure Spot VMs"
+title: 'Slash Your AKS Costs: Run Resilient Production Workloads on Azure Spot VMs'
 pubDate: 2025-06-06
-description: "Learn how to implement intelligent failover and failback mechanisms for Azure Spot VMs in production AKS environments, achieving up to 90% cost savings while maintaining high availability through automated orchestration between spot and on-demand resources."
-author: "Torstein Skulbru"
-isPinned: true
+description: 'Learn how to implement intelligent failover and failback mechanisms for Azure Spot VMs in production AKS environments, achieving up to 90% cost savings while maintaining high availability through automated orchestration between spot and on-demand resources.'
+author: 'Torstein Skulbru'
+isPinned: false
 excerpt: "Azure Spot VMs offer up to 90% cost savings, but production adoption brings complex challenges beyond basic setup. This guide tackles the real problems teams face: automatic failover during spot evictions, intelligent failback when capacity returns, and seamless orchestration between spot and on-demand resources. We'll explore how to combine AKS features, Kubernetes best practices, and tools like the descheduler to build a resilient system that maximizes cost savings without sacrificing reliability."
-blueskyUri: "at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3lqwaglsecc2j"
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3lqwaglsecc2j'
 image:
-  src: "/images/slash-aks-containers.jpg"
-  alt: "Stacked containers"
-tags: ["azure", "kubernetes", "aks", "spot-vms", "devops"]
+  src: '/images/slash-aks-containers.jpg'
+  alt: 'Stacked containers'
+tags: ['azure', 'kubernetes', 'aks', 'spot-vms', 'devops']
 ---
 
 Cloud computing offers incredible scalability, but costs can quickly escalate. For organizations leveraging Azure Kubernetes Service (AKS), one powerful strategy to significantly reduce compute expenses without compromising reliability is by utilizing Azure Spot Virtual Machines. Spot VMs provide access to Azure's unused compute capacity at substantial discounts compared to pay-as-you-go prices.
@@ -71,7 +71,6 @@ This guide will walk you through implementing the following components to create
 - `cluster-autoscaler-priority-expander` - Defines node pool priority for cost optimization
 - Application deployments with spot node affinity and anti-affinity rules
 - Pod Disruption Budgets (PDBs): Service availability protection during node drains and evictions
-
 
 ### Azure CLI Commands
 
@@ -142,10 +141,10 @@ metadata:
 spec:
   template:
     spec:
-      terminationGracePeriodSeconds: 60  # Allow 60 seconds for graceful shutdown
+      terminationGracePeriodSeconds: 60 # Allow 60 seconds for graceful shutdown
       containers:
-      - name: my-app
-        # ... container spec
+        - name: my-app
+          # ... container spec
 ```
 
 ### AKS Node Termination Handler
@@ -177,41 +176,41 @@ spec:
         nodeAffinity:
           # Prefer Spot nodes but allow on-demand as fallback
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            preference:
-              matchExpressions:
-              - key: kubernetes.azure.com/scalesetpriority
-                operator: In
-                values:
-                - spot
+            - weight: 100
+              preference:
+                matchExpressions:
+                  - key: kubernetes.azure.com/scalesetpriority
+                    operator: In
+                    values:
+                      - spot
         podAntiAffinity:
           # Strongly prefer spreading across zones
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                  - my-critical-app
-              topologyKey: topology.kubernetes.io/zone
-          # Secondary preference: spread across nodes
-          - weight: 50
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                  - my-critical-app
-              topologyKey: kubernetes.io/hostname
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - my-critical-app
+                topologyKey: topology.kubernetes.io/zone
+            # Secondary preference: spread across nodes
+            - weight: 50
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - my-critical-app
+                topologyKey: kubernetes.io/hostname
       tolerations:
-      # Allow scheduling on Spot nodes
-      - key: "kubernetes.azure.com/scalesetpriority"
-        operator: "Equal"
-        value: "spot"
-        effect: "NoSchedule"
+        # Allow scheduling on Spot nodes
+        - key: 'kubernetes.azure.com/scalesetpriority'
+          operator: 'Equal'
+          value: 'spot'
+          effect: 'NoSchedule'
 ```
 
 ## Pod Disruption Budgets
@@ -224,7 +223,7 @@ kind: PodDisruptionBudget
 metadata:
   name: my-critical-app-pdb
 spec:
-  minAvailable: 2  # Ensure at least 2 pods remain available
+  minAvailable: 2 # Ensure at least 2 pods remain available
   selector:
     matchLabels:
       app: my-critical-app
@@ -238,7 +237,7 @@ kind: PodDisruptionBudget
 metadata:
   name: my-critical-app-pdb
 spec:
-  maxUnavailable: 25%  # Allow up to 25% of pods to be unavailable
+  maxUnavailable: 25% # Allow up to 25% of pods to be unavailable
   selector:
     matchLabels:
       app: my-critical-app
@@ -263,22 +262,22 @@ helm install cluster-overprovisioner deliveryhero/cluster-overprovisioner -f ove
 
 ```yaml
 # overprovisioner-values.yaml
-fullnameOverride: "overprovision"
+fullnameOverride: 'overprovision'
 
 deployments:
-- name: spot
-  replicaCount: 1
-  resources:
-    requests:
-      cpu: 2      # Reserve 1 CPU core
-      memory: 4Gi     # Reserve 2GB memory
-  nodeSelector:
-    kubernetes.azure.com/scalesetpriority: spot
-  tolerations:
-  - key: "kubernetes.azure.com/scalesetpriority"
-    operator: "Equal"
-    value: "spot"
-    effect: "NoSchedule"
+  - name: spot
+    replicaCount: 1
+    resources:
+      requests:
+        cpu: 2 # Reserve 1 CPU core
+        memory: 4Gi # Reserve 2GB memory
+    nodeSelector:
+      kubernetes.azure.com/scalesetpriority: spot
+    tolerations:
+      - key: 'kubernetes.azure.com/scalesetpriority'
+        operator: 'Equal'
+        value: 'spot'
+        effect: 'NoSchedule'
 ```
 
 ### How It Works
@@ -310,16 +309,16 @@ spec:
   template:
     spec:
       containers:
-      - name: autoscaler
-        image: registry.k8s.io/cpa/cluster-proportional-autoscaler:1.8.8
-        command:
-        - /cluster-proportional-autoscaler
-        - --namespace=default
-        - --configmap=overprovision-config
-        - --target=deployment/overprovision-spot
-        - --nodelabels=kubernetes.azure.com/scalesetpriority=spot
-        - --logtostderr=true
-        - --v=2
+        - name: autoscaler
+          image: registry.k8s.io/cpa/cluster-proportional-autoscaler:1.8.8
+          command:
+            - /cluster-proportional-autoscaler
+            - --namespace=default
+            - --configmap=overprovision-config
+            - --target=deployment/overprovision-spot
+            - --nodelabels=kubernetes.azure.com/scalesetpriority=spot
+            - --logtostderr=true
+            - --v=2
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -370,32 +369,32 @@ helm install descheduler descheduler/descheduler --namespace kube-system -f desc
 Create a values file (`descheduler-values.yaml`) that configures the Descheduler to run on spot nodes and target pods violating node affinity preferences:
 
 ```yaml
-deschedulerPolicyAPIVersion: "descheduler/v1alpha2"
+deschedulerPolicyAPIVersion: 'descheduler/v1alpha2'
 
 kind: Deployment
 
 # Run descheduler itself on spot nodes to save costs
 tolerations:
-- key: "kubernetes.azure.com/scalesetpriority"
-  operator: "Equal"
-  value: "spot"
-  effect: "NoSchedule"
+  - key: 'kubernetes.azure.com/scalesetpriority'
+    operator: 'Equal'
+    value: 'spot'
+    effect: 'NoSchedule'
 
 deschedulerPolicy:
   profiles:
     - name: nodeAffinity-profile
       pluginConfig:
-      - args:
-          nodeAffinityType:
-          - preferredDuringSchedulingIgnoredDuringExecution
-        name: RemovePodsViolatingNodeAffinity
-      - args:
-          evictLocalStoragePods: true
-        name: DefaultEvictor
+        - args:
+            nodeAffinityType:
+              - preferredDuringSchedulingIgnoredDuringExecution
+          name: RemovePodsViolatingNodeAffinity
+        - args:
+            evictLocalStoragePods: true
+          name: DefaultEvictor
       plugins:
         deschedule:
           enabled:
-          - RemovePodsViolatingNodeAffinity
+            - RemovePodsViolatingNodeAffinity
 ```
 
 ### Key Configuration Explained
@@ -515,3 +514,4 @@ Here’s a quick, friendly recap of how all the moving parts come together:
 With this setup, you get the best of both worlds: big savings from spot VMs and the peace of mind that your production workloads are safe. It takes a bit of tinkering to get right, but once it’s humming, your cluster will handle the hard work for you. More savings, less stress—what’s not to love?
 
 Happy hacking, and may your cloud bills always be tiny!
+
