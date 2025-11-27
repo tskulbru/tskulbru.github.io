@@ -10,7 +10,7 @@ image:
   src: '/images/github-k8s-release-header.png'
   alt: 'GitHub and Kubernetes connected through an automated release pipeline'
 tags: ['kubernetes', 'github-actions', 'devops', 'gitops', 'ci-cd']
-blueskyUri: ''
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3m6m5ndwhz22c'
 ---
 
 Managing releases across multiple microservices and Kubernetes environments gets messy fast. Every team ends up with slightly different CI/CD pipelines, inconsistent versioning, and no clear audit trail of what's deployed where.
