@@ -1,16 +1,16 @@
 ---
 layout: ../../layouts/post.astro
-title: "Android Release Management with GitHub Actions and Fastlane"
+title: 'Android Release Management with GitHub Actions and Fastlane'
 pubDate: 2025-12-05
-description: "A comprehensive guide to implementing production-grade Android release pipelines using GitHub Actions and Fastlane, covering beta distribution through Firebase and production releases to Google Play Store."
-author: "Torstein Skulbru"
+description: 'A comprehensive guide to implementing production-grade Android release pipelines using GitHub Actions and Fastlane, covering beta distribution through Firebase and production releases to Google Play Store.'
+author: 'Torstein Skulbru'
 isPinned: false
-excerpt: "Building reliable Android release pipelines requires coordinating version management, signing configurations, and multiple distribution channels. Learn how to implement a complete release system using GitHub Actions and Fastlane."
+excerpt: 'Building reliable Android release pipelines requires coordinating version management, signing configurations, and multiple distribution channels. Learn how to implement a complete release system using GitHub Actions and Fastlane.'
 image:
-  src: "/images/android-release-mgmt-hero.webp"
-  alt: "Android release pipeline illustration"
-tags: ["android", "github-actions", "fastlane", "devops", "ci-cd"]
-blueskyUri: ""
+  src: '/images/android-release-mgmt-hero.webp'
+  alt: 'Android release pipeline illustration'
+tags: ['android', 'github-actions', 'fastlane', 'devops', 'ci-cd']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3m7aaxbvlos2f'
 ---
 
 ## The Pain of Manual Android Releases
@@ -352,7 +352,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Full history for changelog generation
+          fetch-depth: 0 # Full history for changelog generation
 
       - uses: actions/setup-java@v4
         with:
@@ -394,7 +394,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production  # Requires approval if configured
+    environment: production # Requires approval if configured
 
     steps:
       - uses: actions/checkout@v4
