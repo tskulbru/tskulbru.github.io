@@ -2,17 +2,18 @@
 layout: ../../layouts/post.astro
 title: "The Learning Trap: Why Junior Developers Shouldn't Generate Production Code with AI"
 pubDate: 2025-12-11
-description: "AI coding assistants are changing how we write software, but for junior developers, generating production code with AI may be trading short-term productivity for long-term career stagnation."
-author: "Torstein Skulbru"
+description: 'AI coding assistants are changing how we write software, but for junior developers, generating production code with AI may be trading short-term productivity for long-term career stagnation.'
+author: 'Torstein Skulbru'
 isPinned: false
 excerpt: "The difference between using a forklift and lifting weights isn't the end result—it's what happens to you in the process. For junior developers, AI code generation might be the forklift when they actually need the gym."
 image:
-  src: "/images/ai-junior-dev.webp"
-  alt: "A developer looking at AI-generated code"
-tags: ["ai", "career", "software-development", "mentorship"]
+  src: '/images/ai-junior-dev.webp'
+  alt: 'A developer looking at AI-generated code'
+tags: ['ai', 'career', 'software-development', 'mentorship']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3m7pt2hwjuc2s'
 ---
 
-Software development has always been a craft learned through repetition, failure, and the slow accumulation of hard-won experience. You write a function, it breaks, you debug it at 2 AM, and somewhere in that painful process, the knowledge of *why* it broke gets permanently etched into your brain. This experiential learning—the frustration, the discovery, the eventual understanding—forms the foundation that separates developers who can ship reliable software from those who merely assemble code.
+Software development has always been a craft learned through repetition, failure, and the slow accumulation of hard-won experience. You write a function, it breaks, you debug it at 2 AM, and somewhere in that painful process, the knowledge of _why_ it broke gets permanently etched into your brain. This experiential learning—the frustration, the discovery, the eventual understanding—forms the foundation that separates developers who can ship reliable software from those who merely assemble code.
 
 AI coding assistants have fundamentally altered this equation. Tools like GitHub Copilot, Claude, and ChatGPT can generate syntactically correct, sometimes elegant solutions to problems in seconds. For experienced developers who already understand the underlying principles, these tools accelerate their work without compromising their judgment. For junior developers still building that foundational knowledge, however, AI code generation presents a genuine risk: the opportunity to skip the very struggles that create competent engineers.
 
@@ -20,7 +21,7 @@ AI coding assistants have fundamentally altered this equation. Tools like GitHub
 
 Consider the difference between a forklift and weightlifting. Both move heavy objects from one place to another, but their purposes diverge completely. The forklift exists to accomplish a task efficiently. Weightlifting exists to transform the person doing the lifting. Using a forklift to move boxes is sensible; using a forklift to "work out" defeats the entire purpose.
 
-Production code generation with AI operates the same way for junior developers. When an inexperienced developer prompts an AI to write a function they don't understand, they've accomplished the task—code exists, tests might pass—but they've bypassed the cognitive struggle that would have taught them *why* that solution works. They've used the forklift when they needed the weights.
+Production code generation with AI operates the same way for junior developers. When an inexperienced developer prompts an AI to write a function they don't understand, they've accomplished the task—code exists, tests might pass—but they've bypassed the cognitive struggle that would have taught them _why_ that solution works. They've used the forklift when they needed the weights.
 
 The distinction matters because software development isn't just about producing code. It's about building mental models of systems, understanding failure modes, recognizing patterns across different problem domains, and developing the intuition to know when something feels wrong even before you can articulate why. These capabilities emerge from direct engagement with problems, not from reviewing solutions someone (or something) else produced.
 
@@ -66,7 +67,7 @@ A counterargument has emerged: prompt engineering itself constitutes a valuable 
 
 The answer depends on what happens next. Vibe coding works remarkably well for certain categories of problems: straightforward CRUD applications, well-documented integrations, implementations that follow established patterns. A skilled prompt engineer can iterate with Claude or GPT-4 to produce functional code faster than many developers could write it manually. The output looks professional. The tests pass. The feature ships.
 
-The fracture appears when something goes wrong. Production systems fail in ways that require understanding the code's actual behavior, not just its intended behavior. A vibe coder facing a mysterious performance regression, a race condition that only manifests under load, or a security vulnerability buried in generated code has limited options. They can try prompting their way to a fix—sometimes successfully—but they lack the mental model to reason about *why* the system behaves as it does. They're debugging through trial and error rather than through understanding.
+The fracture appears when something goes wrong. Production systems fail in ways that require understanding the code's actual behavior, not just its intended behavior. A vibe coder facing a mysterious performance regression, a race condition that only manifests under load, or a security vulnerability buried in generated code has limited options. They can try prompting their way to a fix—sometimes successfully—but they lack the mental model to reason about _why_ the system behaves as it does. They're debugging through trial and error rather than through understanding.
 
 This limitation reveals what prompt engineering actually optimizes for: translating intent into working code when the problem is well-defined and the solution space is familiar. Prompt engineering does not build the ability to recognize when the AI's solution encodes assumptions that don't hold in your specific context. It does not develop intuition for architectural decisions that will matter six months from now. It does not create the judgment to know when generated code is subtly wrong in ways that won't surface until production.
 
@@ -76,9 +77,9 @@ Vibe coding creates a similar situation. The prompt engineer and the experienced
 
 ![Two paths to the same output—but vastly different depths of understanding beneath the surface.](/images/output-vs-capability.webp)
 
-This matters particularly for people using vibe coding as an entry point into software development. The approach can be genuinely valuable for building prototypes, automating personal workflows, or creating tools where "good enough" truly is good enough. Problems arise when vibe coding becomes the *only* mode of engagement with code, when it substitutes entirely for developing actual programming knowledge. The person who vibe-codes their way through their first year in industry, shipping features successfully while building no underlying understanding, has optimized for the wrong metric. They've demonstrated output while accumulating capability debt.
+This matters particularly for people using vibe coding as an entry point into software development. The approach can be genuinely valuable for building prototypes, automating personal workflows, or creating tools where "good enough" truly is good enough. Problems arise when vibe coding becomes the _only_ mode of engagement with code, when it substitutes entirely for developing actual programming knowledge. The person who vibe-codes their way through their first year in industry, shipping features successfully while building no underlying understanding, has optimized for the wrong metric. They've demonstrated output while accumulating capability debt.
 
-Prompt engineering is a real skill with genuine value. But it's additive to programming knowledge, not a replacement for it. The developers who will thrive long-term are those who can both write code from scratch *and* leverage AI effectively—who understand the systems well enough to evaluate AI output critically and prompt effectively because they know what good solutions look like.
+Prompt engineering is a real skill with genuine value. But it's additive to programming knowledge, not a replacement for it. The developers who will thrive long-term are those who can both write code from scratch _and_ leverage AI effectively—who understand the systems well enough to evaluate AI output critically and prompt effectively because they know what good solutions look like.
 
 ## What This Means for Junior Developers
 
@@ -116,4 +117,4 @@ For junior developers, the answer should usually be: building lasting capability
 
 ---
 
-*This post was inspired by Zac Sweers' excellent article ["Forklifts Require Training"](https://www.zacsweers.dev/forklifts-require-training/), which explores these themes in depth. If you found this perspective valuable, his original piece is worth reading in full.*
+_This post was inspired by Zac Sweers' excellent article ["Forklifts Require Training"](https://www.zacsweers.dev/forklifts-require-training/), which explores these themes in depth. If you found this perspective valuable, his original piece is worth reading in full._
