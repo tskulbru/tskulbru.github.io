@@ -1,5 +1,6 @@
 interface BlueskyPost {
   post: {
+    uri: string;
     author: {
       avatar: string;
       displayName: string;
@@ -14,6 +15,11 @@ interface BlueskyPost {
     replyCount: number;
   };
   replies?: BlueskyPost[];
+}
+
+function getBlueskyPostUrl(uri: string, handle: string): string {
+  const postId = uri.split('/').pop();
+  return `https://bsky.app/profile/${handle}/post/${postId}`;
 }
 
 class CommentSection {
@@ -100,37 +106,60 @@ class CommentSection {
     this.commentsList.innerHTML = comments.map(comment => this.renderComment(comment)).join('');
   }
 
-  private renderComment(comment: BlueskyPost): string {
+  private renderComment(comment: BlueskyPost, maxDepth: number = 3): string {
     const date = new Date(comment.post.indexedAt).toLocaleDateString();
+    const postUrl = getBlueskyPostUrl(comment.post.uri, comment.post.author.handle);
 
-    const renderReplies = (replies: BlueskyPost[] = []): string => {
+    const renderReplies = (replies: BlueskyPost[] = [], depth: number = 1, parentUrl: string): string => {
       if (replies.length === 0) return '';
+
+      // If we've reached max depth and there are still replies, show a "continue thread" link
+      if (depth >= maxDepth) {
+        return `
+          <div class="replies">
+            <a href="${parentUrl}" target="_blank" rel="noopener noreferrer" class="continue-thread">
+              Continue this thread on Bluesky →
+            </a>
+          </div>
+        `;
+      }
+
       return `
         <div class="replies">
           ${replies.map(reply => {
             const replyDate = new Date(reply.post.indexedAt).toLocaleDateString();
+            const replyUrl = getBlueskyPostUrl(reply.post.uri, reply.post.author.handle);
+
             return `
               <div class="comment reply">
-                <div class="comment-header">
-                  <img src="${reply.post.author.avatar}"
-                       alt="${reply.post.author.displayName}'s avatar"
-                       class="avatar"
-                       style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;" />
-                  <div class="author-info">
-                    <span class="author-name">${reply.post.author.displayName}</span>
-                    <span class="author-handle">@${reply.post.author.handle}</span>
+                <a href="${replyUrl}" target="_blank" rel="noopener noreferrer" class="comment-link">
+                  <div class="comment-header">
+                    <img src="${reply.post.author.avatar}"
+                         alt="${reply.post.author.displayName}'s avatar"
+                         class="avatar"
+                         style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;" />
+                    <div class="author-info">
+                      <span class="author-name">${reply.post.author.displayName}</span>
+                      <span class="author-handle">@${reply.post.author.handle}</span>
+                    </div>
                   </div>
-                </div>
-                <div class="comment-content">${reply.post.record.text}</div>
+                  <div class="comment-content">${reply.post.record.text}</div>
+                </a>
                 <div class="comment-footer">
                   <div class="interaction-counts">
-                    <span>${reply.post.replyCount || 0} 💬</span>
-                    <span>${reply.post.repostCount || 0} 🔁</span>
-                    <span>${reply.post.likeCount || 0} ❤️</span>
+                    <a href="${replyUrl}" target="_blank" rel="noopener noreferrer" title="Reply on Bluesky"><span>${reply.post.replyCount || 0} 💬</span></a>
+                    <a href="${replyUrl}" target="_blank" rel="noopener noreferrer" title="Repost on Bluesky"><span>${reply.post.repostCount || 0} 🔁</span></a>
+                    <a href="${replyUrl}" target="_blank" rel="noopener noreferrer" title="Like on Bluesky"><span>${reply.post.likeCount || 0} ❤️</span></a>
                   </div>
                   <time datetime="${reply.post.indexedAt}">${replyDate}</time>
                 </div>
-                ${renderReplies(reply.replies)}
+                ${reply.replies && reply.replies.length > 0
+                  ? renderReplies(reply.replies, depth + 1, replyUrl)
+                  : (reply.post.replyCount > 0
+                      ? `<div class="replies"><a href="${replyUrl}" target="_blank" rel="noopener noreferrer" class="continue-thread">View ${reply.post.replyCount} more ${reply.post.replyCount === 1 ? 'reply' : 'replies'} on Bluesky →</a></div>`
+                      : ''
+                    )
+                }
               </div>
             `;
           }).join('')}
@@ -140,26 +169,34 @@ class CommentSection {
 
     return `
       <div class="comment">
-        <div class="comment-header">
-          <img src="${comment.post.author.avatar}"
-               alt="${comment.post.author.displayName}'s avatar"
-               class="avatar"
-               style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;" />
-          <div class="author-info">
-            <span class="author-name">${comment.post.author.displayName}</span>
-            <span class="author-handle">@${comment.post.author.handle}</span>
+        <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="comment-link">
+          <div class="comment-header">
+            <img src="${comment.post.author.avatar}"
+                 alt="${comment.post.author.displayName}'s avatar"
+                 class="avatar"
+                 style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;" />
+            <div class="author-info">
+              <span class="author-name">${comment.post.author.displayName}</span>
+              <span class="author-handle">@${comment.post.author.handle}</span>
+            </div>
           </div>
-        </div>
-        <div class="comment-content">${comment.post.record.text}</div>
+          <div class="comment-content">${comment.post.record.text}</div>
+        </a>
         <div class="comment-footer">
           <div class="interaction-counts">
-            <span>${comment.post.replyCount || 0} 💬</span>
-            <span>${comment.post.repostCount || 0} 🔁</span>
-            <span>${comment.post.likeCount || 0} ❤️</span>
+            <a href="${postUrl}" target="_blank" rel="noopener noreferrer" title="Reply on Bluesky"><span>${comment.post.replyCount || 0} 💬</span></a>
+            <a href="${postUrl}" target="_blank" rel="noopener noreferrer" title="Repost on Bluesky"><span>${comment.post.repostCount || 0} 🔁</span></a>
+            <a href="${postUrl}" target="_blank" rel="noopener noreferrer" title="Like on Bluesky"><span>${comment.post.likeCount || 0} ❤️</span></a>
           </div>
           <time datetime="${comment.post.indexedAt}">${date}</time>
         </div>
-        ${renderReplies(comment.replies)}
+        ${comment.replies && comment.replies.length > 0
+          ? renderReplies(comment.replies, 1, postUrl)
+          : (comment.post.replyCount > 0
+              ? `<div class="replies"><a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="continue-thread">View ${comment.post.replyCount} more ${comment.post.replyCount === 1 ? 'reply' : 'replies'} on Bluesky →</a></div>`
+              : ''
+            )
+        }
       </div>
     `;
   }

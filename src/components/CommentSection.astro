@@ -137,6 +137,21 @@ const blueskyLink = `https://bsky.app/profile/${uri.split('/')[2]}/post/${postId
     align-items: center;
   }
 
+  .comments-section .comment-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .comments-section .comment-link:hover {
+    text-decoration: none;
+  }
+
+  .comments-section .interaction-counts a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .comments-section .interaction-counts span {
     display: flex;
     align-items: center;
@@ -146,6 +161,7 @@ const blueskyLink = `https://bsky.app/profile/${uri.split('/')[2]}/post/${postId
     background: rgba(120, 113, 108, 0.1);
     border-radius: 0.5rem;
     transition: background-color 0.2s ease;
+    cursor: pointer;
   }
 
   .dark .comments-section .interaction-counts span {
@@ -202,6 +218,32 @@ const blueskyLink = `https://bsky.app/profile/${uri.split('/')[2]}/post/${postId
     color: #a8a29e;
     background: rgba(68, 64, 60, 0.3);
     border: 1px dashed rgba(120, 113, 108, 0.3);
+  }
+
+  .comments-section .continue-thread {
+    display: block;
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #ea580c;
+    text-decoration: none;
+    background: rgba(234, 88, 12, 0.08);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .comments-section .continue-thread:hover {
+    background: rgba(234, 88, 12, 0.15);
+    text-decoration: none;
+  }
+
+  .dark .comments-section .continue-thread {
+    color: #fb923c;
+    background: rgba(234, 88, 12, 0.12);
+  }
+
+  .dark .comments-section .continue-thread:hover {
+    background: rgba(234, 88, 12, 0.2);
   }
 
   .comments-section .refresh-comments:hover {
