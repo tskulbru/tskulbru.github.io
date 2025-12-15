@@ -1,15 +1,16 @@
 ---
 layout: ../../layouts/post.astro
-title: "Customizing Claude Code for Your Development Workflow"
+title: 'Customizing Claude Code for Your Development Workflow'
 pubDate: 2025-12-12
-description: "A practical guide to extending Claude Code with custom skills, slash commands, subagents, MCP integrations, plugins, and hooks to match your specific development workflow."
-author: "Torstein Skulbru"
+description: 'A practical guide to extending Claude Code with custom skills, slash commands, subagents, MCP integrations, plugins, and hooks to match your specific development workflow.'
+author: 'Torstein Skulbru'
 isPinned: false
 excerpt: "Claude Code becomes significantly more powerful when configured for your specific workflow. Learn how to create custom skills, automated hooks, and specialized agents that understand your project's conventions and automate your repetitive tasks."
 image:
-  src: "/images/claude-code-customization-hero.webp"
-  alt: "Claude Code customization and extensibility mechanisms"
-tags: ["golang", "claude", "ai", "devops", "productivity"]
+  src: '/images/claude-code-customization-hero.webp'
+  alt: 'Claude Code customization and extensibility mechanisms'
+tags: ['golang', 'claude', 'ai', 'devops', 'productivity']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3m7ztrwuyrs2c'
 ---
 
 Claude Code ships with capable defaults, but the real productivity gains come from customizing it to match your specific development workflow. Several extension mechanisms transform Claude Code from a general-purpose assistant into a specialized development partner that understands your project's conventions, enforces your team's standards, and automates your repetitive tasks.
@@ -52,12 +53,12 @@ Wrap errors with context using fmt.Errorf with %w verb. Never discard
 errors silently. Log errors at the boundary where they're handled,
 not where they originate.
 
-func (s *Service) ProcessOrder(ctx context.Context, id string) error {
-    order, err := s.repo.GetOrder(ctx, id)
-    if err != nil {
-        return fmt.Errorf("fetching order %s: %w", id, err)
-    }
-    return nil
+func (s \*Service) ProcessOrder(ctx context.Context, id string) error {
+order, err := s.repo.GetOrder(ctx, id)
+if err != nil {
+return fmt.Errorf("fetching order %s: %w", id, err)
+}
+return nil
 }
 
 ## Context Propagation
@@ -131,16 +132,21 @@ Prioritize issues by severity: correctness problems first, then
 performance, then style.
 
 Format your response as a markdown document with the following structure:
+
 ## Summary
+
 Brief overview of findings and overall code quality assessment.
 
 ## Critical Issues
+
 Issues that must be fixed before merging.
 
 ## Recommendations
+
 Suggested improvements that would enhance the code.
 
 ## Files Reviewed
+
 List of files examined with brief notes on each.
 ```
 
@@ -177,7 +183,8 @@ Kubernetes manifests.
 
 ## Analysis Steps
 
-1. Read main.go or cmd/*/main.go to identify:
+1. Read main.go or cmd/\*/main.go to identify:
+
    - Service name from module path or package name
    - HTTP/gRPC ports from server configuration
    - Environment variables from os.Getenv or config loading
@@ -190,6 +197,7 @@ Kubernetes manifests.
 Create these files in deployments/kubernetes/:
 
 deployment.yaml:
+
 - Deployment with 3 replicas
 - Resource requests: 256Mi memory, 250m CPU
 - Resource limits: 512Mi memory, 500m CPU
@@ -198,13 +206,16 @@ deployment.yaml:
 - Security context: non-root, read-only filesystem
 
 service.yaml:
+
 - ClusterIP service on identified ports
 - Proper port naming for service mesh compatibility
 
 configmap.yaml:
+
 - Non-sensitive environment variables extracted from code
 
 hpa.yaml:
+
 - Scale on CPU (70%) and memory (80%)
 - Min 3, max 10 replicas
 
@@ -248,17 +259,17 @@ Or configure them in `.mcp.json` for project-specific settings:
 
 ```json
 {
-  "mcpServers": {
-    "github": {
-      "transport": "http",
-      "url": "https://mcp.github.com/sse"
-    },
-    "filesystem": {
-      "transport": "stdio",
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-server-filesystem"]
-    }
-  }
+	"mcpServers": {
+		"github": {
+			"transport": "http",
+			"url": "https://mcp.github.com/sse"
+		},
+		"filesystem": {
+			"transport": "stdio",
+			"command": "npx",
+			"args": ["-y", "@anthropic/mcp-server-filesystem"]
+		}
+	}
 }
 ```
 
@@ -299,14 +310,14 @@ The `index.json` file lists available plugins:
 
 ```json
 {
-  "plugins": [
-    {
-      "name": "backend-dev",
-      "version": "1.0.0",
-      "description": "Backend development toolkit",
-      "path": "./backend-dev"
-    }
-  ]
+	"plugins": [
+		{
+			"name": "backend-dev",
+			"version": "1.0.0",
+			"description": "Backend development toolkit",
+			"path": "./backend-dev"
+		}
+	]
 }
 ```
 
@@ -351,24 +362,24 @@ The `plugin.json` manifest declares plugin metadata and can include hook configu
 
 ```json
 {
-  "name": "backend-dev",
-  "version": "1.0.0",
-  "description": "Backend development toolkit with K8s integration",
-  "author": "Platform Team",
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/format.sh",
-            "timeout": 30
-          }
-        ]
-      }
-    ]
-  }
+	"name": "backend-dev",
+	"version": "1.0.0",
+	"description": "Backend development toolkit with K8s integration",
+	"author": "Platform Team",
+	"hooks": {
+		"PostToolUse": [
+			{
+				"matcher": "Edit|Write",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/format.sh",
+						"timeout": 30
+					}
+				]
+			}
+		]
+	}
 }
 ```
 
@@ -386,20 +397,20 @@ Configure hooks in `.claude/settings.json`:
 
 ```json
 {
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jq -r '.tool_input.file_path' | xargs -I {} sh -c 'case \"{}\" in *.go) gofmt -w \"{}\" ;; *.ts|*.tsx) npx prettier --write \"{}\" ;; esac'",
-            "timeout": 30
-          }
-        ]
-      }
-    ]
-  }
+	"hooks": {
+		"PostToolUse": [
+			{
+				"matcher": "Edit|Write",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "jq -r '.tool_input.file_path' | xargs -I {} sh -c 'case \"{}\" in *.go) gofmt -w \"{}\" ;; *.ts|*.tsx) npx prettier --write \"{}\" ;; esac'",
+						"timeout": 30
+					}
+				]
+			}
+		]
+	}
 }
 ```
 
