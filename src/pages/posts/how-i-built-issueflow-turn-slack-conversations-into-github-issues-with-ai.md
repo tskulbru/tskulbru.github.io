@@ -255,6 +255,8 @@ If you're losing hours to the Slack-GitHub gap, give it a shot: **[https://issue
 
 And if you're building tools to eliminate meta-work in other areas, I'd love to hear about it. This problem space is wide open.
 
+*IssueFlow is one of my side projects. Check out my [portfolio](/portfolio) to see what else I'm building.*
+
 ---
 
 *If this resonates with you, share it with your engineering team. Someone on your team is losing time to this problem right now.*
