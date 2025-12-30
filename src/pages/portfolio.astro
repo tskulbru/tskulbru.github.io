@@ -1,0 +1,341 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Portfolio';
+const description = 'Apps and projects I have built';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<h1 class="pb-2 pt-6 text-4xl font-bold">Portfolio</h1>
+		<p class="text-sm text-gray-600 dark:text-gray-400 pb-8">
+			Apps and projects I've built
+		</p>
+
+		<!-- Stao -->
+		<article class="mb-16">
+			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
+				<h2 class="text-2xl font-bold">Stao</h2>
+				<p class="text-orange-600 font-medium">Stand more. Sit less. Feel better.</p>
+			</div>
+
+			<!-- Screenshots -->
+			<div class="flex flex-col md:flex-row gap-4 mb-6 justify-center">
+				<img
+					src="/images/portfolio/stao-1.png"
+					alt="Stao main timer screen showing standing mode"
+					class="w-full md:w-48 rounded-2xl shadow-lg"
+				/>
+				<img
+					src="/images/portfolio/stao-2.png"
+					alt="Stao statistics screen showing daily and weekly progress"
+					class="w-full md:w-48 rounded-2xl shadow-lg"
+				/>
+				<img
+					src="/images/portfolio/stao-3.png"
+					alt="Stao settings screen for customizing intervals"
+					class="w-full md:w-48 rounded-2xl shadow-lg"
+				/>
+			</div>
+
+			<!-- Description -->
+			<div class="text-sm space-y-4 mb-6">
+				<p>
+					<span class="font-bold text-orange-600">Stao</span> is a standing desk companion app
+					that helps you build healthier habits by providing smart reminders to balance sitting
+					and standing throughout your workday.
+				</p>
+				<p>
+					Key features include customizable sitting/standing intervals, gentle non-intrusive
+					notifications, detailed progress tracking with daily, weekly, and monthly statistics,
+					and a privacy-first approach where all data stays on your device.
+				</p>
+			</div>
+
+			<!-- Tech Stack -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Built with</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Flutter</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Riverpod</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Firebase</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Hive</span>
+				</div>
+			</div>
+
+			<!-- Platforms -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Platforms</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">iOS</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500">Android (Soon)</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500">macOS (Soon)</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500">Windows (Soon)</span>
+				</div>
+			</div>
+
+			<!-- Links -->
+			<div class="flex flex-wrap gap-4">
+				<a
+					href="https://www.stao.app/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-orange-600 hover:text-orange-600 transition-colors"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+					</svg>
+					Website
+				</a>
+				<a
+					href="https://apps.apple.com/app/stao-standing-desk-reminder/id6756825085"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+					</svg>
+					App Store
+				</a>
+			</div>
+		</article>
+
+		<!-- Kvile -->
+		<article class="mb-16">
+			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
+				<h2 class="text-2xl font-bold">Kvile</h2>
+				<p class="text-orange-600 font-medium">Lightweight HTTP debugging for developers</p>
+			</div>
+
+			<!-- App Icon and Feature Highlights -->
+			<div class="mb-6 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
+				<div class="flex flex-col md:flex-row items-center gap-6">
+					<!-- App Icon -->
+					<div class="flex-shrink-0">
+						<img
+							src="/images/portfolio/kvile-icon.png"
+							alt="Kvile app icon"
+							class="w-24 h-24 rounded-2xl shadow-lg"
+						/>
+					</div>
+					<!-- Feature Highlights -->
+					<div class="flex-1 grid grid-cols-2 gap-3 text-sm">
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Native .http file support</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Offline-first, no account</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Monaco code editor</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Git-friendly plain text</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Description with Screenshot -->
+			<div class="text-sm space-y-4 mb-6">
+				<img
+					src="/images/portfolio/kvile-preview.png"
+					alt="Kvile app screenshot showing HTTP request editor with syntax highlighting, collections sidebar, and JSON response"
+					class="float-right ml-4 mb-4 max-w-sm rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+				/>
+				<p>
+					<span class="font-bold text-orange-600">Kvile</span> (Norwegian for "rest") is a
+					lightweight, fast HTTP debugging tool built with Tauri and Rust. Unlike heavyweight
+					alternatives like Postman, Kvile treats <code class="px-1 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">.http</code>
+					files as first-class citizens.
+				</p>
+				<p>
+					Works seamlessly with JetBrains HTTP Client, VS Code REST Client, and Kulala (Neovim)
+					formats. Features dual editor modes, JavaScript scripting for assertions, request history
+					with search, and sub-second startup times. No telemetry, no cloud sync - just a fast,
+					privacy-respecting tool for developers.
+				</p>
+			</div>
+
+			<!-- Tech Stack -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Built with</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Tauri 2</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Rust</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">React</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">TypeScript</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Monaco Editor</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">SQLite</span>
+				</div>
+			</div>
+
+			<!-- Platforms -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Platforms</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">Linux</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">macOS</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">Windows</span>
+				</div>
+			</div>
+
+			<!-- Links -->
+			<div class="flex flex-wrap gap-4">
+				<a
+					href="https://kvile.app/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-orange-600 hover:text-orange-600 transition-colors"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+					</svg>
+					Website
+				</a>
+				<a
+					href="https://github.com/tskulbru/kvile"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+					</svg>
+					GitHub
+				</a>
+			</div>
+		</article>
+
+		<!-- IssueFlow -->
+		<article class="mb-16">
+			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
+				<h2 class="text-2xl font-bold">IssueFlow</h2>
+				<p class="text-orange-600 font-medium">AI-powered Slack to GitHub integration</p>
+			</div>
+
+			<!-- Visual Flow Diagram -->
+			<div class="mb-6 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
+				<div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+					<!-- Slack Icon -->
+					<div class="flex flex-col items-center">
+						<div class="w-16 h-16 bg-white dark:bg-gray-700 rounded-xl shadow-md flex items-center justify-center">
+							<svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+								<path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" fill="#E01E5A"/>
+							</svg>
+						</div>
+						<span class="mt-2 text-xs text-gray-500 dark:text-gray-400">Slack</span>
+					</div>
+					<!-- Arrow -->
+					<div class="text-orange-600">
+						<svg class="w-8 h-8 rotate-90 md:rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+						</svg>
+					</div>
+					<!-- AI/Brain Icon -->
+					<div class="flex flex-col items-center">
+						<div class="w-16 h-16 bg-orange-600 rounded-xl shadow-md flex items-center justify-center">
+							<svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+							</svg>
+						</div>
+						<span class="mt-2 text-xs text-gray-500 dark:text-gray-400">AI</span>
+					</div>
+					<!-- Arrow -->
+					<div class="text-orange-600">
+						<svg class="w-8 h-8 rotate-90 md:rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+						</svg>
+					</div>
+					<!-- GitHub Icon -->
+					<div class="flex flex-col items-center">
+						<div class="w-16 h-16 bg-white dark:bg-gray-700 rounded-xl shadow-md flex items-center justify-center">
+							<svg class="w-10 h-10 text-gray-900 dark:text-white" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+							</svg>
+						</div>
+						<span class="mt-2 text-xs text-gray-500 dark:text-gray-400">GitHub</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Description -->
+			<div class="text-sm space-y-4 mb-6">
+				<p>
+					<span class="font-bold text-orange-600">IssueFlow</span> transforms your team's Slack
+					discussions into perfectly structured GitHub issues with the power of AI. Simply mention
+					the bot in any Slack thread, and it analyzes the conversation context to generate
+					production-ready issues in seconds.
+				</p>
+				<p>
+					The platform eliminates manual context-switching between Slack and GitHub, ensuring no
+					ideas get lost in chat history. Features include intelligent AI analysis of conversation
+					threads, one-click issue creation with human approval, and detailed analytics to track
+					team productivity.
+				</p>
+			</div>
+
+			<!-- Tech Stack -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Built with</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Next.js 15</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">TypeScript</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Supabase</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">OpenAI</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Slack API</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">GitHub API</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Stripe</span>
+				</div>
+			</div>
+
+			<!-- Key Stats -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Key metrics</h3>
+				<div class="flex flex-wrap gap-4 text-sm">
+					<div class="flex items-center gap-2">
+						<span class="text-orange-600 font-bold">95%</span>
+						<span class="text-gray-600 dark:text-gray-400">success rate</span>
+					</div>
+					<div class="flex items-center gap-2">
+						<span class="text-orange-600 font-bold">&lt;10s</span>
+						<span class="text-gray-600 dark:text-gray-400">processing time</span>
+					</div>
+					<div class="flex items-center gap-2">
+						<span class="text-orange-600 font-bold">99.9%</span>
+						<span class="text-gray-600 dark:text-gray-400">uptime SLA</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Links -->
+			<div class="flex flex-wrap gap-4">
+				<a
+					href="https://issueflow.io/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+					</svg>
+					Visit IssueFlow
+				</a>
+			</div>
+		</article>
+	</Section>
+</Base>
