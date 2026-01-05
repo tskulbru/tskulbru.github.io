@@ -1,0 +1,144 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'BuzzBlast - Privacy Policy';
+const description = 'Privacy Policy for BuzzBlast - Quiz Buzzer & Game Sounds app';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Privacy Policy for BuzzBlast</h1>
+			<p class="text-sm text-gray-600 dark:text-gray-400">
+				Last updated: January 5, 2026
+			</p>
+
+			<h2>Overview</h2>
+			<p>
+				BuzzBlast ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our quiz buzzer and soundboard application.
+			</p>
+
+			<h2>Information We Don't Collect</h2>
+			<p>
+				BuzzBlast is designed with privacy in mind:
+			</p>
+			<ul>
+				<li>We don't collect personal information</li>
+				<li>We don't require user accounts</li>
+				<li>We don't access your contacts or photos</li>
+				<li>We don't track your location</li>
+				<li>All app functionality works offline</li>
+			</ul>
+
+			<h2>Analytics and Crash Reporting</h2>
+			<p>
+				To improve the app experience, we use the following services:
+			</p>
+
+			<h3>Firebase Analytics</h3>
+			<p>
+				We use Firebase Analytics to understand general app usage patterns. This includes:
+			</p>
+			<ul>
+				<li>Which sounds are most popular (anonymized)</li>
+				<li>App launch frequency</li>
+				<li>Feature usage statistics</li>
+				<li>Device type and OS version</li>
+			</ul>
+			<p>
+				This data is anonymized and aggregated. We cannot identify individual users from this information.
+			</p>
+
+			<h3>Firebase Crashlytics</h3>
+			<p>
+				We use Firebase Crashlytics to identify and fix app crashes. When the app crashes, it may send:
+			</p>
+			<ul>
+				<li>Device model and OS version</li>
+				<li>App version</li>
+				<li>Crash stack traces</li>
+				<li>Anonymous installation UUID</li>
+			</ul>
+
+			<h2>In-App Purchases</h2>
+			<p>
+				BuzzBlast offers premium sound packs through in-app purchases. Purchase processing is handled by:
+			</p>
+			<ul>
+				<li><strong>Apple App Store</strong> for iOS devices</li>
+				<li><strong>Google Play Store</strong> for Android devices</li>
+				<li><strong>RevenueCat</strong> for purchase management</li>
+			</ul>
+			<p>
+				We don't store payment information. All transactions are processed securely by the respective platform providers.
+			</p>
+
+			<h2>Advertising</h2>
+			<p>
+				BuzzBlast uses Google AdMob to display advertisements. AdMob may collect certain information as outlined in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+			</p>
+			<p>
+				You can opt out of personalized advertising by adjusting your device settings:
+			</p>
+			<ul>
+				<li><strong>iOS:</strong> Settings → Privacy & Security → Apple Advertising → Personalized Ads</li>
+				<li><strong>Android:</strong> Settings → Google → Ads → Opt out of Ads Personalization</li>
+			</ul>
+
+			<h2>Data Storage</h2>
+			<p>
+				All app preferences and settings are stored locally on your device. This includes:
+			</p>
+			<ul>
+				<li>Selected sounds</li>
+				<li>Volume preferences</li>
+				<li>Purchase status</li>
+			</ul>
+			<p>
+				This data never leaves your device unless you explicitly back up your device using iOS or Android backup services.
+			</p>
+
+			<h2>Third-Party Services</h2>
+			<p>
+				BuzzBlast uses the following third-party services:
+			</p>
+			<ul>
+				<li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase</a> - Analytics and crash reporting</li>
+				<li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat</a> - Purchase management</li>
+				<li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google AdMob</a> - Advertising</li>
+			</ul>
+
+			<h2>Children's Privacy</h2>
+			<p>
+				BuzzBlast is suitable for all ages. We don't knowingly collect personal information from children under 13. The app doesn't require any personal information to function.
+			</p>
+
+			<h2>Your Rights</h2>
+			<p>
+				Since we don't collect personal data, there's no personal information to access, modify, or delete. You can:
+			</p>
+			<ul>
+				<li>Delete the app at any time to remove all local data</li>
+				<li>Disable analytics collection in your device settings</li>
+				<li>Opt out of personalized ads as described above</li>
+			</ul>
+
+			<h2>Changes to This Policy</h2>
+			<p>
+				We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last updated" date at the top of this policy.
+			</p>
+
+			<h2>Contact</h2>
+			<p>
+				If you have questions about this Privacy Policy or how BuzzBlast handles data, please contact us through the App Store or Google Play Store where you downloaded the app.
+			</p>
+
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">← Back to tskulbru.dev</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>
