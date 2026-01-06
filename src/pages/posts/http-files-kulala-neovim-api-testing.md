@@ -1,15 +1,16 @@
 ---
 layout: ../../layouts/post.astro
-title: "Ditching Postman: HTTP Files and Kulala.nvim for API Testing"
+title: 'Ditching Postman: HTTP Files and Kulala.nvim for API Testing'
 pubDate: 2025-12-16
-description: "How I moved from centralized API clients to colocated HTTP files with Kulala.nvim, and why this workflow fits microservice development better than Postman ever did."
-author: "Torstein Skulbru"
+description: 'How I moved from centralized API clients to colocated HTTP files with Kulala.nvim, and why this workflow fits microservice development better than Postman ever did.'
+author: 'Torstein Skulbru'
 isPinned: false
 excerpt: "Postman's inability to sync OpenAPI changes without destroying your custom scripts pushed me to HTTP files. Here's how Kulala.nvim makes this workflow seamless in Neovim."
 image:
-  src: "/images/kulala-demo.gif"
-  alt: "Kulala.nvim demo showing HTTP request execution in Neovim"
-tags: ["neovim", "api", "tooling", "lazyvim", "developer-experience"]
+  src: '/images/kulala-demo.gif'
+  alt: 'Kulala.nvim demo showing HTTP request execution in Neovim'
+tags: ['neovim', 'api', 'tooling', 'lazyvim', 'developer-experience']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mbqmdb52tk2q'
 ---
 
 Postman has a fundamental problem that becomes painful once you work across multiple microservices: it cannot update an imported OpenAPI specification without completely replacing the collection. Every custom script, every environment tweak, every test assertion you wrote against that collection vanishes the moment you need to sync with an updated API spec. For a single monolithic API this might be tolerable, but when you're managing dozens of services with evolving APIs, the maintenance burden becomes absurd.
@@ -71,18 +72,18 @@ For environment-specific values like API keys, base URLs, or authentication toke
 
 ```json
 {
-  "development": {
-    "baseUrl": "http://localhost:8080",
-    "apiKey": "dev-key-12345"
-  },
-  "staging": {
-    "baseUrl": "https://staging-api.example.com",
-    "apiKey": "staging-key-67890"
-  },
-  "production": {
-    "baseUrl": "https://api.example.com",
-    "apiKey": "{{$env.PROD_API_KEY}}"
-  }
+	"development": {
+		"baseUrl": "http://localhost:8080",
+		"apiKey": "dev-key-12345"
+	},
+	"staging": {
+		"baseUrl": "https://staging-api.example.com",
+		"apiKey": "staging-key-67890"
+	},
+	"production": {
+		"baseUrl": "https://api.example.com",
+		"apiKey": "{{$env.PROD_API_KEY}}"
+	}
 }
 ```
 
@@ -227,18 +228,18 @@ OAuth 2.0 configuration lives in the environment file. Define your OAuth provide
 
 ```json
 {
-  "development": {
-    "baseUrl": "http://localhost:8080",
-    "oauth2": {
-      "myAuthProvider": {
-        "grantType": "client_credentials",
-        "tokenUrl": "https://auth.example.com/oauth/token",
-        "clientId": "my-client-id",
-        "clientSecret": "{{$env.CLIENT_SECRET}}",
-        "scope": "read write"
-      }
-    }
-  }
+	"development": {
+		"baseUrl": "http://localhost:8080",
+		"oauth2": {
+			"myAuthProvider": {
+				"grantType": "client_credentials",
+				"tokenUrl": "https://auth.example.com/oauth/token",
+				"clientId": "my-client-id",
+				"clientSecret": "{{$env.CLIENT_SECRET}}",
+				"scope": "read write"
+			}
+		}
+	}
 }
 ```
 

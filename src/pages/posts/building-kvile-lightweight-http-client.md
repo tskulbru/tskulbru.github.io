@@ -10,6 +10,7 @@ image:
   src: '/images/portfolio/kvile-preview.png'
   alt: 'Kvile HTTP client showing request editor and JSON response'
 tags: ['rust', 'tauri', 'api', 'tooling', 'open-source']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mbqmignozk2q'
 ---
 
 The breaking point came during a routine API update. I had spent an afternoon writing custom test scripts in Postman, carefully crafting pre-request logic and response assertions for a new authentication flow. The next week, the backend team updated the OpenAPI specification with new endpoints. I imported the updated spec into Postman, and every custom script I had written vanished. Postman's import replaces the entire collection rather than merging changes. Weeks of work, gone.
