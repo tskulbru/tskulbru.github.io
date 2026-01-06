@@ -4,7 +4,7 @@ title: 'Scalable GitHub Release Management for Kubernetes with Shared Workflows'
 pubDate: 2025-11-27
 description: 'A practical guide to implementing multi-environment release management using GitHub Actions shared workflows, repository dispatch events, and GitOps patterns for Kubernetes deployments.'
 author: 'Torstein Skulbru'
-isPinned: true
+isPinned: false
 excerpt: 'How to build a scalable CI/CD pipeline that connects multiple application repositories to a central Kubernetes configuration repository using shared workflows, repository dispatch events, and GitOps principles.'
 image:
   src: '/images/github-k8s-release-header.png'

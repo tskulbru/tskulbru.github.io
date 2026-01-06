@@ -4,7 +4,7 @@ title: "I Built IssueFlow: Turn Slack Conversations into GitHub Issues with AI"
 pubDate: 2025-10-23 # Update with your publish date
 description: "How I lost dozens of minutes a week to copy-pasting Slack conversations into GitHub, and built an AI tool to solve it."
 author: "Torstein Skulbru"
-isPinned: true
+isPinned: false
 excerpt: "How I lost dozens of minutes a week to copy-pasting Slack conversations into GitHub, and built an AI tool to solve it."
 image:
   src: "/images/totally-serious-working-pic.png"
