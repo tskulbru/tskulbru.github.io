@@ -26,16 +26,16 @@ const shareUrls = generateSocialShareUrls(currentURL, frontmatter.title, frontma
 ---
 
 <Base head={seoData}>
+	<PostHeader
+		title={frontmatter.title}
+		author={frontmatter.author}
+		tags={frontmatter.tags}
+		minutesRead={frontmatter.minutesRead}
+		pubDate={frontmatter.pubDate}
+		isPinned={frontmatter.isPinned}
+		img={{ src: frontmatter.image.src, alt: frontmatter.image.alt }}
+	/>
 	<div class="mx-auto w-full max-w-screen-md">
-		<PostHeader
-			title={frontmatter.title}
-			author={frontmatter.author}
-			tags={frontmatter.tags}
-			minutesRead={frontmatter.minutesRead}
-			pubDate={frontmatter.pubDate}
-			isPinned={frontmatter.isPinned}
-			img={{ src: frontmatter.image.src, alt: frontmatter.image.alt }}
-		/>
 		<PostContent><slot /></PostContent>
 		
 		<!-- Social Share Section -->
