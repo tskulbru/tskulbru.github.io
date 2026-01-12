@@ -5,11 +5,12 @@ pubDate: 2026-01-12
 description: 'How I built Stao, a cross-platform standing desk reminder app for iOS, Android, macOS, Windows, and Linux. A sit-stand timer that tracks your progress without accounts or subscriptions.'
 author: 'Torstein Skulbru'
 isPinned: true
-excerpt: "Most standing desk apps get it wrong. I built Stao to fix the simple problems they overcomplicate."
+excerpt: 'Most standing desk apps get it wrong. I built Stao to fix the simple problems they overcomplicate.'
 image:
   src: '/images/portfolio/stao-promo-header.webp'
   alt: 'Stao app showing timer interface with sitting and standing modes'
 tags: ['flutter', 'cross-platform', 'side-project', 'mobile-development']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mc7vfg67bs23'
 ---
 
 I bought a standing desk two years ago. Wanna know how much I actually stood? Maybe 15-20 minutes a day. On a good day.
@@ -142,4 +143,4 @@ The app is available at [stao.app](https://stao.app?utm_source=tskulbru.dev&utm_
 
 ---
 
-*If you enjoyed this dev story, you might also like [Building Kvile: A Lightweight HTTP Client for .http Files](/posts/building-kvile-lightweight-http-client)—a similar journey building a desktop app with Tauri and Rust.*
+_If you enjoyed this dev story, you might also like [Building Kvile: A Lightweight HTTP Client for .http Files](/posts/building-kvile-lightweight-http-client)—a similar journey building a desktop app with Tauri and Rust._
