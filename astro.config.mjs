@@ -51,11 +51,6 @@ export default defineConfig({
 			changefreq: 'weekly',
 			priority: 0.7,
 			lastmod: new Date(),
-			// Add custom entries for dynamic pages
-			customPages: [
-				'https://tskulbru.dev/posts',
-				'https://tskulbru.dev/tags'
-			]
 		}),
 		partytown({
 			config: {
