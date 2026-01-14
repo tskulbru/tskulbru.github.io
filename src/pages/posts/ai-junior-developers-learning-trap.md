@@ -10,6 +10,7 @@ image:
   src: '/images/ai-junior-dev.webp'
   alt: 'A developer looking at AI-generated code'
 tags: ['ai', 'career', 'software-development', 'mentorship']
+modifiedDate: 2026-01-14
 blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3m7pt2hwjuc2s'
 ---
 

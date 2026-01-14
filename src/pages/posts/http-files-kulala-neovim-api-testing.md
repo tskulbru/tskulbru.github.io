@@ -10,6 +10,7 @@ image:
   src: '/images/kulala-demo.gif'
   alt: 'Kulala.nvim demo showing HTTP request execution in Neovim'
 tags: ['neovim', 'api', 'tooling', 'lazyvim', 'developer-experience']
+modifiedDate: 2026-01-14
 blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mbqmdb52tk2q'
 ---
 

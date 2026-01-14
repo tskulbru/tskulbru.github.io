@@ -11,6 +11,7 @@ image:
   src: "/images/bsky-comment.png"
   alt: "An example comment on a blog post"
 tags: ["bluesky", "blog", "meta"]
+modifiedDate: 2026-01-14
 ---
 
 I've always had mixed feelings about blog comments. On one hand, I love the idea of readers chiming in, sharing their thoughts, and maybe even sparking a little debate. On the other hand, traditional comment sections can be a magnet for spam, require constant moderation, and often feel a bit... disconnected from the rest of the web.

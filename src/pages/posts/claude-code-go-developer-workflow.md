@@ -9,7 +9,8 @@ excerpt: "Claude Code becomes significantly more powerful when configured for yo
 image:
   src: '/images/claude-code-customization-hero.webp'
   alt: 'Claude Code customization and extensibility mechanisms'
-tags: ['golang', 'claude', 'ai', 'devops', 'productivity']
+tags: ['golang', 'claude', 'ai', 'devops', 'productivity', 'claude-code', 'ai-coding-assistant', 'developer-tools', 'workflow-automation']
+modifiedDate: 2026-01-14
 blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3m7ztrwuyrs2c'
 ---
 

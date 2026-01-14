@@ -10,6 +10,7 @@ image:
   src: "/images/fitsystemwindows-hero.webp"
   alt: "Photo by Vidar Nordli-Mathisen on Unsplash, picture of a beatuiful lake view from inside a cabin"
 tags: ["android", "ui", "system-windows", "mobile-development"]
+modifiedDate: 2026-01-14
 ---
 
 Since you are here, I'm guessing you've tumbled into the black abyss that is `fitSystemWindows` once or twice in the past. I know I have spent hours blindly adding `android:fitSystemWindows="true"` without understanding why my views _refused_ to adhere to this magical setting.

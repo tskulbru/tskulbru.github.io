@@ -10,6 +10,7 @@ image:
   src: '/images/portfolio/kvile-preview.png'
   alt: 'Kvile HTTP client showing request editor and JSON response'
 tags: ['rust', 'tauri', 'api', 'tooling', 'open-source']
+modifiedDate: 2026-01-14
 blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mbqmignozk2q'
 ---
 

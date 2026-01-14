@@ -10,6 +10,7 @@ image:
   src: '/images/android-release-mgmt-hero.webp'
   alt: 'Android release pipeline illustration'
 tags: ['android', 'github-actions', 'fastlane', 'devops', 'ci-cd']
+modifiedDate: 2026-01-14
 blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3m7aaxbvlos2f'
 ---
 

@@ -10,6 +10,7 @@ image:
   src: '/images/portfolio/stao-promo-header.webp'
   alt: 'Stao app showing timer interface with sitting and standing modes'
 tags: ['flutter', 'cross-platform', 'side-project', 'mobile-development']
+modifiedDate: 2026-01-14
 blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mc7vfg67bs23'
 ---
 

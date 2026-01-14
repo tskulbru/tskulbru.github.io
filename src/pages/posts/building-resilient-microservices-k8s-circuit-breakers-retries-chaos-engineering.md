@@ -10,6 +10,7 @@ image:
   src: "/images/interconnected-microservices.jpg"
   alt: "Network of interconnected nodes representing resilient microservices architecture"
 tags: ["kubernetes", "microservices", "resilience", "chaos-engineering", "golang"]
+modifiedDate: 2026-01-14
 blueskyUri: "at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3lsijet3s322p"
 ---
 

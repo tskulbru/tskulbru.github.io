@@ -10,6 +10,7 @@ image:
   src: '/images/github-k8s-release-header.png'
   alt: 'GitHub and Kubernetes connected through an automated release pipeline'
 tags: ['kubernetes', 'github-actions', 'devops', 'gitops', 'ci-cd']
+modifiedDate: 2026-01-14
 blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3m6m5ndwhz22c'
 ---
 

@@ -19,7 +19,17 @@ export const AppConfig = {
 		'Technical Blog',
 		'Software Engineering',
 		'Container Orchestration',
-		'Production Systems'
+		'Production Systems',
+		'Claude Code',
+		'AI Developer Tools',
+		'Circuit Breaker Pattern',
+		'Chaos Engineering',
+		'GitHub Actions',
+		'Fastlane',
+		'GitOps',
+		'Azure Spot VMs',
+		'Kubernetes Tutorial',
+		'Go Tutorial'
 	],
 	social: {
 		twitter: '@tskulbru',

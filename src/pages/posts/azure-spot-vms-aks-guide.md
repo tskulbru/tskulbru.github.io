@@ -11,6 +11,7 @@ image:
   src: "/images/spot-vms.webp"
   alt: "Cloud money clipart"
 tags: ["azure", "kubernetes", "aks", "spot-vms", "devops"]
+modifiedDate: 2026-01-14
 ---
 
 Cloud computing costs can quickly spiral out of control, especially when running compute-intensive workloads at scale. For organizations using Azure Kubernetes Service (AKS), Azure Spot Virtual Machines present a compelling opportunity to slash compute expenses by up to 90% compared to standard pay-as-you-go pricing. However, successfully implementing spot instances in production requires understanding their mechanics, limitations, and the proper architectural patterns to ensure reliability.

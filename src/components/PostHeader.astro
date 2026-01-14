@@ -10,6 +10,7 @@ interface Props {
 	tags: string[];
 	minutesRead: string;
 	pubDate: string;
+	modifiedDate?: string;
 	isPinned?: boolean;
 	img: {
 		src: string;
@@ -18,9 +19,11 @@ interface Props {
 	blueskyUri?: string;
 }
 
-const { title, pubDate, tags, minutesRead, img, isPinned = false } = Astro.props;
+const { title, pubDate, modifiedDate, tags, minutesRead, img, isPinned = false } = Astro.props;
 
 const formattedDate = formatDate(pubDate);
+const formattedModifiedDate = modifiedDate ? formatDate(modifiedDate) : null;
+const showModifiedDate = modifiedDate && new Date(modifiedDate) > new Date(pubDate);
 ---
 
 <Section>
@@ -33,7 +36,11 @@ const formattedDate = formatDate(pubDate);
 			<Tags tags={tags} withHref={true} />
 		</div>
 		<div class="text-sm pb-6">
-			<span>{formattedDate}</span> - <span>{minutesRead}</span>
+			<span>{formattedDate}</span>
+			{showModifiedDate && (
+				<span class="text-gray-500 dark:text-gray-400"> · Updated {formattedModifiedDate}</span>
+			)}
+			<span> - {minutesRead}</span>
 		</div>
 
 		{img.src ? <img src={img.src} alt={img.alt} class="w-full max-w-4xl h-auto rounded-lg" /> : null}

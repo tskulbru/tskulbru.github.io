@@ -3,9 +3,24 @@ import Base from '@/layouts/Base.astro';
 import PostHeader from '@/components/PostHeader.astro';
 import PostContent from '@/components/PostContent.astro';
 import CommentSection from '@/components/CommentSection.astro';
-import { generateSocialShareUrls } from '@/utils/seo';
+import RelatedPosts from '@/components/RelatedPosts.astro';
+import { generateSocialShareUrls, generateBreadcrumbStructuredData } from '@/utils/seo';
 
 const { frontmatter } = Astro.props;
+
+// Get all posts for related posts (using import.meta.glob to avoid deprecation)
+const postModules = import.meta.glob('../pages/posts/*.md', { eager: true });
+const allPosts = Object.values(postModules) as any[];
+const currentSlug = Astro.url.pathname;
+
+// Generate breadcrumb data
+const siteURL = Astro.site?.toString() || 'https://tskulbru.dev';
+const breadcrumbs = [
+	{ name: 'Home', url: siteURL },
+	{ name: 'Posts', url: `${siteURL}/posts` },
+	{ name: frontmatter.title, url: `${siteURL}${Astro.url.pathname}` }
+];
+const breadcrumbSchema = generateBreadcrumbStructuredData(breadcrumbs);
 
 // Prepare SEO data for the post
 const seoData = {
@@ -26,12 +41,16 @@ const shareUrls = generateSocialShareUrls(currentURL, frontmatter.title, frontma
 ---
 
 <Base head={seoData}>
+	<!-- Breadcrumb Structured Data (JSON-LD can appear anywhere in document) -->
+	<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
 	<PostHeader
 		title={frontmatter.title}
 		author={frontmatter.author}
 		tags={frontmatter.tags}
 		minutesRead={frontmatter.minutesRead}
 		pubDate={frontmatter.pubDate}
+		modifiedDate={frontmatter.modifiedDate}
 		isPinned={frontmatter.isPinned}
 		img={{ src: frontmatter.image.src, alt: frontmatter.image.alt }}
 	/>
@@ -109,6 +128,13 @@ const shareUrls = generateSocialShareUrls(currentURL, frontmatter.title, frontma
 			</div>
 		</div>
 		
+		<!-- Related Posts Section -->
+		<RelatedPosts
+			currentSlug={currentSlug}
+			currentTags={frontmatter.tags || []}
+			allPosts={allPosts}
+		/>
+
 		{frontmatter.blueskyUri && <CommentSection uri={frontmatter.blueskyUri} /> }
 	</div>
 </Base>

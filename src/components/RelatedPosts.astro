@@ -1,0 +1,57 @@
+---
+import { formatDate } from '@/utils/data.util';
+import Tags from './Tags.astro';
+
+interface Props {
+	currentSlug: string;
+	currentTags: string[];
+	allPosts: any[];
+	maxPosts?: number;
+}
+
+const { currentSlug, currentTags, allPosts, maxPosts = 3 } = Astro.props;
+
+// Find related posts based on shared tags
+const relatedPosts = allPosts
+	.filter(post => post.url !== currentSlug)
+	.map(post => {
+		const sharedTags = post.frontmatter.tags?.filter((tag: string) =>
+			currentTags.includes(tag)
+		) || [];
+		return {
+			post,
+			relevanceScore: sharedTags.length
+		};
+	})
+	.filter(item => item.relevanceScore > 0)
+	.sort((a, b) => {
+		// Sort by relevance first, then by date
+		if (b.relevanceScore !== a.relevanceScore) {
+			return b.relevanceScore - a.relevanceScore;
+		}
+		return new Date(b.post.frontmatter.pubDate).getTime() - new Date(a.post.frontmatter.pubDate).getTime();
+	})
+	.slice(0, maxPosts)
+	.map(item => item.post);
+---
+
+{relatedPosts.length > 0 && (
+	<div class="related-posts mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+		<h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-white">Related Posts</h3>
+		<div class="grid gap-4 md:grid-cols-3">
+			{relatedPosts.map((post: any) => (
+				<a href={post.url} class="block group">
+					<div class="h-full rounded-lg bg-stone-200/50 p-4 transition-colors hover:bg-stone-300/50 dark:bg-stone-800 dark:hover:bg-stone-700">
+						<p class="text-xs text-gray-500 dark:text-gray-400 mb-2">
+							{formatDate(post.frontmatter.pubDate)}
+						</p>
+						<p class="font-bold text-sm mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 line-clamp-2">
+							{post.frontmatter.title}
+						</p>
+						<Tags tags={post.frontmatter.tags?.slice(0, 3)} />
+					</div>
+				</a>
+			))}
+		</div>
+	</div>
+)}

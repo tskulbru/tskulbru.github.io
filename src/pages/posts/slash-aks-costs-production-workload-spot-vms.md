@@ -11,6 +11,7 @@ image:
   src: '/images/slash-aks-containers.jpg'
   alt: 'Stacked containers'
 tags: ['azure', 'kubernetes', 'aks', 'spot-vms', 'devops']
+modifiedDate: 2026-01-14
 ---
 
 Cloud computing offers incredible scalability, but costs can quickly escalate. For organizations leveraging Azure Kubernetes Service (AKS), one powerful strategy to significantly reduce compute expenses without compromising reliability is by utilizing Azure Spot Virtual Machines. Spot VMs provide access to Azure's unused compute capacity at substantial discounts compared to pay-as-you-go prices.
