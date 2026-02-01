@@ -4,7 +4,7 @@ title: 'Building Kvile: A Lightweight HTTP Client for .http Files'
 pubDate: 2026-01-06
 description: 'The story of building a Tauri-based HTTP client that treats .http files as first-class citizens, and what I learned along the way.'
 author: 'Torstein Skulbru'
-isPinned: true
+isPinned: false
 excerpt: "Frustrated with heavyweight API clients, I built Kvile - a fast, offline-first HTTP debugging tool. Here's the journey."
 image:
   src: '/images/portfolio/kvile-preview.png'

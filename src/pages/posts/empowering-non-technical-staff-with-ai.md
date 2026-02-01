@@ -2,7 +2,7 @@
 layout: ../../layouts/post.astro
 title: 'Beyond the Dev Team: Unlocking AI for Every Department'
 pubDate: 2026-02-01
-description: 'Why companies should democratize AI access beyond technical teams, and how getting your entire organization using tools like Claude creates compounding competitive advantages.'
+description: 'Why companies should democratize AI access beyond technical teams, and how getting your entire organization using LLMs creates compounding competitive advantages.'
 author: 'Torstein Skulbru'
 isPinned: false
 excerpt: "Technical staff have already transformed their workflows with AI. Meanwhile, non-technical teams struggle with the same knowledge silos and bottlenecks they always have. The companies winning tomorrow are democratizing AI access today."
@@ -12,7 +12,9 @@ image:
 tags: ['ai', 'productivity', 'business', 'organization', 'workflow-automation']
 ---
 
-A quiet asymmetry has emerged in most organizations. Technical staff—developers, data scientists, DevOps engineers—have integrated AI tools deeply into their daily workflows. They use Claude or ChatGPT to debug code, generate documentation, explore solutions, and accelerate tasks that once took hours. Meanwhile, their non-technical colleagues in sales, marketing, HR, finance, and operations continue working the same way they did five years ago, unaware that the same tools could transform their effectiveness.
+A quiet asymmetry has emerged in most organizations. Technical staff—developers, data scientists, DevOps engineers—have integrated AI tools deeply into their daily workflows. They use LLMs to debug code, generate documentation, explore solutions, and accelerate tasks that once took hours. Meanwhile, their non-technical colleagues in sales, marketing, HR, finance, and operations continue working the same way they did five years ago, unaware that the same tools could transform their effectiveness.
+
+*Throughout this article, "LLM" refers to large language models like Claude, ChatGPT, Gemini, and similar AI assistants.*
 
 This gap represents both a problem and an opportunity. The problem: knowledge silos persist, information bottlenecks remain, and cross-functional collaboration suffers because only some teams have access to AI's force-multiplying capabilities. The opportunity: organizations that democratize AI access across all departments gain compounding advantages that widen over time.
 
@@ -36,7 +38,7 @@ The abstract benefits become concrete when you see specific applications across 
 
 **Before**: A PM needs to scope a feature involving payment integration. They message the tech lead, wait for a response, schedule a call, get a partial answer, then follow up with more questions spread across several days.
 
-**After**: The PM opens Claude with access to the codebase context. They ask: "What payment providers do we currently support? What would be involved in adding Stripe subscriptions? Which services would need to change?" Within minutes, they have architectural context, can identify dependencies, and create accurate tickets with realistic complexity estimates.
+**After**: The PM opens an LLM with access to the codebase context. They ask: "What payment providers do we currently support? What would be involved in adding Stripe subscriptions? Which services would need to change?" Within minutes, they have architectural context, can identify dependencies, and create accurate tickets with realistic complexity estimates.
 
 This shift doesn't replace developer input for final decisions—it means PMs arrive at planning conversations already informed, making those conversations more productive for everyone.
 
@@ -44,7 +46,7 @@ This shift doesn't replace developer input for final decisions—it means PMs ar
 
 **Before**: An SDR prepares for outreach to fifty target accounts. They manually research each company, check LinkedIn, read recent news, try to identify pain points. Three hours later, they have superficial notes on maybe fifteen companies.
 
-**After**: The SDR shares their target list with Claude. "Research each company's tech stack, recent funding, and likely pain points based on their industry and stage. Draft personalized first-touch emails that reference something specific to their situation." The same task takes thirty minutes, with deeper research and genuinely tailored messaging.
+**After**: The SDR shares their target list with an LLM. "Research each company's tech stack, recent funding, and likely pain points based on their industry and stage. Draft personalized first-touch emails that reference something specific to their situation." The same task takes thirty minutes, with deeper research and genuinely tailored messaging.
 
 Beyond prospecting, AI helps with competitive intelligence—analyzing competitor positioning, pricing, and feature gaps—and proposal generation, creating technically accurate sections without pulling engineers into the sales process.
 
@@ -52,7 +54,7 @@ Beyond prospecting, AI helps with competitive intelligence—analyzing competito
 
 **Before**: The marketing team writes a blog post about a technical feature. They interview an engineer, draft content based on their notes, send it for technical review, receive corrections, revise, review again. The cycle takes two weeks.
 
-**After**: Marketing uses Claude to understand the feature directly—asking questions about how it works, what problems it solves, what makes the implementation interesting. They draft content that's technically accurate from the start. Technical review becomes a sanity check rather than a rewrite.
+**After**: Marketing uses an LLM to understand the feature directly—asking questions about how it works, what problems it solves, what makes the implementation interesting. They draft content that's technically accurate from the start. Technical review becomes a sanity check rather than a rewrite.
 
 AI also accelerates SEO work (keyword research, meta descriptions, content gap analysis), campaign ideation (brainstorming concepts based on product features and target audience), and analytics interpretation (helping non-technical marketers understand data and derive actionable insights).
 
@@ -60,7 +62,7 @@ AI also accelerates SEO work (keyword research, meta descriptions, content gap a
 
 **Before**: A CSM prepares a quarterly business review. They pull usage metrics from various dashboards, try to identify trends, and build a narrative based on intuition about what the numbers mean.
 
-**After**: The CSM shares usage data with Claude. "Analyze usage trends over the past quarter. Identify any patterns that suggest churn risk. What features are they using heavily versus ignoring? What expansion opportunities do you see based on their usage patterns?" The QBR becomes data-driven, with specific talking points backed by analysis rather than vague observations.
+**After**: The CSM shares usage data with an LLM. "Analyze usage trends over the past quarter. Identify any patterns that suggest churn risk. What features are they using heavily versus ignoring? What expansion opportunities do you see based on their usage patterns?" The QBR becomes data-driven, with specific talking points backed by analysis rather than vague observations.
 
 AI transforms customer success from reactive account management to proactive relationship development—identifying at-risk customers before they complain, spotting expansion opportunities based on usage patterns, and creating personalized onboarding paths based on customer segment.
 
@@ -68,7 +70,7 @@ AI transforms customer success from reactive account management to proactive rel
 
 **Before**: HR posts a job description for a senior backend role. It's either too vague to attract qualified candidates or technically inaccurate because HR doesn't fully understand the requirements.
 
-**After**: HR works with Claude: "Help me write a job description for a senior backend engineer. Our stack is Python, FastAPI, PostgreSQL, deployed on AWS. The role focuses on payment systems integration. What technical qualifications should we require versus prefer? What interview questions would effectively assess these skills?"
+**After**: HR works with an LLM: "Help me write a job description for a senior backend engineer. Our stack is Python, FastAPI, PostgreSQL, deployed on AWS. The role focuses on payment systems integration. What technical qualifications should we require versus prefer? What interview questions would effectively assess these skills?"
 
 The result: accurate job descriptions that attract the right candidates, relevant interview questions, and better hiring outcomes—without requiring engineering time for routine recruiting tasks.
 
@@ -76,7 +78,7 @@ The result: accurate job descriptions that attract the right candidates, relevan
 
 **Before**: Finance needs to evaluate three potential vendors for a new tool. They spend weeks gathering information, scheduling demos, and manually comparing features and pricing.
 
-**After**: Finance uses Claude to research each vendor's positioning, typical pricing models, known limitations, and customer sentiment. They create comparison matrices covering features, pricing, security compliance, and integration capabilities. The same evaluation takes days instead of weeks, with more thorough analysis.
+**After**: Finance uses an LLM to research each vendor's positioning, typical pricing models, known limitations, and customer sentiment. They create comparison matrices covering features, pricing, security compliance, and integration capabilities. The same evaluation takes days instead of weeks, with more thorough analysis.
 
 AI also accelerates contract review (identifying key terms and risks in vendor agreements), expense analysis (categorizing spending patterns and identifying anomalies), and process documentation (capturing and improving operational workflows).
 
