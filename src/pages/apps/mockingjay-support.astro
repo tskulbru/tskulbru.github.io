@@ -1,0 +1,259 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Mockingjay - Support';
+const description = 'Support and help for Mockingjay - Secure Video Recording App';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Mockingjay Support</h1>
+			<p class="text-lg text-gray-600 dark:text-gray-400">
+				Get help with Mockingjay - Secure Video Recording
+			</p>
+
+			<h2>Getting Started</h2>
+
+			<h3>How do I set up Mockingjay?</h3>
+			<p>
+				To start using Mockingjay:
+			</p>
+			<ol>
+				<li>Open Mockingjay and complete the welcome screen</li>
+				<li>Create a PIN (4-8 digits) - this protects your settings and recordings</li>
+				<li>Optionally set up a duress PIN for additional security</li>
+				<li>Sign in with your Google account to enable cloud backup</li>
+				<li>You're ready to record</li>
+			</ol>
+
+			<h3>How does the encryption work?</h3>
+			<p>
+				Mockingjay uses military-grade AES-256-GCM encryption:
+			</p>
+			<ul>
+				<li>Video is split into small chunks (3-10 seconds)</li>
+				<li>Each chunk is encrypted on your device before upload</li>
+				<li>Encryption keys are stored in Apple's Secure Enclave</li>
+				<li>Only you can decrypt your videos - not us, not Google, not anyone else</li>
+			</ul>
+
+			<h2>Recording</h2>
+
+			<h3>How do I start a recording?</h3>
+			<p>
+				There are multiple ways to start recording:
+			</p>
+			<ul>
+				<li><strong>Quick start:</strong> Open the app and tap the record button</li>
+				<li><strong>Action Button:</strong> Configure your iPhone's Action Button to start recording instantly</li>
+				<li><strong>Auto-record:</strong> Enable "Auto-Record on Launch" in settings to start recording when the app opens</li>
+			</ul>
+			<p>
+				Recording starts immediately without requiring your PIN - this is by design for emergency situations.
+			</p>
+
+			<h3>How do I stop a recording?</h3>
+			<p>
+				To stop a recording:
+			</p>
+			<ol>
+				<li>Tap the screen to reveal controls</li>
+				<li>Tap the stop button</li>
+				<li>Enter your PIN to confirm</li>
+			</ol>
+			<p>
+				The PIN requirement prevents someone from easily stopping your recording.
+			</p>
+
+			<h3>What happens if I close the app while recording?</h3>
+			<p>
+				Mockingjay will:
+			</p>
+			<ul>
+				<li>Flush and upload the final chunk</li>
+				<li>Mark the recording as incomplete in your history</li>
+				<li>All footage captured up to that point is preserved in the cloud</li>
+			</ul>
+
+			<h3>What if I lose internet connection?</h3>
+			<p>
+				Don't worry - Mockingjay handles this automatically:
+			</p>
+			<ul>
+				<li>Chunks are queued locally when offline</li>
+				<li>Upload resumes automatically when connection returns</li>
+				<li>Exponential backoff prevents battery drain during poor connectivity</li>
+			</ul>
+
+			<h2>Security Features</h2>
+
+			<h3>What is a duress PIN?</h3>
+			<p>
+				The duress PIN is a secondary PIN that appears to work normally but provides additional protection:
+			</p>
+			<ul>
+				<li>When entered, it wipes local encryption keys</li>
+				<li>The app appears to function normally</li>
+				<li>Your cloud backup remains intact but inaccessible from the device</li>
+				<li>You can recover your recordings later on a new device</li>
+			</ul>
+			<p>
+				This protects you if someone forces you to unlock the app.
+			</p>
+
+			<h3>Why doesn't Mockingjay use Face ID?</h3>
+			<p>
+				This is a deliberate security decision. Face ID can be used to unlock your phone against your will (by pointing it at your face). A PIN requires your active cooperation to enter.
+			</p>
+
+			<h3>How do I change my PIN?</h3>
+			<ol>
+				<li>Go to Settings</li>
+				<li>Tap "Change PIN"</li>
+				<li>Enter your current PIN</li>
+				<li>Enter and confirm your new PIN</li>
+			</ol>
+
+			<h2>Google Drive</h2>
+
+			<h3>How do I connect my Google account?</h3>
+			<ol>
+				<li>Go to Settings</li>
+				<li>Tap "Google Account"</li>
+				<li>Sign in with your Google account</li>
+				<li>Grant permission to create files in Google Drive</li>
+			</ol>
+
+			<h3>Where are my recordings stored?</h3>
+			<p>
+				Recordings are stored in a folder called "Mockingjay Recordings" in your Google Drive. Pro users can customize this folder name. Each recording creates a subfolder containing encrypted video chunks.
+			</p>
+
+			<h3>How do I access my recordings?</h3>
+			<p>
+				Use the Mockingjay app to view and decrypt your recordings:
+			</p>
+			<ol>
+				<li>Open Mockingjay</li>
+				<li>Enter your PIN</li>
+				<li>Go to Recording History</li>
+				<li>Select a recording to play</li>
+			</ol>
+			<p>
+				Note: The encrypted files in Google Drive cannot be played directly - they must be decrypted by the app.
+			</p>
+
+			<h2>Subscription</h2>
+
+			<h3>What's included in Mockingjay Pro?</h3>
+			<p>
+				Pro subscribers get access to:
+			</p>
+			<ul>
+				<li>Unlimited recording time (free: 60 seconds)</li>
+				<li>All video quality options: 480p, 720p, 1080p (free: 720p only)</li>
+				<li>Unlimited history retention (free: 7 days)</li>
+				<li>GPS metadata embedding</li>
+				<li>Custom folder names</li>
+			</ul>
+
+			<h3>How do I restore my subscription?</h3>
+			<p>
+				If you've previously subscribed to Mockingjay Pro:
+			</p>
+			<ol>
+				<li>Go to Settings in Mockingjay</li>
+				<li>Tap "Restore Purchases"</li>
+				<li>Sign in with the same Apple ID you used for the subscription</li>
+				<li>Your premium features will be restored automatically</li>
+			</ol>
+
+			<h3>How do I cancel my subscription?</h3>
+			<p>
+				Subscriptions are managed through your Apple ID:
+			</p>
+			<ol>
+				<li>Open the Settings app on your iPhone</li>
+				<li>Tap your name at the top</li>
+				<li>Tap "Subscriptions"</li>
+				<li>Find Mockingjay and tap it</li>
+				<li>Tap "Cancel Subscription"</li>
+			</ol>
+			<p>
+				You must cancel at least 24 hours before the end of the current period to avoid being charged for the next period. After cancellation, you will retain access to premium features until the end of your current billing period.
+			</p>
+
+			<h2>Troubleshooting</h2>
+
+			<h3>Uploads are failing</h3>
+			<p>
+				If uploads aren't working:
+			</p>
+			<ol>
+				<li>Check your internet connection</li>
+				<li>Verify your Google account is still connected in Settings</li>
+				<li>Check that your Google Drive has available storage</li>
+				<li>Try signing out and back into your Google account</li>
+				<li>Force quit Mockingjay and reopen it</li>
+			</ol>
+
+			<h3>The app is crashing</h3>
+			<p>
+				Try these troubleshooting steps:
+			</p>
+			<ol>
+				<li>Force quit the app and restart it</li>
+				<li>Restart your device</li>
+				<li>Check for app updates in the App Store</li>
+				<li>Ensure you have enough storage space</li>
+				<li>If issues persist, contact support with your device model and iOS version</li>
+			</ol>
+
+			<h3>I forgot my PIN</h3>
+			<p>
+				For security reasons, we cannot recover your PIN. If you forget your PIN:
+			</p>
+			<ul>
+				<li>Your cloud recordings remain safe but encrypted</li>
+				<li>You will need to delete and reinstall the app</li>
+				<li>You will need to set up a new PIN and encryption keys</li>
+				<li>Previous recordings cannot be decrypted without the original keys</li>
+			</ul>
+			<p>
+				This is by design - it ensures no one can bypass your PIN protection.
+			</p>
+
+			<h2>Contact Support</h2>
+			<p>
+				If you need additional help or want to report a bug, please reach out through the App Store where you downloaded the app. You can also leave a review with your feedback.
+			</p>
+
+			<h2>Feature Requests</h2>
+			<p>
+				Have an idea for Mockingjay? We'd love to hear from you! Please share your suggestions through App Store reviews or the feedback option in the app.
+			</p>
+
+			<h2>Leave a Review</h2>
+			<p>
+				Is Mockingjay helping you feel more secure when documenting important moments? Please consider leaving a review on the App Store. Your feedback helps us improve and helps others discover the app!
+			</p>
+
+			<h2>Subscription Terms</h2>
+			<p>
+				Mockingjay Pro is available as an auto-renewable subscription. Current pricing is displayed in the app.
+			</p>
+			<p>
+				Payment will be charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours prior to the end of the current period. You can manage and cancel subscriptions in your Apple ID Account Settings. Any unused portion of a free trial period will be forfeited when you purchase a subscription.
+			</p>
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">&larr; Back to tskulbru.dev</a> |
+					<a href="/apps/mockingjay-privacy" class="hover:text-orange-600 transition-colors">Privacy Policy</a> |
+					<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" class="hover:text-orange-600 transition-colors">Terms of Use (EULA)</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>

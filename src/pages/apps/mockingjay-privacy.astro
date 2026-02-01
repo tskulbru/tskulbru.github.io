@@ -1,0 +1,180 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Mockingjay - Privacy Policy';
+const description = 'Privacy Policy for Mockingjay - Secure Video Recording App';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Privacy Policy for Mockingjay</h1>
+			<p class="text-sm text-gray-600 dark:text-gray-400">
+				Last updated: February 1, 2026
+			</p>
+
+			<h2>Overview</h2>
+			<p>
+				Mockingjay ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our secure video recording application. Mockingjay is designed for journalists, activists, and individuals who need tamper-proof video evidence.
+			</p>
+
+			<h2>Information We Collect</h2>
+			<p>
+				Mockingjay is designed with privacy as a core principle. We collect minimal information:
+			</p>
+			<ul>
+				<li>We don't require personal information like your name or email</li>
+				<li>We don't access your contacts or photo library</li>
+				<li>We cannot access or decrypt your recorded videos</li>
+				<li>Your PIN and encryption keys never leave your device</li>
+			</ul>
+
+			<h2>Video Recording and Encryption</h2>
+			<p>
+				Mockingjay uses end-to-end encryption to protect your recordings:
+			</p>
+			<ul>
+				<li><strong>AES-256-GCM encryption:</strong> All video chunks are encrypted on your device before upload</li>
+				<li><strong>Secure Enclave:</strong> Encryption keys are stored using Apple's hardware-protected secure enclave</li>
+				<li><strong>Zero-knowledge design:</strong> We cannot decrypt your videos - only you hold the keys</li>
+				<li><strong>No password recovery:</strong> By design, we cannot recover your password if lost</li>
+			</ul>
+
+			<h2>Google Drive Storage</h2>
+			<p>
+				Your encrypted video chunks are stored in your own Google Drive account:
+			</p>
+			<ul>
+				<li>We use Google Sign-In to authenticate with your account</li>
+				<li>Videos are uploaded to a folder you control in your Drive</li>
+				<li>We only request permission to create and manage files in the Mockingjay folder</li>
+				<li>Google cannot decrypt your videos as they are encrypted before upload</li>
+				<li>You can revoke access to your Google account at any time</li>
+			</ul>
+			<p>
+				For information about how Google handles data, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+			</p>
+
+			<h2>Location Data</h2>
+			<p>
+				GPS metadata embedding is an optional premium feature:
+			</p>
+			<ul>
+				<li>Location tracking is <strong>off by default</strong></li>
+				<li>You must explicitly enable GPS in settings</li>
+				<li>When enabled, coordinates are embedded in the encrypted recording manifest only</li>
+				<li>Location data is encrypted along with your video and never sent to our servers</li>
+			</ul>
+
+			<h2>Analytics and Crash Reporting</h2>
+			<p>
+				To improve the app experience, we use the following services:
+			</p>
+
+			<h3>Firebase Analytics</h3>
+			<p>
+				We use Firebase Analytics to understand general app usage patterns. This includes:
+			</p>
+			<ul>
+				<li>Feature usage statistics (anonymized)</li>
+				<li>App launch frequency</li>
+				<li>Recording completion rates</li>
+				<li>Device type and OS version</li>
+			</ul>
+			<p>
+				This data is anonymized and aggregated. We cannot identify individual users from this information. Analytics never include your video content, PIN, or encryption keys.
+			</p>
+
+			<h3>Firebase Crashlytics</h3>
+			<p>
+				We use Firebase Crashlytics to identify and fix app crashes. When the app crashes, it may send:
+			</p>
+			<ul>
+				<li>Device model and OS version</li>
+				<li>App version</li>
+				<li>Crash stack traces</li>
+				<li>Anonymous installation UUID</li>
+			</ul>
+
+			<h2>In-App Purchases</h2>
+			<p>
+				Mockingjay offers premium features through subscriptions. Purchase processing is handled by:
+			</p>
+			<ul>
+				<li><strong>Apple App Store</strong> for all transactions</li>
+				<li><strong>RevenueCat</strong> for subscription management</li>
+			</ul>
+			<p>
+				We don't store payment information. All transactions are processed securely by Apple and RevenueCat.
+			</p>
+
+			<h2>Third-Party Services</h2>
+			<p>
+				Mockingjay uses the following third-party services:
+			</p>
+			<ul>
+				<li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase</a> - Analytics and crash reporting</li>
+				<li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat</a> - Subscription management</li>
+				<li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Drive</a> - Encrypted video storage (your account)</li>
+			</ul>
+
+			<h2>Security Features</h2>
+			<p>
+				Mockingjay includes several security features designed to protect your data:
+			</p>
+			<ul>
+				<li><strong>PIN-only authentication:</strong> We deliberately do not use Face ID to prevent forced unlocking</li>
+				<li><strong>Duress PIN:</strong> A secondary PIN that appears to work normally but protects your data</li>
+				<li><strong>Real-time upload:</strong> Footage is preserved in the cloud even if your device is confiscated</li>
+				<li><strong>Local key storage:</strong> All encryption keys are stored locally and never transmitted</li>
+			</ul>
+
+			<h2>Children's Privacy</h2>
+			<p>
+				Mockingjay is not intended for children under 13. We don't knowingly collect personal information from children. The app doesn't require any personal information to function.
+			</p>
+
+			<h2>Your Rights</h2>
+			<p>
+				You have control over your data:
+			</p>
+			<ul>
+				<li>Delete the app at any time to remove all local data and keys</li>
+				<li>Delete encrypted videos from your Google Drive at any time</li>
+				<li>Revoke Google Drive access in your Google account settings</li>
+				<li>Disable analytics collection in your device settings</li>
+				<li>Disable GPS tracking in the app settings</li>
+			</ul>
+
+			<h2>Data Security</h2>
+			<p>
+				We take extensive measures to protect your information:
+			</p>
+			<ul>
+				<li>All video data is encrypted with AES-256-GCM before leaving your device</li>
+				<li>Encryption keys are stored in the Secure Enclave</li>
+				<li>All network transmission uses HTTPS encryption</li>
+				<li>No unencrypted video data is ever transmitted</li>
+			</ul>
+
+			<h2>Changes to This Policy</h2>
+			<p>
+				We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last updated" date at the top of this policy.
+			</p>
+
+			<h2>Contact</h2>
+			<p>
+				If you have questions about this Privacy Policy or how Mockingjay handles data, please contact us through the App Store where you downloaded the app.
+			</p>
+
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">&larr; Back to tskulbru.dev</a> |
+					<a href="/apps/mockingjay-support" class="hover:text-orange-600 transition-colors">Support</a> |
+					<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" class="hover:text-orange-600 transition-colors">Terms of Use (EULA)</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>
