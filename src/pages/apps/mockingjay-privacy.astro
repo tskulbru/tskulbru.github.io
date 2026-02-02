@@ -11,7 +11,7 @@ const description = 'Privacy Policy for Mockingjay - Secure Video Recording App'
 		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
 			<h1>Privacy Policy for Mockingjay</h1>
 			<p class="text-sm text-gray-600 dark:text-gray-400">
-				Last updated: February 1, 2026
+				Last updated: February 2, 2026
 			</p>
 
 			<h2>Overview</h2>
@@ -32,13 +32,14 @@ const description = 'Privacy Policy for Mockingjay - Secure Video Recording App'
 
 			<h2>Video Recording and Encryption</h2>
 			<p>
-				Mockingjay uses end-to-end encryption to protect your recordings:
+				Mockingjay uses strong encryption to protect your recordings:
 			</p>
 			<ul>
 				<li><strong>AES-256-GCM encryption:</strong> All video chunks are encrypted on your device before upload</li>
-				<li><strong>Secure Enclave:</strong> Encryption keys are stored using Apple's hardware-protected secure enclave</li>
-				<li><strong>Zero-knowledge design:</strong> We cannot decrypt your videos - only you hold the keys</li>
-				<li><strong>No password recovery:</strong> By design, we cannot recover your password if lost</li>
+				<li><strong>Secure Enclave:</strong> Your master encryption key is stored in Apple's hardware-protected Secure Enclave on your device</li>
+				<li><strong>Passphrase never stored:</strong> Your passphrase is generated once, shown to you, and immediately discarded. We have no copy.</li>
+				<li><strong>PIN never stored:</strong> Your PIN is used to derive a key, then discarded. It is not saved anywhere.</li>
+				<li><strong>No recovery possible:</strong> Because we don't store your passphrase or PIN, we cannot recover them if lost. This is intentional.</li>
 			</ul>
 
 			<h2>Google Drive Storage</h2>
@@ -158,6 +159,69 @@ const description = 'Privacy Policy for Mockingjay - Secure Video Recording App'
 				<li>No unencrypted video data is ever transmitted</li>
 			</ul>
 
+			<h2>Law Enforcement and Legal Requests</h2>
+			<p>
+				To be fully transparent, we distinguish between what is <em>technically impossible</em> for us to provide and what we <em>commit to never providing</em>.
+			</p>
+
+			<h3>What We Cannot Provide (Technically Impossible)</h3>
+			<p>
+				The following data does not exist on our systems. We literally cannot provide it even if legally compelled:
+			</p>
+			<ul>
+				<li><strong>Your passphrase</strong> — generated once during setup, shown to you, then immediately discarded. Never stored.</li>
+				<li><strong>Your PIN</strong> — never stored; exists only briefly in device memory when you enter it.</li>
+				<li><strong>Your recordings</strong> — stored in YOUR Google Drive account, not on our servers.</li>
+				<li><strong>Recording metadata, timestamps, or GPS coordinates</strong> — encrypted within your recordings, which we don't have.</li>
+				<li><strong>Any link between users and their recordings</strong> — we have no database connecting users to their encrypted files.</li>
+			</ul>
+			<p>
+				Legal requests for your recordings must be directed to you or to Google regarding your Google Drive account — not to us.
+			</p>
+
+			<h3>What We Will Not Provide (Behavioral Commitment)</h3>
+			<p>
+				Your <strong>master encryption key</strong> exists on your device (in Apple's Secure Enclave and encrypted in the Keychain). The App accesses this key to encrypt and decrypt your recordings. A malicious app update <em>could</em> theoretically read and transmit this key.
+			</p>
+			<p>
+				<strong>We commit to never doing this.</strong> Specifically, we will not:
+			</p>
+			<ul>
+				<li>Log, capture, or transmit your master encryption key to any server</li>
+				<li>Capture or transmit your PIN when you enter it</li>
+				<li>Modify the App to exfiltrate credentials in response to legal demands</li>
+				<li>Provide law enforcement with tools or app updates to bypass encryption</li>
+				<li>Build "lawful intercept" or "exceptional access" capabilities</li>
+			</ul>
+			<p>
+				If we are ever legally compelled to compromise user security in ways that conflict with these commitments, we will cease offering the App in that jurisdiction rather than comply.
+			</p>
+
+			<h3>What We Can Provide If Legally Compelled</h3>
+			<p>
+				In response to valid legal process (subpoena, court order, or law enforcement inquiry), we can only provide information that exists on our systems:
+			</p>
+			<ul>
+				<li>Basic account information from Firebase (anonymous user ID, account creation date)</li>
+				<li>Anonymized, aggregated analytics data that cannot identify individual recordings</li>
+				<li>Crash reports (device type, app version, stack traces)</li>
+				<li>Subscription status through RevenueCat (if applicable)</li>
+			</ul>
+
+			<h2>Data Recovery Limitations</h2>
+			<p>
+				<strong>Important:</strong> Due to our zero-knowledge design, we cannot help you recover your data if:
+			</p>
+			<ul>
+				<li>You forget your PIN or passphrase</li>
+				<li>You lose your device without backing up your encryption keys</li>
+				<li>You use your duress PIN (which destroys local keys)</li>
+				<li>Your Secure Enclave data is corrupted or wiped</li>
+			</ul>
+			<p>
+				This is an intentional security feature, not a limitation. The same design that protects your recordings from unauthorized access also means we cannot bypass that protection for any reason. <strong>We strongly recommend keeping a secure backup of your passphrase.</strong>
+			</p>
+
 			<h2>Changes to This Policy</h2>
 			<p>
 				We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last updated" date at the top of this policy.
@@ -172,7 +236,7 @@ const description = 'Privacy Policy for Mockingjay - Secure Video Recording App'
 				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
 					<a href="/" class="hover:text-orange-600 transition-colors">&larr; Back to tskulbru.dev</a> |
 					<a href="/apps/mockingjay-support" class="hover:text-orange-600 transition-colors">Support</a> |
-					<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" class="hover:text-orange-600 transition-colors">Terms of Use (EULA)</a>
+					<a href="/apps/mockingjay-terms" class="hover:text-orange-600 transition-colors">Terms of Service</a>
 				</p>
 			</div>
 		</article>

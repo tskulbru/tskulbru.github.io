@@ -1,0 +1,315 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Mockingjay - Terms of Service';
+const description = 'Terms of Service for Mockingjay - Secure Video Recording App';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Terms of Service for Mockingjay</h1>
+			<p class="text-sm text-gray-600 dark:text-gray-400">
+				Last updated: February 2, 2026
+			</p>
+
+			<p>
+				Please read these Terms of Service ("Terms") carefully before using Mockingjay ("the App", "we", "our", or "us"). By downloading, installing, or using Mockingjay, you agree to be bound by these Terms.
+			</p>
+
+			<h2>1. Acceptance of Terms</h2>
+			<p>
+				By accessing or using Mockingjay, you agree to these Terms and our <a href="/apps/mockingjay-privacy">Privacy Policy</a>. If you do not agree to these Terms, do not use the App.
+			</p>
+
+			<h2>2. Description of Service</h2>
+			<p>
+				Mockingjay is a secure video recording application that encrypts video footage and uploads it to your personal Google Drive account. The App is designed for individuals who need tamper-resistant video documentation, including journalists, activists, and others in sensitive situations.
+			</p>
+
+			<h2>3. Security Architecture</h2>
+			<p>
+				Mockingjay uses a security architecture designed to keep your recordings private. To be fully transparent about what this means, we distinguish between what is <em>technically impossible</em> and what we <em>commit to never doing</em>.
+			</p>
+
+			<h3>What Is Technically Impossible (We Cannot Do This)</h3>
+			<p>
+				The following protections are enforced by the App's design — we genuinely cannot bypass them:
+			</p>
+			<ul>
+				<li><strong>Your passphrase is never stored.</strong> It is generated once during setup, shown to you, and immediately discarded. We have no copy and cannot recover it.</li>
+				<li><strong>Your PIN is never stored.</strong> It exists only briefly in device memory when you enter it, then is used to derive a decryption key and discarded.</li>
+				<li><strong>Your encrypted recordings are stored in YOUR Google Drive account</strong>, not on our servers. We have no access to your Google Drive.</li>
+				<li><strong>We cannot identify which recordings belong to which user.</strong> We have no database linking users to their encrypted files.</li>
+			</ul>
+			<p>
+				Because of this architecture, we literally cannot recover your passphrase, access your recordings, or provide them to any third party — even if legally compelled.
+			</p>
+
+			<h3>What We Commit To Never Doing (Behavioral Commitment)</h3>
+			<p>
+				The following data <em>does</em> exist on your device and <em>could</em> theoretically be read by the App:
+			</p>
+			<ul>
+				<li><strong>Your master encryption key</strong> is stored in Apple's Secure Enclave and in encrypted form in the Keychain. The App must access this to encrypt/decrypt recordings.</li>
+				<li><strong>Your PIN</strong> passes through device memory when you enter it.</li>
+			</ul>
+			<p>
+				A malicious app update <em>could</em> read this data and transmit it. <strong>We commit to never doing this.</strong> Specifically, we will not:
+			</p>
+			<ul>
+				<li>Log, capture, or transmit your master encryption key to any server</li>
+				<li>Log, capture, or transmit your PIN when you enter it</li>
+				<li>Build "lawful intercept" or "exceptional access" capabilities into the App</li>
+				<li>Modify the App to exfiltrate credentials in response to legal demands</li>
+				<li>Provide law enforcement with tools or updates to bypass encryption</li>
+				<li>Weaken our encryption or security practices in any jurisdiction</li>
+			</ul>
+			<p>
+				If we are ever legally compelled to compromise user security in ways that conflict with these commitments, we will cease offering the App in that jurisdiction rather than comply.
+			</p>
+
+			<h3>What We Can Provide If Legally Compelled</h3>
+			<p>
+				In response to valid legal process, we can only provide information that actually exists on our systems:
+			</p>
+			<ul>
+				<li>Basic account information from Firebase (anonymous user ID, account creation date)</li>
+				<li>Anonymized, aggregated analytics data that cannot identify individual recordings</li>
+				<li>Subscription status through RevenueCat (if applicable)</li>
+			</ul>
+			<p>
+				<strong>We cannot provide — because we do not possess:</strong>
+			</p>
+			<ul>
+				<li>Your passphrase (never stored)</li>
+				<li>Your PIN (never stored)</li>
+				<li>Your recordings (stored in your Google Drive, not ours)</li>
+				<li>Recording metadata, timestamps, or GPS coordinates (encrypted in your recordings)</li>
+			</ul>
+			<p>
+				<strong>We will not provide — as a matter of policy:</strong>
+			</p>
+			<ul>
+				<li>Your master encryption key (exists on your device, but we commit to never transmitting it)</li>
+				<li>Any app modification that would capture your credentials</li>
+			</ul>
+
+			<h2>4. Recording Laws and User Responsibility</h2>
+			<p>
+				<strong>You are solely responsible for complying with all applicable laws regarding recording consent in your jurisdiction.</strong> Recording laws vary significantly by location:
+			</p>
+			<ul>
+				<li>Some jurisdictions require all-party consent (everyone being recorded must agree)</li>
+				<li>Some jurisdictions require one-party consent (only the person recording must consent)</li>
+				<li>Some locations prohibit recording in certain contexts entirely</li>
+			</ul>
+			<p>
+				We do not provide legal advice. Before using Mockingjay, you should understand the recording consent laws in your area. We are not responsible for any legal consequences arising from your use of the App.
+			</p>
+
+			<h2>5. No Guarantee of Evidence Admissibility</h2>
+			<p>
+				While Mockingjay is designed to create secure, tamper-resistant recordings, <strong>we make no guarantee that recordings made with the App will be admissible as evidence in any legal proceeding</strong>. Courts have specific rules regarding evidence authenticity, chain of custody, and admissibility that vary by jurisdiction and case type.
+			</p>
+			<p>
+				If you intend to use recordings as legal evidence, consult with a qualified attorney in your jurisdiction.
+			</p>
+
+			<h2>6. Security Limitations</h2>
+			<p>
+				While we use industry-standard encryption (AES-256-GCM) and security practices:
+			</p>
+			<ul>
+				<li>No security system is 100% infallible</li>
+				<li>We cannot guarantee protection against all possible attacks or vulnerabilities</li>
+				<li>Security depends partly on your device security and practices</li>
+				<li>Future cryptographic advances could theoretically compromise current encryption</li>
+			</ul>
+			<p>
+				We continuously work to maintain strong security but cannot guarantee absolute protection.
+			</p>
+
+			<h2>7. Service Availability</h2>
+			<p>
+				We strive to provide reliable service, but:
+			</p>
+			<ul>
+				<li>Uploads may fail due to network conditions, Google Drive outages, or other factors</li>
+				<li>The App may be temporarily unavailable for maintenance or updates</li>
+				<li>Google Drive availability is outside our control</li>
+				<li>We do not guarantee uninterrupted recording or upload capability</li>
+			</ul>
+			<p>
+				<strong>We are not liable for any damages resulting from failed uploads, lost recordings, or service interruptions.</strong> You should not rely solely on Mockingjay for critical documentation needs.
+			</p>
+
+			<h2>8. Prohibited Uses</h2>
+			<p>
+				You agree NOT to use Mockingjay for:
+			</p>
+			<ul>
+				<li>Stalking, harassment, or intimidation of any person</li>
+				<li>Recording individuals without consent where required by law</li>
+				<li>Any illegal surveillance activities</li>
+				<li>Recording in locations where recording is prohibited (private property, courtrooms, etc.)</li>
+				<li>Creating content that exploits, harms, or endangers minors</li>
+				<li>Any activity that violates applicable local, state, national, or international law</li>
+			</ul>
+			<p>
+				We reserve the right to terminate access for users who violate these terms, though our zero-knowledge architecture means we cannot monitor your actual recordings.
+			</p>
+
+			<h2>9. Subscriptions and Payments</h2>
+			<p>
+				Mockingjay offers free and premium (Pro) tiers:
+			</p>
+			<ul>
+				<li>Payment is processed by Apple through the App Store</li>
+				<li>Subscriptions automatically renew unless cancelled at least 24 hours before the renewal date</li>
+				<li>You can manage subscriptions in your Apple ID settings</li>
+				<li>Refunds are handled by Apple according to their policies</li>
+				<li>We reserve the right to change pricing with reasonable notice</li>
+			</ul>
+
+			<h2>10. License Grant and Restrictions</h2>
+			<p>
+				Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to download, install, and use Mockingjay on Apple-branded devices that you own or control, as permitted by the Apple App Store Terms of Service.
+			</p>
+			<p>
+				<strong>You may not:</strong>
+			</p>
+			<ul>
+				<li>Copy, modify, or distribute the App</li>
+				<li>Reverse engineer, decompile, or disassemble the App</li>
+				<li>Distribute or make the App available over a network where it could be used by multiple devices simultaneously</li>
+				<li>Rent, lease, lend, sell, or sublicense the App</li>
+				<li>Use our trademarks without permission</li>
+				<li>Create derivative works based on the App</li>
+				<li>Remove or alter any proprietary notices or labels</li>
+			</ul>
+			<p>
+				You retain all rights to your recordings. We claim no ownership over content you create.
+			</p>
+
+			<h2>11. Disclaimer of Warranties</h2>
+			<p>
+				THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
+			</p>
+			<ul>
+				<li>WARRANTIES OF MERCHANTABILITY</li>
+				<li>FITNESS FOR A PARTICULAR PURPOSE</li>
+				<li>NON-INFRINGEMENT</li>
+				<li>ACCURACY OR RELIABILITY OF RECORDINGS</li>
+				<li>UNINTERRUPTED OR ERROR-FREE OPERATION</li>
+			</ul>
+			<p>
+				We do not warrant that the App will meet your specific requirements or that it will be suitable for use as legal evidence.
+			</p>
+
+			<h2>12. Limitation of Liability</h2>
+			<p>
+				TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE SHALL NOT BE LIABLE FOR ANY:
+			</p>
+			<ul>
+				<li>Indirect, incidental, special, consequential, or punitive damages</li>
+				<li>Loss of profits, data, or recordings</li>
+				<li>Damages resulting from failed uploads or encryption</li>
+				<li>Damages arising from unauthorized access to your recordings</li>
+				<li>Damages resulting from your inability to access your own recordings</li>
+				<li>Legal consequences arising from your use of recordings</li>
+				<li>Cost of procurement of substitute goods or services</li>
+				<li>Business interruption however caused</li>
+			</ul>
+			<p>
+				IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU FOR ALL DAMAGES EXCEED THE GREATER OF: (A) THE AMOUNT YOU ACTUALLY PAID FOR THE APP IN THE 12 MONTHS PRECEDING THE CLAIM, OR (B) FIFTY U.S. DOLLARS ($50.00).
+			</p>
+			<p>
+				The foregoing limitations apply even if any remedy fails of its essential purpose. Some jurisdictions do not allow the exclusion or limitation of certain damages, so some of the above limitations may not apply to you.
+			</p>
+
+			<h2>13. Indemnification</h2>
+			<p>
+				You agree to indemnify and hold harmless Mockingjay and its developers from any claims, damages, losses, or expenses (including legal fees) arising from:
+			</p>
+			<ul>
+				<li>Your use of the App</li>
+				<li>Your violation of these Terms</li>
+				<li>Your violation of any law or third-party rights</li>
+				<li>Any recordings you create or share</li>
+			</ul>
+
+			<h2>14. Third-Party Services</h2>
+			<p>
+				Mockingjay integrates with third-party services including Google Drive, Firebase, and RevenueCat. Your use of these services is subject to their respective terms and privacy policies. We are not responsible for the availability, security, or practices of third-party services.
+			</p>
+
+			<h2>15. Export Compliance</h2>
+			<p>
+				You may not use or export the App except as authorized by United States law and the laws of the jurisdiction in which the App was obtained. In particular, but without limitation, the App may not be exported or re-exported:
+			</p>
+			<ul>
+				<li>Into any U.S.-embargoed countries</li>
+				<li>To anyone on the U.S. Treasury Department's Specially Designated Nationals List or the U.S. Department of Commerce Denied Persons List</li>
+			</ul>
+			<p>
+				By using the App, you represent and warrant that you are not located in any such country or on any such list. You also agree that you will not use the App for any purposes prohibited by United States law, including the development, design, manufacture, or production of nuclear, missile, or chemical or biological weapons.
+			</p>
+
+			<h2>16. U.S. Government End Users</h2>
+			<p>
+				The App and related documentation are "Commercial Items", as that term is defined at 48 C.F.R. §2.101, consisting of "Commercial Computer Software" and "Commercial Computer Software Documentation", as such terms are used in 48 C.F.R. §12.212 or 48 C.F.R. §227.7202, as applicable. Consistent with these provisions, the App is being licensed to U.S. Government end users only as Commercial Items and with only those rights as are granted to all other end users pursuant to these Terms.
+			</p>
+
+			<h2>17. Termination</h2>
+			<p>
+				You may stop using Mockingjay at any time by deleting the App. Upon termination:
+			</p>
+			<ul>
+				<li>Your local encryption keys will be deleted</li>
+				<li>Your encrypted recordings in Google Drive will remain but become inaccessible without your keys</li>
+				<li>Active subscriptions must be cancelled separately through Apple</li>
+			</ul>
+			<p>
+				We may terminate or suspend access to the App for violations of these Terms. This license is effective until terminated by you or us.
+			</p>
+
+			<h2>18. Changes to Terms</h2>
+			<p>
+				We may update these Terms from time to time. We will notify you of material changes by updating the "Last updated" date. Continued use of the App after changes constitutes acceptance of the new Terms.
+			</p>
+
+			<h2>19. Governing Law</h2>
+			<p>
+				These Terms shall be governed by and construed in accordance with the laws of Norway, without regard to conflict of law principles. Any disputes shall be resolved in the courts of Norway.
+			</p>
+			<p>
+				<strong>Exception for EU/EEA Residents:</strong> If you are a consumer residing in the European Union or European Economic Area, you may also bring proceedings in the courts of your country of residence, and the mandatory consumer protection laws of your country shall apply.
+			</p>
+
+			<h2>20. Severability</h2>
+			<p>
+				If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.
+			</p>
+
+			<h2>21. Entire Agreement</h2>
+			<p>
+				These Terms, together with our Privacy Policy, constitute the entire agreement between you and Mockingjay regarding your use of the App.
+			</p>
+
+			<h2>22. Contact</h2>
+			<p>
+				If you have questions about these Terms, please contact us through the App Store where you downloaded the app.
+			</p>
+
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">&larr; Back to tskulbru.dev</a> |
+					<a href="/apps/mockingjay-privacy" class="hover:text-orange-600 transition-colors">Privacy Policy</a> |
+					<a href="/apps/mockingjay-support" class="hover:text-orange-600 transition-colors">Support</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>
