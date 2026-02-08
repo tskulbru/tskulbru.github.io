@@ -13,6 +13,121 @@ const description = 'Apps and projects I have built';
 			Apps and projects I've built
 		</p>
 
+		<!-- Mockingjay -->
+		<article class="mb-16">
+			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
+				<h2 class="text-2xl font-bold">Mockingjay</h2>
+				<p class="text-orange-600 font-medium">Secure video recording with encrypted cloud backup</p>
+			</div>
+
+			<!-- App Icon and Feature Highlights -->
+			<div class="mb-6 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
+				<div class="flex flex-col md:flex-row items-center gap-6">
+					<!-- App Icon -->
+					<div class="flex-shrink-0">
+						<img
+							src="/images/portfolio/mockingjay-icon.png"
+							alt="Mockingjay app icon"
+							class="w-24 h-24 rounded-2xl shadow-lg"
+						/>
+					</div>
+					<!-- Feature Highlights -->
+					<div class="flex-1 grid grid-cols-2 gap-3 text-sm">
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Real-time encrypted upload</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>AES-256-GCM encryption</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Panic-start recording</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Duress PIN protection</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Description with Screenshot -->
+			<div class="text-sm space-y-4 mb-6">
+				<img
+					src="/images/portfolio/mockingjay-hero.png"
+					alt="Mockingjay app showing secure recording interface"
+					class="float-right ml-4 mb-4 w-48 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+				/>
+				<p>
+					<span class="font-bold text-orange-600">Mockingjay</span> is an iOS app for secure,
+					real-time video recording with encrypted cloud backup. Unlike traditional video apps that
+					upload after recording, Mockingjay uploads encrypted chunks during recording—designed to
+					preserve footage even if the device is confiscated or destroyed.
+				</p>
+				<p>
+					Features include Panic-Start for instant recording without password entry, a Duress PIN
+					that wipes local keys while keeping cloud backups safe, and Fake Sleep Mode where the
+					screen goes black during recording. All video is encrypted with AES-256-GCM and backed
+					up to Google Drive in real-time.
+				</p>
+			</div>
+
+			<!-- Tech Stack -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Built with</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">SwiftUI</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">AVFoundation</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">CryptoKit</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Google Drive API</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">RevenueCat</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Firebase</span>
+				</div>
+			</div>
+
+			<!-- Platforms -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Platforms</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">iOS</span>
+				</div>
+			</div>
+
+			<!-- Links -->
+			<div class="flex flex-wrap gap-4">
+				<a
+					href="https://apps.apple.com/us/app/mockingjay-secure-recorder/id6758616261"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+					</svg>
+					App Store
+				</a>
+				<a
+					href="/posts/building-mockingjay-secure-video-recorder"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-orange-600 hover:text-orange-600 transition-colors"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+					</svg>
+					Read the story
+				</a>
+			</div>
+		</article>
+
 		<!-- GraceLock -->
 		<article class="mb-16">
 			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
