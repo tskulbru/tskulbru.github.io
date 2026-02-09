@@ -102,16 +102,6 @@ The adversary sees what looks like a cooperative unlock. There's nothing suspici
 
 Recovery happens later on a new device: sign into the same Google account, enter the original password to re-derive the decryption key, and access everything.
 
-### Fake Sleep Mode
-
-Sometimes you need to record without anyone knowing. Mockingjay's "fake sleep" mode makes the phone appear powered off while recording continues.
-
-The implementation is surprisingly simple: a black screen that covers everything, including the status bar and system overlays. The idle timer gets disabled so the actual screen doesn't dim or lock. Audio from the microphone and video from the camera continue recording normally.
-
-Exiting requires a hidden gesture (five taps) followed by PIN entry. Someone casually checking if your phone is off sees a black screen. Someone who knows what they're looking for still needs your PIN.
-
-The limitations are real: physical buttons still work, Control Center can still be accessed with a swipe, and incoming calls interrupt the recording. iOS doesn't allow apps to truly fake a powered-off state. But for many scenarios, a black screen is convincing enough.
-
 ### Why Not Face ID?
 
 Mockingjay deliberately doesn't support biometric authentication. This is a feature, not a limitation.
