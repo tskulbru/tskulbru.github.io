@@ -12,7 +12,7 @@ image:
 tags: ['swift', 'ios', 'security', 'encryption', 'side-project']
 ---
 
-A journalist friend told me about losing footage. Not to a corrupted SD card or a dead battery—to confiscation. She had recorded an important interview, and before she could back it up, her phone was taken. Hours of work, gone. Footage that mattered, erased.
+I was reading a Reddit thread about journalists and activists getting their phones confiscated. Not lost or stolen—deliberately taken to scrub evidence. Someone had recorded an important encounter, and before they could back it up, the phone was gone. Hours of documentation, erased.
 
 The standard advice is "back up to the cloud." But that assumes you have time after recording to upload. In high-stakes situations, that's exactly what you don't have.
 
