@@ -10,6 +10,7 @@ image:
   src: '/images/portfolio/mockingjay-icon-small.png'
   alt: 'Mockingjay app icon'
 tags: ['swift', 'ios', 'security', 'encryption', 'side-project']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3menvv24ey22t'
 ---
 
 I was reading a Reddit thread about journalists and activists getting their phones confiscated. Not lost or stolen—deliberately taken to scrub evidence. Someone had recorded an important encounter, and before they could back it up, the phone was gone. Hours of documentation, erased.
@@ -21,6 +22,7 @@ The standard advice is "back up to the cloud." But that assumes you have time af
 Every video app works the same way: record locally, then upload later. This makes sense for most use cases. But for anyone in situations where devices might be confiscated, forcibly unlocked, or destroyed, this model fails completely.
 
 Think about who needs tamper-resistant video documentation:
+
 - Journalists documenting sensitive stories
 - Activists recording encounters with authorities
 - Individuals in difficult situations who need records
@@ -115,6 +117,7 @@ PIN-only authentication means the secrets in your head stay in your head. It's s
 I considered building custom server infrastructure. Users would upload to servers I control, and I'd handle storage, redundancy, and access control.
 
 The problems with this approach:
+
 - I become a target. Subpoenas, hacking attempts, pressure to provide backdoors.
 - I become a cost center. Video storage is expensive at scale.
 - I become a single point of failure. If my servers go down, users lose access.
