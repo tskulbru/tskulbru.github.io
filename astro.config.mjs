@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
+import fs from 'node:fs';
+import path from 'node:path';
 
 const options = {
     // Specify the theme to use or a custom theme json, in our case
@@ -30,6 +32,24 @@ const options = {
     }
 };
 
+// Build a map of blog post slugs to their dates from frontmatter
+function getPostDates() {
+    const postsDir = path.resolve('./src/pages/posts');
+    const dateMap = {};
+    const files = fs.readdirSync(postsDir).filter(f => f.endsWith('.md'));
+    for (const file of files) {
+        const content = fs.readFileSync(path.join(postsDir, file), 'utf-8');
+        const pubMatch = content.match(/pubDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/);
+        const modMatch = content.match(/modifiedDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/);
+        const slug = file.replace('.md', '');
+        dateMap[slug] = {
+            lastmod: modMatch ? modMatch[1] : pubMatch ? pubMatch[1] : null
+        };
+    }
+    return dateMap;
+}
+const postDates = getPostDates();
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://tskulbru.dev',
@@ -44,13 +64,39 @@ export default defineConfig({
     integrations: [
 		react(),
 		sitemap({
-			filter: (page) => {
-				// Exclude draft pages or any pages you don't want indexed
-				return !page.includes('/draft/');
+			filter: (page) => !page.includes('/draft/'),
+			serialize(item) {
+				const url = item.url;
+				// Homepage
+				if (url === 'https://tskulbru.dev/' || url === 'https://tskulbru.dev') {
+					item.priority = 1.0;
+					item.changefreq = 'weekly';
+				// Blog post listing and portfolio
+				} else if (url.endsWith('/posts/') || url.endsWith('/portfolio/')) {
+					item.priority = 0.9;
+					item.changefreq = 'weekly';
+				// Individual blog posts - use actual dates
+				} else if (url.includes('/posts/') && !url.endsWith('/posts/')) {
+					item.priority = 0.8;
+					item.changefreq = 'monthly';
+					const slug = url.replace('https://tskulbru.dev/posts/', '').replace(/\/$/, '');
+					if (postDates[slug]?.lastmod) {
+						item.lastmod = new Date(postDates[slug].lastmod).toISOString();
+					}
+				// Tag pages
+				} else if (url.includes('/tags/')) {
+					item.priority = 0.5;
+					item.changefreq = 'weekly';
+				// App privacy/support pages
+				} else if (url.includes('/apps/')) {
+					item.priority = 0.3;
+					item.changefreq = 'yearly';
+				} else {
+					item.priority = 0.7;
+					item.changefreq = 'weekly';
+				}
+				return item;
 			},
-			changefreq: 'weekly',
-			priority: 0.7,
-			lastmod: new Date(),
 		}),
 		partytown({
 			config: {

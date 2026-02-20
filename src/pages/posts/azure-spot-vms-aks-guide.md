@@ -12,6 +12,13 @@ image:
   alt: "Cloud money clipart"
 tags: ["azure", "kubernetes", "aks", "spot-vms", "devops"]
 modifiedDate: 2026-01-14
+faqs:
+  - question: "What are Azure Spot VMs and how much can they save?"
+    answer: "Azure Spot VMs are unused compute capacity offered at up to 90% discount compared to standard pay-as-you-go pricing. Azure can reclaim them when demand increases, so they work best for fault-tolerant and stateless workloads."
+  - question: "Can you use Azure Spot VMs in production AKS clusters?"
+    answer: "Yes, Spot VMs can run production workloads in AKS when combined with proper node affinity rules, tolerations, and fallback to regular on-demand node pools. Stateless microservices and batch processing jobs are ideal candidates."
+  - question: "How do you configure Spot VM node pools in AKS?"
+    answer: "Create a spot node pool using Azure CLI with the --priority Spot flag, set an eviction policy (Delete or Deallocate), configure max price, and use Kubernetes taints and tolerations to schedule appropriate workloads onto spot nodes."
 ---
 
 Cloud computing costs can quickly spiral out of control, especially when running compute-intensive workloads at scale. For organizations using Azure Kubernetes Service (AKS), Azure Spot Virtual Machines present a compelling opportunity to slash compute expenses by up to 90% compared to standard pay-as-you-go pricing. However, successfully implementing spot instances in production requires understanding their mechanics, limitations, and the proper architectural patterns to ensure reliability.

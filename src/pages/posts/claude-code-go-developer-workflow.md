@@ -12,6 +12,13 @@ image:
 tags: ['golang', 'claude', 'ai', 'devops', 'productivity', 'claude-code', 'ai-coding-assistant', 'developer-tools', 'workflow-automation']
 modifiedDate: 2026-01-14
 blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3m7ztrwuyrs2c'
+faqs:
+  - question: "What are Claude Code skills and how do they work?"
+    answer: "Skills are markdown instruction files that Claude Code loads on demand. They encode project-specific knowledge like coding conventions, deployment procedures, and debugging strategies. Claude knows a skill exists via a brief description but only loads full instructions when relevant to the current task."
+  - question: "How do you create custom slash commands in Claude Code?"
+    answer: "Create markdown files in .claude/commands/ (project-level) or ~/.claude/commands/ (global). The filename becomes the command name. Use $ARGUMENTS placeholder for user input. Commands appear as /project:command-name or /user:command-name in the CLI."
+  - question: "What are Claude Code hooks and what can they automate?"
+    answer: "Hooks are shell commands that execute in response to Claude Code events like tool calls (PreToolUse/PostToolUse) or notifications. They can enforce standards automatically — for example, running linters after file edits, blocking force-pushes, or validating commit messages."
 ---
 
 Claude Code ships with capable defaults, but the real productivity gains come from customizing it to match your specific development workflow. Several extension mechanisms transform Claude Code from a general-purpose assistant into a specialized development partner that understands your project's conventions, enforces your team's standards, and automates your repetitive tasks.

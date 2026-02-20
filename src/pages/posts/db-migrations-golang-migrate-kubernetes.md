@@ -12,6 +12,13 @@ image:
 tags: ["golang", "kubernetes", "mongodb", "devops"]
 modifiedDate: 2026-01-14
 blueskyUri: "at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3lrzybbc6y22u"
+faqs:
+  - question: "How do you run database migrations in Kubernetes?"
+    answer: "Use Kubernetes init containers to run migration scripts before your application starts. The init container runs golang-migrate (or similar tool) against the database, and only after migrations succeed does the main application container start."
+  - question: "What is golang-migrate and how does it work?"
+    answer: "golang-migrate is a database migration tool for Go that manages schema changes through numbered up/down migration files. It tracks applied migrations in a schema_migrations table and supports multiple databases including PostgreSQL, MySQL, and MongoDB."
+  - question: "How do you handle migration failures in production Kubernetes deployments?"
+    answer: "Design migrations to be idempotent and backward-compatible. Use init containers so failed migrations prevent the application from starting. Implement rollback migrations (down files) for every schema change, and test migrations against production-like data before deploying."
 ---
 
 ## Why Database Migrations Matter

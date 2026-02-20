@@ -12,6 +12,13 @@ image:
 tags: ["kubernetes", "microservices", "resilience", "chaos-engineering", "golang"]
 modifiedDate: 2026-01-14
 blueskyUri: "at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3lsijet3s322p"
+faqs:
+  - question: "What is the circuit breaker pattern in microservices?"
+    answer: "A circuit breaker monitors calls to external services and 'trips' after repeated failures, temporarily blocking requests to give the failing service time to recover. It operates in three states: closed (normal), open (failing fast), and half-open (testing recovery)."
+  - question: "How do retries differ from circuit breakers in microservices?"
+    answer: "Retries automatically re-attempt failed requests with exponential backoff and jitter, handling transient failures. Circuit breakers prevent cascading failures by stopping requests entirely when a service is unhealthy. They work together — retries handle temporary blips while circuit breakers handle sustained outages."
+  - question: "What is chaos engineering and why use it with Kubernetes?"
+    answer: "Chaos engineering deliberately introduces failures (pod kills, network delays, resource exhaustion) into production or staging environments to validate that resilience patterns like circuit breakers and retries actually work under real failure conditions."
 ---
 
 Distributed systems fail in fascinating ways. A single service timeout can cascade through your entire platform if you're not careful. A naive retry loop can turn a minor hiccup into a system-wide outage. A service that appears healthy can actually be failing every request because its dependencies are down.

@@ -4,7 +4,7 @@ import PostHeader from '@/components/PostHeader.astro';
 import PostContent from '@/components/PostContent.astro';
 import CommentSection from '@/components/CommentSection.astro';
 import RelatedPosts from '@/components/RelatedPosts.astro';
-import { generateSocialShareUrls, generateBreadcrumbStructuredData } from '@/utils/seo';
+import { generateSocialShareUrls, generateBreadcrumbStructuredData, generateFAQStructuredData } from '@/utils/seo';
 
 const { frontmatter } = Astro.props;
 
@@ -38,11 +38,18 @@ const seoData = {
 // Generate social share URLs
 const currentURL = new URL(Astro.url.pathname, Astro.site || 'https://tskulbru.dev').toString();
 const shareUrls = generateSocialShareUrls(currentURL, frontmatter.title, frontmatter.blueskyUri);
+
+// Generate FAQ schema if post has faqs in frontmatter
+const faqSchema = frontmatter.faqs?.length > 0 ? generateFAQStructuredData(frontmatter.faqs) : null;
 ---
 
 <Base head={seoData}>
-	<!-- Breadcrumb Structured Data (JSON-LD can appear anywhere in document) -->
+	<!-- Breadcrumb Structured Data -->
 	<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+	{faqSchema && (
+		<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+	)}
 
 	<PostHeader
 		title={frontmatter.title}
