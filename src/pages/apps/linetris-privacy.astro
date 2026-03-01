@@ -1,0 +1,145 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Linetris - Privacy Policy';
+const description = 'Privacy Policy for Linetris - Daily Puzzle Game';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Privacy Policy for Linetris</h1>
+			<p class="text-sm text-gray-600 dark:text-gray-400">
+				Last updated: March 1, 2026
+			</p>
+
+			<h2>Overview</h2>
+			<p>
+				Linetris ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our daily puzzle game application.
+			</p>
+
+			<h2>Information We Collect</h2>
+
+			<h3>Account Information</h3>
+			<p>
+				Linetris supports optional sign-in via Apple Sign-In. If you choose to sign in, we receive:
+			</p>
+			<ul>
+				<li>An anonymous user identifier provided by Apple</li>
+				<li>Your name or email only if you choose to share them (Apple lets you hide these)</li>
+			</ul>
+			<p>
+				You can also use the app anonymously without signing in.
+			</p>
+
+			<h3>Leaderboard Data</h3>
+			<p>
+				If you choose to participate in leaderboards, we store:
+			</p>
+			<ul>
+				<li>Your chosen display name (username)</li>
+				<li>Your puzzle scores and completion data</li>
+				<li>Competitor relationships you create</li>
+			</ul>
+			<p>
+				This data is stored in Google Firebase Firestore and is visible to other players on the leaderboard.
+			</p>
+
+			<h2>Analytics and Crash Reporting</h2>
+			<p>
+				To improve the app experience, we use the following services:
+			</p>
+
+			<h3>Firebase Analytics</h3>
+			<p>
+				We use Firebase Analytics to understand general app usage patterns. This includes:
+			</p>
+			<ul>
+				<li>Feature usage statistics (anonymized)</li>
+				<li>App launch frequency</li>
+				<li>Device type and OS version</li>
+			</ul>
+			<p>
+				This data is anonymized and aggregated. We cannot identify individual users from this information.
+			</p>
+
+			<h3>Firebase Crashlytics</h3>
+			<p>
+				We use Firebase Crashlytics to identify and fix app crashes. When the app crashes, it may send:
+			</p>
+			<ul>
+				<li>Device model and OS version</li>
+				<li>App version</li>
+				<li>Crash stack traces</li>
+				<li>Anonymous installation UUID</li>
+			</ul>
+
+			<h2>In-App Purchases</h2>
+			<p>
+				Linetris offers power-up bundles through in-app purchases. Purchase processing is handled by:
+			</p>
+			<ul>
+				<li><strong>Apple App Store</strong> for payment processing</li>
+				<li><strong>RevenueCat</strong> for purchase management</li>
+			</ul>
+			<p>
+				We don't store payment information. All transactions are processed securely by Apple and RevenueCat.
+			</p>
+
+			<h2>Data Storage</h2>
+			<p>
+				App preferences and settings are stored locally on your device, including:
+			</p>
+			<ul>
+				<li>Game preferences and settings</li>
+				<li>Purchased power-up inventory</li>
+				<li>Notification preferences</li>
+			</ul>
+			<p>
+				Leaderboard data and scores are stored in Firebase Firestore on secure servers.
+			</p>
+
+			<h2>Third-Party Services</h2>
+			<p>
+				Linetris uses the following third-party services:
+			</p>
+			<ul>
+				<li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase</a> - Authentication, database, analytics, and crash reporting</li>
+				<li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat</a> - Purchase management</li>
+			</ul>
+
+			<h2>Children's Privacy</h2>
+			<p>
+				Linetris is suitable for all ages. We don't knowingly collect personal information from children under 13. The app can be used fully without providing any personal information.
+			</p>
+
+			<h2>Your Rights</h2>
+			<p>
+				You have the right to:
+			</p>
+			<ul>
+				<li>Use the app anonymously without creating an account</li>
+				<li>Delete the app at any time to remove all local data</li>
+				<li>Request deletion of your leaderboard data by contacting us</li>
+				<li>Disable analytics collection in your device settings</li>
+			</ul>
+
+			<h2>Changes to This Policy</h2>
+			<p>
+				We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last updated" date at the top of this policy.
+			</p>
+
+			<h2>Contact</h2>
+			<p>
+				If you have questions about this Privacy Policy or how Linetris handles data, please contact us through the App Store where you downloaded the app.
+			</p>
+
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">← Back to tskulbru.dev</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>

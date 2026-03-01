@@ -1,0 +1,61 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Linetris - Support';
+const description = 'Support page for Linetris - Daily Puzzle Game';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Linetris Support</h1>
+
+			<h2>Contact Us</h2>
+			<p>
+				If you're experiencing issues with Linetris or have questions, we're happy to help.
+			</p>
+			<p>
+				Please reach out through the App Store where you downloaded the app.
+			</p>
+
+			<h2>Frequently Asked Questions</h2>
+
+			<h3>How do I restore my purchases?</h3>
+			<p>
+				Open the Power-Up Store in the app and tap "Restore Purchases" at the bottom. This will restore any previously purchased power-up bundles.
+			</p>
+
+			<h3>How does the daily puzzle work?</h3>
+			<p>
+				Every day there's a new puzzle for everyone to play. The difficulty varies by day of the week, with Monday being the easiest and Sunday being the hardest.
+			</p>
+
+			<h3>How do leaderboards work?</h3>
+			<p>
+				After completing a puzzle, you can publish your score to the daily leaderboard. You can also add competitors to track how you compare against friends.
+			</p>
+
+			<h3>What are power-ups?</h3>
+			<p>
+				Power-ups help you during gameplay. You receive a free set of power-ups each game, and can purchase additional bundles from the Power-Up Store:
+			</p>
+			<ul>
+				<li><strong>Skip</strong> — Skip the current piece and get a new one</li>
+				<li><strong>Swap</strong> — Swap the current and next pieces</li>
+				<li><strong>One-Cell</strong> — Replace the current piece with a single cell</li>
+			</ul>
+
+			<h3>How do I delete my account?</h3>
+			<p>
+				You can delete the app to remove all local data. If you'd like your leaderboard data removed, please contact us through the App Store.
+			</p>
+
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">← Back to tskulbru.dev</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>
