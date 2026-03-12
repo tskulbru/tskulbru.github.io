@@ -1,0 +1,55 @@
+# tskulbru.dev
+
+> Personal technical blog and portfolio by Torstein Skulbru — Technical Lead & Fullstack Developer specializing in Kubernetes, Go microservices, cloud architecture, and mobile development.
+
+## Author
+- Name: Torstein Skulbru
+- Role: Technical Lead & Fullstack Developer
+- Employer: Iteam Solutions AS
+- Location: Norway
+- Expertise: Kubernetes, Go, Azure, Android/iOS, DevOps, GitOps, Database Design
+
+## Content
+
+### Blog Posts
+Technical deep-dives on cloud-native architecture, DevOps practices, and mobile development:
+- Building Mockingjay: Secure Video Recorder: https://tskulbru.dev/posts/building-mockingjay-secure-video-recorder/
+- Building Stao: Standing Desk Companion: https://tskulbru.dev/posts/building-stao-standing-desk-companion/
+- Beyond the Dev Team: Unlocking AI for Every Department: https://tskulbru.dev/posts/empowering-non-technical-staff-with-ai/
+- AI Junior Developers Learning Trap: https://tskulbru.dev/posts/ai-junior-developers-learning-trap/
+- Azure Spot VMs AKS Guide: https://tskulbru.dev/posts/azure-spot-vms-aks-guide/
+- Building Kvile: Lightweight HTTP Client: https://tskulbru.dev/posts/building-kvile-lightweight-http-client/
+- Claude Code Go Developer Workflow: https://tskulbru.dev/posts/claude-code-go-developer-workflow/
+- DB Migrations with golang-migrate in Kubernetes: https://tskulbru.dev/posts/db-migrations-golang-migrate-kubernetes/
+- GitHub Release Management for Kubernetes GitOps: https://tskulbru.dev/posts/github-release-management-kubernetes-gitops/
+- Building Resilient Microservices with K8s Circuit Breakers: https://tskulbru.dev/posts/building-resilient-microservices-k8s-circuit-breakers-retries-chaos-engineering/
+- Slash AKS Costs with Spot VMs: https://tskulbru.dev/posts/slash-aks-costs-production-workload-spot-vms/
+- How I Built IssueFlow: https://tskulbru.dev/posts/how-i-built-issueflow-turn-slack-conversations-into-github-issues-with-ai/
+- Bluesky Comments on My Blog: https://tskulbru.dev/posts/bluesky-comments-on-my-blog/
+- HTTP Files with Kulala in Neovim: https://tskulbru.dev/posts/http-files-kulala-neovim-api-testing/
+- Android Release Management with GitHub Actions & Fastlane: https://tskulbru.dev/posts/android-release-management-github-actions-fastlane/
+- What is fitSystemWindows: https://tskulbru.dev/posts/what-is-and-how-do-i-even-fitsystemwindows/
+
+### Portfolio
+13 shipped apps and projects: https://tskulbru.dev/portfolio/
+- Plask: Analytics dashboard with AI insights (Next.js, Supabase, Claude AI)
+- APIDrift: API breaking change alerts & migration guides
+- Linetris: Mobile puzzle game
+- Stao: Standing desk companion app (iOS)
+- MyVisualRoutine: Visual routine planner
+- BiblieWise: Bible study app with AI
+- Mockingjay: Secure video recorder (iOS)
+- NEIMR: Norwegian Emergency Info & Map Reporting
+- Kvile: Lightweight HTTP client library (Go)
+- GraceLock: App lock for Android
+- StartRemoteWork: Remote work resources
+- BuzzBlast: Group notification app
+- IssueFlow: Slack-to-GitHub issue creator
+
+## Links
+- Website: https://tskulbru.dev
+- GitHub: https://github.com/tskulbru
+- LinkedIn: https://www.linkedin.com/in/tskulbru
+- Bluesky: https://bsky.app/profile/tskulbru.dev
+- RSS: https://tskulbru.dev/rss.xml
+- Sitemap: https://tskulbru.dev/sitemap-index.xml

@@ -1,0 +1,112 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'About - Torstein Skulbru';
+const description = 'Technical lead and fullstack developer with 15+ years of experience building Android, iOS, and cloud-native applications. Based in Bergen, Norway.';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<h1 class="pb-2 pt-6 text-4xl font-bold">About Me</h1>
+
+		<div class="flex flex-col md:flex-row gap-8 mt-6">
+			<div class="flex-shrink-0">
+				<img
+					src="/images/profile.png"
+					alt="Torstein Skulbru"
+					class="w-48 h-48 rounded-full object-cover shadow-lg"
+				/>
+			</div>
+			<div class="text-sm space-y-4">
+				<p>
+					I'm <span class="font-bold text-orange-600">Torstein Skulbru</span>, a technical lead and fullstack developer with over 15 years of professional experience building software across mobile, web, and cloud platforms.
+				</p>
+				<p>
+					Based in <span class="font-bold text-orange-600">Bergen, Norway</span>, I currently work as a developer at <a href="https://ditio.app" target="_blank" rel="noopener noreferrer" class="font-bold text-orange-600 hover:underline">Ditio</a>, focusing on Go microservices, DevOps, GitOps, and Kubernetes.
+				</p>
+			</div>
+		</div>
+
+		<div class="mt-10 space-y-8 text-sm">
+			<div>
+				<h2 class="text-2xl font-bold mb-4">Professional Background</h2>
+				<div class="space-y-4">
+					<div class="border-l-2 border-orange-600 pl-4">
+						<p class="font-bold">Developer - Ditio</p>
+						<p class="text-gray-600 dark:text-gray-400">Current</p>
+						<p class="mt-1">Go microservices, Kubernetes, DevOps, and GitOps in production environments.</p>
+					</div>
+					<div class="border-l-2 border-gray-300 dark:border-gray-600 pl-4">
+						<p class="font-bold">Technical Lead - TV 2 Norway</p>
+						<p class="text-gray-600 dark:text-gray-400">Previous</p>
+						<p class="mt-1">Led development teams building large-scale media and streaming platforms.</p>
+					</div>
+					<div class="border-l-2 border-gray-300 dark:border-gray-600 pl-4">
+						<p class="font-bold">Consultant / Senior Developer - Tieto Evry</p>
+						<p class="text-gray-600 dark:text-gray-400">Previous</p>
+						<p class="mt-1">Enterprise software consulting and mobile application development.</p>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h2 class="text-2xl font-bold mb-4">Technical Expertise</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					<div>
+						<h3 class="font-bold text-orange-600 mb-2">Cloud & Infrastructure</h3>
+						<ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+							<li>Kubernetes & container orchestration</li>
+							<li>Azure cloud architecture (AKS, Spot VMs)</li>
+							<li>DevOps & GitOps practices</li>
+							<li>CI/CD with GitHub Actions</li>
+							<li>Production system reliability</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="font-bold text-orange-600 mb-2">Development</h3>
+						<ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+							<li>Go microservices</li>
+							<li>Android development (Kotlin/Java)</li>
+							<li>iOS development (Swift)</li>
+							<li>TypeScript & React / Next.js</li>
+							<li>Database design & migrations</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h2 class="text-2xl font-bold mb-4">Education</h2>
+				<div class="border-l-2 border-gray-300 dark:border-gray-600 pl-4">
+					<p class="font-bold">University of Bergen</p>
+					<p class="text-gray-600 dark:text-gray-400">Computer Science</p>
+				</div>
+			</div>
+
+			<div>
+				<h2 class="text-2xl font-bold mb-4">Beyond Code</h2>
+				<p>
+					When I'm not coding, I'm a husband and dad to three kids. I enjoy tinkering with smart home automation and exploring the mountains around Bergen. I write about my technical experiences on this <a href="/" class="font-bold text-orange-600 hover:underline">blog</a> and share my projects in my <a href="/portfolio" class="font-bold text-orange-600 hover:underline">portfolio</a>.
+				</p>
+			</div>
+
+			<div>
+				<h2 class="text-2xl font-bold mb-4">Get in Touch</h2>
+				<p class="mb-4">
+					I'm always happy to connect with fellow developers and tech enthusiasts.
+				</p>
+				<div class="flex flex-wrap gap-3">
+					<a href="https://github.com/tskulbru" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors">GitHub</a>
+					<a href="https://www.linkedin.com/in/tskulbru" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors">LinkedIn</a>
+					<a href="https://bsky.app/profile/tskulbru.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors">Bluesky</a>
+					<a href="/contact" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-orange-600 text-white hover:bg-orange-700 transition-colors">Contact</a>
+				</div>
+			</div>
+		</div>
+
+		<p class="mt-8 text-xs text-gray-600 dark:text-gray-400 italic">
+			The opinions expressed on this site are my own and do not represent my employer's views.
+		</p>
+	</Section>
+</Base>

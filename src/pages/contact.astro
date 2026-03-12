@@ -1,0 +1,44 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Contact - Torstein Skulbru';
+const description = 'Get in touch with Torstein Skulbru. Reach out via email, LinkedIn, or Bluesky for questions about software development, collaboration, or speaking opportunities.';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<h1 class="pb-2 pt-6 text-4xl font-bold">Contact</h1>
+		<p class="text-sm text-gray-600 dark:text-gray-400 pb-8">
+			Have a question, want to collaborate, or just want to say hello? Here's how to reach me.
+		</p>
+
+		<div class="space-y-6 text-sm">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<a href="mailto:torstein@skulbru.com" class="block p-6 bg-gray-100 dark:bg-gray-800 rounded-xl hover:ring-2 hover:ring-orange-600 transition-all">
+					<h2 class="text-lg font-bold mb-2">Email</h2>
+					<p class="text-orange-600 font-medium">torstein@skulbru.com</p>
+					<p class="text-gray-600 dark:text-gray-400 mt-2">Best for detailed questions or collaboration inquiries.</p>
+				</a>
+
+				<a href="https://www.linkedin.com/in/tskulbru" target="_blank" rel="noopener noreferrer" class="block p-6 bg-gray-100 dark:bg-gray-800 rounded-xl hover:ring-2 hover:ring-orange-600 transition-all">
+					<h2 class="text-lg font-bold mb-2">LinkedIn</h2>
+					<p class="text-orange-600 font-medium">linkedin.com/in/tskulbru</p>
+					<p class="text-gray-600 dark:text-gray-400 mt-2">Connect professionally or send a message.</p>
+				</a>
+
+				<a href="https://bsky.app/profile/tskulbru.dev" target="_blank" rel="noopener noreferrer" class="block p-6 bg-gray-100 dark:bg-gray-800 rounded-xl hover:ring-2 hover:ring-orange-600 transition-all">
+					<h2 class="text-lg font-bold mb-2">Bluesky</h2>
+					<p class="text-orange-600 font-medium">@tskulbru.dev</p>
+					<p class="text-gray-600 dark:text-gray-400 mt-2">Follow and DM for quick conversations.</p>
+				</a>
+
+				<a href="https://github.com/tskulbru" target="_blank" rel="noopener noreferrer" class="block p-6 bg-gray-100 dark:bg-gray-800 rounded-xl hover:ring-2 hover:ring-orange-600 transition-all">
+					<h2 class="text-lg font-bold mb-2">GitHub</h2>
+					<p class="text-orange-600 font-medium">github.com/tskulbru</p>
+					<p class="text-gray-600 dark:text-gray-400 mt-2">Open an issue or start a discussion on any project.</p>
+				</a>
+			</div>
+		</div>
+	</Section>
+</Base>

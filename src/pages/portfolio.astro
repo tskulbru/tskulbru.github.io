@@ -3,10 +3,56 @@ import Base from '@/layouts/Base.astro';
 import Section from '@/components/Section.astro';
 
 const title = 'Portfolio';
-const description = 'Apps and projects I have built';
+const description = '13 shipped apps and projects by Torstein Skulbru — from analytics dashboards and API monitoring tools to mobile apps for iOS and Android, built with Go, TypeScript, Swift, and Kotlin.';
+
+const siteURL = 'https://tskulbru.dev';
+const portfolioItems = [
+	{ name: 'Plask', description: 'Analytics dashboard with AI insights. Multi-property GA4 dashboard with anomaly detection, AI weekly digests, and root cause analysis.', category: 'BusinessApplication', os: 'Web', url: 'https://plask.dev' },
+	{ name: 'APIDrift', description: 'API breaking change alerts and migration guides. Monitors 25+ APIs daily, uses AI to classify changes by severity, and generates step-by-step migration guides.', category: 'DeveloperApplication', os: 'Web', url: 'https://apidrift.dev' },
+	{ name: 'Linetris', description: 'Daily line puzzle game. Fill lines on a grid to score combos in a daily puzzle challenge.', category: 'GameApplication', os: ['iOS', 'Android'], url: `${siteURL}/portfolio/` },
+	{ name: 'Neimr', description: 'Norwegian Emergency Info and Map Reporting. Find the perfect name together with your partner.', category: 'UtilitiesApplication', os: ['iOS', 'Android'], url: `${siteURL}/portfolio/` },
+	{ name: 'Biblewise', description: 'Test your Biblical knowledge through fun trivia quizzes with multiple game modes.', category: 'EducationalApplication', os: ['iOS', 'Android'], url: `${siteURL}/portfolio/` },
+	{ name: 'Mockingjay', description: 'Secure video recording with AES-256-GCM encrypted cloud backup. Records video with real-time encryption and secure cloud storage.', category: 'UtilitiesApplication', os: 'iOS', url: `${siteURL}/portfolio/` },
+	{ name: 'GraceLock', description: 'Pray Before You Scroll. App lock that encourages mindful phone usage.', category: 'LifestyleApplication', os: 'Android', url: `${siteURL}/portfolio/` },
+	{ name: 'MyVisualRoutine', description: 'Visual schedules and choice boards for families. Helps children follow daily routines with visual aids.', category: 'EducationalApplication', os: ['iOS', 'Android'], url: `${siteURL}/portfolio/` },
+	{ name: 'StartRemoteWork', description: 'Find your dream remote job worldwide. Aggregates remote job listings from multiple sources.', category: 'BusinessApplication', os: 'Web', url: `${siteURL}/portfolio/` },
+	{ name: 'BuzzBlast', description: 'Turn your iPhone into the ultimate quiz game buzzer for group trivia nights.', category: 'GameApplication', os: 'iOS', url: `${siteURL}/portfolio/` },
+	{ name: 'Stao', description: 'Standing desk companion app. Uses the 20-8-2 pattern to remind you to alternate between standing, sitting, and moving.', category: 'HealthApplication', os: 'iOS', url: `${siteURL}/portfolio/` },
+	{ name: 'Kvile', description: 'Lightweight HTTP debugging client library for Go developers. Simple, composable API for HTTP testing.', category: 'DeveloperApplication', os: 'Web', url: 'https://github.com/tskulbru/kvile' },
+	{ name: 'IssueFlow', description: 'AI-powered Slack to GitHub integration. Turns Slack conversations into structured GitHub issues using AI.', category: 'DeveloperApplication', os: 'Web', url: `${siteURL}/portfolio/` },
+];
+
+const portfolioSchema = {
+	"@context": "https://schema.org",
+	"@type": "ItemList",
+	"name": "Portfolio - Apps and Projects by Torstein Skulbru",
+	"description": description,
+	"numberOfItems": portfolioItems.length,
+	"itemListElement": portfolioItems.map((item, index) => ({
+		"@type": "ListItem",
+		"position": index + 1,
+		"item": {
+			"@type": "SoftwareApplication",
+			"name": item.name,
+			"description": item.description,
+			"applicationCategory": item.category,
+			"operatingSystem": Array.isArray(item.os) ? item.os.join(', ') : item.os,
+			"url": item.url,
+			"author": {
+				"@id": `${siteURL}/#person`
+			},
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			}
+		}
+	}))
+};
 ---
 
 <Base head={{ title, description }}>
+	<script type="application/ld+json" set:html={JSON.stringify(portfolioSchema)} />
 	<Section>
 		<h1 class="pb-2 pt-6 text-4xl font-bold">Portfolio</h1>
 		<p class="text-sm text-gray-600 dark:text-gray-400 pb-8">

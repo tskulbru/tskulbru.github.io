@@ -1,0 +1,99 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Privacy Policy - tskulbru.dev';
+const description = 'Privacy policy for tskulbru.dev. Information about data collection, cookies, analytics, and your rights under GDPR.';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<h1 class="pb-2 pt-6 text-4xl font-bold">Privacy Policy</h1>
+		<p class="text-sm text-gray-600 dark:text-gray-400 pb-8">
+			Last updated: March 12, 2026
+		</p>
+
+		<div class="prose prose-sm dark:prose-invert max-w-none space-y-6 text-sm">
+			<section>
+				<h2 class="text-2xl font-bold mb-3">Who I Am</h2>
+				<p>
+					This website, <span class="font-bold">tskulbru.dev</span>, is a personal blog and portfolio operated by Torstein Skulbru, based in Bergen, Norway. You can contact me at <a href="mailto:torstein@skulbru.com" class="text-orange-600 hover:underline">torstein@skulbru.com</a> for any privacy-related questions.
+				</p>
+			</section>
+
+			<section>
+				<h2 class="text-2xl font-bold mb-3">What Data I Collect</h2>
+				<h3 class="text-lg font-bold mb-2">Analytics</h3>
+				<p>
+					This site uses <span class="font-bold">Google Analytics 4</span> to understand how visitors use the site. Google Analytics collects:
+				</p>
+				<ul class="list-disc list-inside space-y-1 ml-4">
+					<li>Pages visited and time spent</li>
+					<li>Referring websites</li>
+					<li>General geographic location (country/city level)</li>
+					<li>Device type, browser, and operating system</li>
+				</ul>
+				<p class="mt-2">
+					Google Analytics uses cookies to distinguish unique visitors. IP addresses are anonymized. I do not use this data to identify individual visitors.
+				</p>
+
+				<h3 class="text-lg font-bold mb-2 mt-4">No Other Data Collection</h3>
+				<p>
+					This site does not have user accounts, comment forms that collect personal data, newsletters, or any other data collection mechanisms beyond analytics. Blog comments are loaded from Bluesky and are subject to <a href="https://bsky.social/about/support/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-orange-600 hover:underline">Bluesky's privacy policy</a>.
+				</p>
+			</section>
+
+			<section>
+				<h2 class="text-2xl font-bold mb-3">Cookies</h2>
+				<p>This site uses the following cookies:</p>
+				<ul class="list-disc list-inside space-y-1 ml-4">
+					<li><span class="font-bold">Google Analytics cookies</span> (_ga, _ga_*) — used for analytics purposes</li>
+					<li><span class="font-bold">Theme preference</span> (localStorage) — remembers your light/dark mode choice, stored locally on your device</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2 class="text-2xl font-bold mb-3">Third-Party Services</h2>
+				<ul class="list-disc list-inside space-y-1 ml-4">
+					<li><span class="font-bold">GitHub Pages</span> — hosts the website</li>
+					<li><span class="font-bold">Cloudflare</span> — provides CDN and DNS services</li>
+					<li><span class="font-bold">Google Analytics</span> — provides website analytics</li>
+					<li><span class="font-bold">Bluesky</span> — provides comment functionality on blog posts</li>
+				</ul>
+				<p class="mt-2">Each of these services has their own privacy policies governing how they process data.</p>
+			</section>
+
+			<section>
+				<h2 class="text-2xl font-bold mb-3">Your Rights (GDPR)</h2>
+				<p>
+					As this site is operated from Norway (EEA), you have the following rights under the General Data Protection Regulation:
+				</p>
+				<ul class="list-disc list-inside space-y-1 ml-4">
+					<li>Right to access your personal data</li>
+					<li>Right to rectification of inaccurate data</li>
+					<li>Right to erasure ("right to be forgotten")</li>
+					<li>Right to restrict processing</li>
+					<li>Right to data portability</li>
+					<li>Right to object to processing</li>
+				</ul>
+				<p class="mt-2">
+					To exercise any of these rights, please contact me at <a href="mailto:torstein@skulbru.com" class="text-orange-600 hover:underline">torstein@skulbru.com</a>.
+				</p>
+			</section>
+
+			<section>
+				<h2 class="text-2xl font-bold mb-3">Opt Out of Analytics</h2>
+				<p>
+					You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-orange-600 hover:underline">Google Analytics Opt-out Browser Add-on</a>, or by using a browser extension that blocks tracking scripts.
+				</p>
+			</section>
+
+			<section>
+				<h2 class="text-2xl font-bold mb-3">Changes to This Policy</h2>
+				<p>
+					I may update this privacy policy from time to time. Changes will be posted on this page with an updated "last updated" date.
+				</p>
+			</section>
+		</div>
+	</Section>
+</Base>
