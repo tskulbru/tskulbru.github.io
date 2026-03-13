@@ -4,7 +4,7 @@ title: 'Building Stao: A Standing Desk Companion That Actually Works'
 pubDate: 2026-01-12
 description: 'How I built Stao, a cross-platform standing desk reminder app for iOS, Android, macOS, Windows, and Linux. A sit-stand timer that tracks your progress without accounts or subscriptions.'
 author: 'Torstein Skulbru'
-isPinned: true
+isPinned: false
 excerpt: 'Most standing desk apps get it wrong. I built Stao to fix the simple problems they overcomplicate.'
 image:
   src: '/images/portfolio/stao-promo-header.webp'

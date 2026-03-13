@@ -4,7 +4,7 @@ title: 'Building Mockingjay: A Video Recorder for When It Matters Most'
 pubDate: 2026-02-08
 description: 'How I built Mockingjay, an iOS app for secure video recording with real-time encrypted cloud backup. Designed for journalists, activists, and anyone who needs tamper-resistant video documentation.'
 author: 'Torstein Skulbru'
-isPinned: true
+isPinned: false
 excerpt: 'Traditional video apps fail when you need them most. I built Mockingjay to upload encrypted footage in real-time, not after.'
 image:
   src: '/images/portfolio/mockingjay-icon-small.png'
