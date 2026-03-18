@@ -10,6 +10,7 @@ image:
   src: '/images/portfolio/plask-icon.png'
   alt: 'Plask app icon'
 tags: ['nextjs', 'react', 'saas', 'analytics', 'ai', 'side-project']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mhd53yinn22r'
 ---
 
 I check Google Analytics every morning. Open the dashboard, scan the numbers, compare to yesterday, try to remember if 1,200 sessions is normal for a Tuesday. Close the tab. Repeat tomorrow.
