@@ -3,7 +3,7 @@ import Base from '@/layouts/Base.astro';
 import Section from '@/components/Section.astro';
 
 const title = 'Contact - Torstein Skulbru';
-const description = 'Get in touch with Torstein Skulbru. Reach out via email, LinkedIn, or Bluesky for questions about software development, collaboration, or speaking opportunities.';
+const description = 'Get in touch with Torstein Skulbru. Reach out via LinkedIn, Bluesky, or GitHub for questions about software development, collaboration, or speaking opportunities.';
 ---
 
 <Base head={{ title, description }}>
@@ -15,11 +15,10 @@ const description = 'Get in touch with Torstein Skulbru. Reach out via email, Li
 
 		<div class="space-y-6 text-sm">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-				<a href="mailto:torstein@skulbru.com" class="block p-6 bg-gray-100 dark:bg-gray-800 rounded-xl hover:ring-2 hover:ring-orange-600 transition-all">
+				<div class="block p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
 					<h2 class="text-lg font-bold mb-2">Email</h2>
-					<p class="text-orange-600 font-medium">torstein@skulbru.com</p>
-					<p class="text-gray-600 dark:text-gray-400 mt-2">Best for detailed questions or collaboration inquiries.</p>
-				</a>
+					<p class="text-gray-600 dark:text-gray-400">Prefer to reach me via one of the other platforms listed here — I'm most responsive on LinkedIn and Bluesky.</p>
+				</div>
 
 				<a href="https://www.linkedin.com/in/tskulbru" target="_blank" rel="noopener noreferrer" class="block p-6 bg-gray-100 dark:bg-gray-800 rounded-xl hover:ring-2 hover:ring-orange-600 transition-all">
 					<h2 class="text-lg font-bold mb-2">LinkedIn</h2>
