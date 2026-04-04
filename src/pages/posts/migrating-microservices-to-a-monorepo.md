@@ -10,6 +10,7 @@ image:
   src: '/images/portfolio/monorepo-hero.png'
   alt: 'Illustration of many small repositories merging into a single monorepo'
 tags: ['go', 'monorepo', 'devops', 'microservices', 'architecture', 'ci-cd']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mioowfc4hf2u'
 ---
 
 I was debugging a production issue that spanned three services. The request started in one API, triggered an event consumed by a second service, which wrote data picked up by a third. The bug was a field name mismatch introduced when someone updated a shared protobuf definition in one repo but forgot to regenerate the client in another.
