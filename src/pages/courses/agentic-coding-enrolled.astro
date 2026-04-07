@@ -1,0 +1,70 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = "You're in - Agentic Coding Course";
+const description = 'Welcome to Cohort 1. Next steps and preparation guide.';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<div class="pt-8 pb-4">
+			<span class="inline-block bg-green-600/10 text-green-600 text-xs font-bold uppercase tracking-widest px-3 py-1 border border-green-600/30 mb-6">
+				Registration Successful
+			</span>
+			<h1 class="text-4xl font-bold pb-4">You're in. <span class="text-orange-600">Let's build.</span></h1>
+			<p class="text-sm text-gray-600 dark:text-gray-400 max-w-2xl">
+				Your spot in Cohort 1 is confirmed. Follow these steps to prepare before our first session.
+			</p>
+		</div>
+	</Section>
+
+	<Section>
+		<div class="pb-12 space-y-6">
+			<div class="flex gap-4 border border-gray-200 dark:border-gray-700 p-6">
+				<div class="flex-shrink-0 w-8 h-8 bg-orange-600 text-white font-bold flex items-center justify-center text-sm">1</div>
+				<div>
+					<h3 class="font-bold mb-1">Fill out the intake form</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Takes 2 minutes. Tell us about your background and what you're hoping to build so we can tailor the sessions.</p>
+					<a href="https://docs.google.com/forms/d/e/1FAIpQLSefhi0jHEB51yjkdvsqHrgVtcMOMg8G1iTQ5EwTYn3aW8n8Rw/viewform" class="text-sm font-bold text-orange-600 hover:underline">Complete the intake form →</a>
+				</div>
+			</div>
+
+			<div class="flex gap-4 border border-gray-200 dark:border-gray-700 p-6">
+				<div class="flex-shrink-0 w-8 h-8 bg-orange-600 text-white font-bold flex items-center justify-center text-sm">2</div>
+				<div>
+					<h3 class="font-bold mb-1">Get the Week 0 prep guide</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Step-by-step setup: install Claude Code, get your API key, run your first prompt. Do this before April 24.</p>
+					<a href="https://docs.google.com/document/d/1yJBpnsWY6xwVDnwLixDn1EyhHKZlt0_6MmLTKqy8Wqs/edit?usp=sharing" class="text-sm font-bold text-orange-600 hover:underline">Access Week 0 prep guide →</a>
+				</div>
+			</div>
+
+			<div class="flex gap-4 border border-gray-200 dark:border-gray-700 p-6">
+				<div class="flex-shrink-0 w-8 h-8 bg-orange-600 text-white font-bold flex items-center justify-center text-sm">3</div>
+				<div>
+					<h3 class="font-bold mb-1">Watch your inbox</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">We'll send a calendar invite with the Google Meet link before our first session on <span class="font-bold text-gray-900 dark:text-white">Friday, April 24 at 20:00-21:00 CEST</span>. Check your spam folder.</p>
+				</div>
+			</div>
+
+			<div class="flex gap-4 border border-gray-200 dark:border-gray-700 p-6">
+				<div class="flex-shrink-0 w-8 h-8 bg-orange-600 text-white font-bold flex items-center justify-center text-sm">4</div>
+				<div>
+					<h3 class="font-bold mb-1">Show up and build</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Bring your laptop, your ideas, and your questions. We'll do the rest together.</p>
+				</div>
+			</div>
+
+			<!-- Optional Discord -->
+			<div class="border border-gray-200 dark:border-gray-700 p-6 mt-8 text-center">
+				<h3 class="font-bold mb-2">Join the community (optional)</h3>
+				<p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Connect with other participants in our Discord. Share ideas, ask questions between sessions. All important communication happens via email.</p>
+				<a href="https://discord.gg/sjkHdeSB" class="inline-block bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold px-6 py-2 text-sm hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors">Join Discord →</a>
+			</div>
+
+			<p class="text-center text-sm text-gray-500 dark:text-gray-400 pt-4">
+				Questions? <a href="mailto:course-agentic@tskulbru.dev" class="text-orange-600 hover:underline">course-agentic@tskulbru.dev</a>
+			</p>
+		</div>
+	</Section>
+</Base>

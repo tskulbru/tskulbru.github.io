@@ -1,0 +1,310 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Agentic Coding Course - Learn to Build with AI Agents';
+const description = 'A 4-week live course teaching developers, PMs, and builders how to use AI coding agents to ship real software. Taught by a practitioner, not a textbook.';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<!-- Hero -->
+		<div class="pt-12 pb-16">
+			<div class="flex flex-wrap gap-3 mb-6">
+				<span class="inline-block bg-orange-600/10 text-orange-600 text-xs font-bold uppercase tracking-widest px-3 py-1 border border-orange-600/30">
+					Cohort 1 · Starts April 24, 2026
+				</span>
+			</div>
+			<h1 class="text-4xl md:text-6xl font-bold pb-4">
+				I don't write code anymore.<br/>
+				<span class="text-orange-600 italic">Let me show you why.</span>
+			</h1>
+			<p class="text-base text-gray-600 dark:text-gray-400 max-w-2xl pb-8">
+				You describe what you want built. The AI writes the code. In 4 weeks, you'll know exactly how to make that work — whether you're a developer, a PM, or a founder.
+			</p>
+			<div class="flex flex-col sm:flex-row items-start gap-4">
+				<a href="https://book.stripe.com/9B64gr5bEfBTbqN1Zy8IU00" class="block sm:inline-block bg-orange-600 text-white font-bold px-6 py-3 hover:bg-orange-700 transition-colors text-center w-full sm:w-auto">
+					Join Cohort 1 — $299 →
+				</a>
+				<span class="text-xs text-gray-500 dark:text-gray-400 pt-2">Live sessions · 1-on-1 included · Recordings</span>
+			</div>
+		</div>
+	</Section>
+
+	<!-- Format -->
+	<div class="bg-stone-200 dark:bg-stone-800">
+		<Section>
+			<div class="py-10">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div>
+						<h3 class="font-bold text-orange-600 mb-2">Live Sessions</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400">60 min every Friday, 20:00-21:00 CEST. Teaching, live demos, and Q&A.</p>
+					</div>
+					<div>
+						<h3 class="font-bold text-orange-600 mb-2">Hands-on Exercises</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400">Developers work on existing codebases. Non-devs build from a product brief. Same skills, different starting points.</p>
+					</div>
+					<div>
+						<h3 class="font-bold text-orange-600 mb-2">Recordings</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400">Can't make it live? All sessions are shared within 24 hours with full transcripts.</p>
+					</div>
+				</div>
+				<div class="mt-8 border-2 border-orange-600/30 bg-orange-600/5 dark:bg-orange-600/10 p-5 flex flex-col sm:flex-row items-start gap-4">
+					<span class="text-orange-600 font-bold text-lg flex-shrink-0">1-on-1</span>
+					<div>
+						<h3 class="font-bold mb-1">30-minute private session with the instructor</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400">Bring your codebase, your stuck project, or the idea you haven't started. You'll leave with a specific next step, not generic advice.</p>
+					</div>
+				</div>
+			</div>
+		</Section>
+	</div>
+
+	<!-- Instructor (moved above curriculum for trust sequencing) -->
+	<Section>
+		<div class="py-16" id="instructor">
+			<h2 class="text-2xl font-bold pb-8">Your Instructor</h2>
+			<div class="flex flex-col md:flex-row gap-8 items-start">
+				<img
+					src="/images/profile.png"
+					alt="Torstein Skulbru"
+					class="w-40 h-40 rounded-full object-cover shadow-lg flex-shrink-0"
+				/>
+				<div class="text-sm space-y-4">
+					<div>
+						<h3 class="text-xl font-bold">Torstein Skulbru</h3>
+						<p class="text-orange-600 font-bold">Developer at Ditio · 15+ years experience</p>
+					</div>
+					<p class="text-gray-600 dark:text-gray-400">
+						Torstein builds production Go microservices and cloud-native apps at Ditio — using AI coding agents for the actual work, daily. Previously Technical Lead for News and Sports apps at TV 2 Norway. He's been teaching colleagues and friends this workflow one Slack message at a time. This course is the Slack message that scales.
+					</p>
+					<div class="flex gap-4">
+						<a href="https://tskulbru.dev" class="font-bold text-orange-600 hover:underline">Blog</a>
+						<a href="https://github.com/tskulbru" target="_blank" rel="noopener noreferrer" class="font-bold text-orange-600 hover:underline">GitHub</a>
+						<a href="https://www.linkedin.com/in/tskulbru" target="_blank" rel="noopener noreferrer" class="font-bold text-orange-600 hover:underline">LinkedIn</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</Section>
+
+	<!-- Curriculum -->
+	<div class="bg-stone-200 dark:bg-stone-800">
+		<Section>
+			<div class="py-16" id="curriculum">
+				<h2 class="text-2xl font-bold pb-2">Curriculum</h2>
+				<p class="text-sm text-gray-500 dark:text-gray-400 pb-8">For developers and non-developers</p>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div class="border border-gray-300 dark:border-gray-600 bg-stone-100 dark:bg-stone-900 p-6">
+						<span class="text-xs font-bold text-orange-600 uppercase tracking-widest">Week 01</span>
+						<h3 class="text-lg font-bold mt-2 mb-2">Foundations</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 mb-4">The paradigm shift from typist to architect. Set up Claude Code, understand CLAUDE.md, and make any project AI-ready. You'll build your first thing before the session ends.</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">Claude Code</span>
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">CLAUDE.md</span>
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">Project Setup</span>
+						</div>
+					</div>
+
+					<div class="border border-gray-300 dark:border-gray-600 bg-stone-100 dark:bg-stone-900 p-6">
+						<span class="text-xs font-bold text-orange-600 uppercase tracking-widest">Week 02</span>
+						<h3 class="text-lg font-bold mt-2 mb-2">Prompting as a Skill</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 mb-4">The prompt is the specification. Learn four patterns that turn vague ideas into production-quality output, the anti-patterns that burn tokens and produce garbage, and the Research-Plan-Implement workflow for complex features.</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">4 Patterns</span>
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">RPI Workflow</span>
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">Hands-on</span>
+						</div>
+					</div>
+
+					<div class="border border-gray-300 dark:border-gray-600 bg-stone-100 dark:bg-stone-900 p-6">
+						<span class="text-xs font-bold text-orange-600 uppercase tracking-widest">Week 03</span>
+						<h3 class="text-lg font-bold mt-2 mb-2">From Idea to MVP</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 mb-4">The six mechanisms: skills, agents, MCP, hooks, slash commands, and agent teams. Learn agent memory that compounds across sessions and /batch for parallel changesets. Exercise: empty folder to working app.</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">6 Mechanisms</span>
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">Agent Memory</span>
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">Greenfield</span>
+						</div>
+					</div>
+
+					<div class="border border-gray-300 dark:border-gray-600 bg-stone-100 dark:bg-stone-900 p-6">
+						<span class="text-xs font-bold text-orange-600 uppercase tracking-widest">Week 04</span>
+						<h3 class="text-lg font-bold mt-2 mb-2">Build Your Own Project</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Plan mode, parallel worktrees, autonomous loops. See how the instructor actually works day-to-day. Then bring your own project and build something real with live guidance. 1-on-1s this week.</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">Plan Mode</span>
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">Worktrees</span>
+							<span class="text-[10px] uppercase font-bold tracking-wider text-gray-500 bg-stone-200 dark:bg-stone-800 px-2 py-1">1-on-1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="text-center pt-8">
+					<a href="https://book.stripe.com/9B64gr5bEfBTbqN1Zy8IU00" class="text-orange-600 font-bold hover:underline">Ready to start? Join Cohort 1 — $299 →</a>
+				</div>
+			</div>
+		</Section>
+	</div>
+
+	<!-- What you'll walk away with -->
+	<Section>
+		<div class="py-16">
+			<h2 class="text-2xl font-bold pb-6">After 4 weeks, you will</h2>
+			<ul class="text-sm text-gray-600 dark:text-gray-400 space-y-3">
+				<li class="flex items-start gap-2">
+					<span class="text-orange-600 font-bold flex-shrink-0">→</span>
+					Build and ship a working application using only natural language and AI agents
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-orange-600 font-bold flex-shrink-0">→</span>
+					Know exactly when to let the agent run and when to intervene — the judgment that separates productive from frustrated
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-orange-600 font-bold flex-shrink-0">→</span>
+					Have a repeatable workflow you can apply to any project, any language, any stack
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-orange-600 font-bold flex-shrink-0">→</span>
+					Own a deployed project that proves you can do this — not just that you took a course
+				</li>
+			</ul>
+		</div>
+	</Section>
+
+	<!-- Who this is for -->
+	<div class="bg-stone-200 dark:bg-stone-800">
+		<Section>
+			<div class="py-16">
+				<h2 class="text-2xl font-bold pb-6">Is this for you?</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+					<div>
+						<h3 class="font-bold text-orange-600 mb-3">This is for you if...</h3>
+						<ul class="space-y-2 text-gray-600 dark:text-gray-400">
+							<li>— You're a developer who wants to ship dramatically faster with AI agents</li>
+							<li>— You're a PM or founder who wants to build without waiting for an engineering team</li>
+							<li>— You've tried ChatGPT for code but want production-grade workflows</li>
+							<li>— You learn best by doing, not by watching videos</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="font-bold mb-3">This is NOT for you if...</h3>
+						<ul class="space-y-2 text-gray-600 dark:text-gray-400">
+							<li>— You want to learn traditional programming (this is not a coding bootcamp)</li>
+							<li>— You're looking for a certificate to put on LinkedIn</li>
+							<li>— You're not willing to open a terminal</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</Section>
+	</div>
+
+	<!-- Pricing -->
+	<Section>
+		<div class="py-16" id="pricing">
+			<h2 class="text-2xl font-bold pb-8">One price. Everything included.</h2>
+			<div class="max-w-xl mx-auto border-2 border-orange-600 p-6 sm:p-8">
+				<div class="text-center mb-6">
+					<div class="text-xs font-bold text-orange-600 uppercase tracking-widest mb-2">Introductory pricing</div>
+					<div class="text-5xl font-bold text-orange-600">$299</div>
+					<div class="text-sm text-gray-500 dark:text-gray-400 mt-1">One-time payment per seat</div>
+				</div>
+				<ul class="text-sm space-y-3 mb-8">
+					<li class="flex items-start gap-2">
+						<span class="text-orange-600 font-bold">✓</span>
+						4 live interactive sessions (Fridays 20:00-21:00 CEST)
+					</li>
+					<li class="flex items-start gap-2">
+						<span class="text-orange-600 font-bold">✓</span>
+						Week 0 preparation guide
+					</li>
+					<li class="flex items-start gap-2">
+						<span class="text-orange-600 font-bold">✓</span>
+						Real-world coding exercises
+					</li>
+					<li class="flex items-start gap-2">
+						<span class="text-orange-600 font-bold">✓</span>
+						30-min 1-on-1 with the instructor
+					</li>
+					<li class="flex items-start gap-2">
+						<span class="text-orange-600 font-bold">✓</span>
+						Access to all session recordings
+					</li>
+					<li class="flex items-start gap-2">
+						<span class="text-orange-600 font-bold">✓</span>
+						All course materials &amp; prompts
+					</li>
+				</ul>
+				<a href="https://book.stripe.com/9B64gr5bEfBTbqN1Zy8IU00" class="block w-full text-center bg-orange-600 text-white font-bold py-4 text-lg hover:bg-orange-700 transition-colors">
+					Join Cohort 1 — Start April 24 →
+				</a>
+				<p class="text-center text-xs text-gray-500 dark:text-gray-400 mt-4">Full refund up to 7 days before start. No questions asked.</p>
+				<p class="text-center text-sm mt-4">
+					Enrolling a team? <a href="mailto:course-agentic@tskulbru.dev?subject=Team%20pricing%20-%20Agentic%20Coding%20Course" class="text-orange-600 hover:underline">Contact for team pricing</a>
+				</p>
+			</div>
+		</div>
+	</Section>
+
+	<!-- FAQ -->
+	<div class="bg-stone-200 dark:bg-stone-800">
+		<Section>
+			<div class="py-16">
+				<h2 class="text-2xl font-bold pb-8">Frequently Asked Questions</h2>
+				<div class="text-sm">
+					<details class="border-b border-gray-300 dark:border-gray-600 group">
+						<summary class="font-bold py-4 cursor-pointer list-none flex justify-between items-center hover:text-orange-600 transition-colors">
+							What are the prerequisites?
+							<span class="text-gray-400 group-open:rotate-180 transition-transform text-xs">▼</span>
+						</summary>
+						<p class="text-gray-600 dark:text-gray-400 pb-4">Basic comfort with a terminal and willingness to learn. Programming experience is helpful but not required — product managers, founders, and non-developers are welcome. The course teaches you to instruct AI agents, not to write code by hand. Code examples use Go and TypeScript, but the workflow patterns apply to any language or project.</p>
+					</details>
+					<details class="border-b border-gray-300 dark:border-gray-600 group">
+						<summary class="font-bold py-4 cursor-pointer list-none flex justify-between items-center hover:text-orange-600 transition-colors">
+							What tools do I need?
+							<span class="text-gray-400 group-open:rotate-180 transition-transform text-xs">▼</span>
+						</summary>
+						<p class="text-gray-600 dark:text-gray-400 pb-4">A computer with a terminal and an Anthropic API key (or Claude Pro/Max subscription). We primarily use Claude Code (CLI). You'll get a Week 0 prep guide with step-by-step setup instructions after enrolling — no prior setup experience needed.</p>
+					</details>
+					<details class="border-b border-gray-300 dark:border-gray-600 group">
+						<summary class="font-bold py-4 cursor-pointer list-none flex justify-between items-center hover:text-orange-600 transition-colors">
+							What if I miss a session?
+							<span class="text-gray-400 group-open:rotate-180 transition-transform text-xs">▼</span>
+						</summary>
+						<p class="text-gray-600 dark:text-gray-400 pb-4">All sessions are recorded and shared via Google Drive within 24 hours with full transcripts. You'll have access to recordings and materials indefinitely.</p>
+					</details>
+					<details class="border-b border-gray-300 dark:border-gray-600 group">
+						<summary class="font-bold py-4 cursor-pointer list-none flex justify-between items-center hover:text-orange-600 transition-colors">
+							What is the refund policy?
+							<span class="text-gray-400 group-open:rotate-180 transition-transform text-xs">▼</span>
+						</summary>
+						<p class="text-gray-600 dark:text-gray-400 pb-4">Full refund up to 7 days before the cohort starts (April 17). No refunds after that date.</p>
+					</details>
+					<details class="border-b border-gray-300 dark:border-gray-600 group">
+						<summary class="font-bold py-4 cursor-pointer list-none flex justify-between items-center hover:text-orange-600 transition-colors">
+							Minimum enrollment?
+							<span class="text-gray-400 group-open:rotate-180 transition-transform text-xs">▼</span>
+						</summary>
+						<p class="text-gray-600 dark:text-gray-400 pb-4">Minimum 5 students for the cohort to run. If we don't hit 5 by April 17, everyone gets a full refund and we'll schedule the next cohort.</p>
+					</details>
+					<details class="border-b border-gray-300 dark:border-gray-600 group">
+						<summary class="font-bold py-4 cursor-pointer list-none flex justify-between items-center hover:text-orange-600 transition-colors">
+							Is this just for Claude Code?
+							<span class="text-gray-400 group-open:rotate-180 transition-transform text-xs">▼</span>
+						</summary>
+						<p class="text-gray-600 dark:text-gray-400 pb-4">The course focuses on Claude Code because it's the most capable AI coding agent available today. But the patterns, prompt engineering techniques, and workflows transfer to any AI coding tool like Aider, Cursor, or Copilot.</p>
+					</details>
+					<details class="group">
+						<summary class="font-bold py-4 cursor-pointer list-none flex justify-between items-center hover:text-orange-600 transition-colors">
+							Won't this be outdated in 3 months?
+							<span class="text-gray-400 group-open:rotate-180 transition-transform text-xs">▼</span>
+						</summary>
+						<p class="text-gray-600 dark:text-gray-400 pb-4">The specific tools will evolve. That's the point. This course teaches you the patterns — how to structure projects for AI, how to write prompts that work, how to verify output, how to orchestrate agents. Those patterns have been stable across every major tool update so far. You're learning the skill, not memorizing a UI.</p>
+					</details>
+				</div>
+			</div>
+		</Section>
+	</div>
+</Base>
