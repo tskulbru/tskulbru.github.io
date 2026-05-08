@@ -4,7 +4,7 @@ title: 'Building Plask: A GA4 Dashboard That Actually Tells You What Changed'
 pubDate: 2026-03-13
 description: 'How I built Plask, a multi-tenant SaaS that connects to your Google Analytics properties and uses statistical anomaly detection and AI-generated weekly digests to surface what matters.'
 author: 'Torstein Skulbru'
-isPinned: true
+isPinned: false
 excerpt: 'Google Analytics shows you numbers. Plask tells you when those numbers are wrong—and why.'
 image:
   src: '/images/portfolio/plask-icon.png'
