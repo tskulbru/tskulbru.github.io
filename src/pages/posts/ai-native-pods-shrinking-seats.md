@@ -10,6 +10,7 @@ image:
   src: '/images/ai-pods-hero.webp'
   alt: 'A traditional org chart on the left dissolving into a single person directing AI agents on the right'
 tags: ['ai', 'industry', 'tech-layoffs', 'careers', 'llm', 'commentary']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mlenz4yd4c26'
 ---
 
 Earlier this week, Coinbase laid off 14% of its workforce — roughly 660 people. The CEO's stated reason wasn't market conditions or restructuring debt or any of the usual euphemisms. It was that AI now lets engineers ship in days what used to take a team weeks, and that non-technical employees are increasingly writing code themselves. The day after, Brian Armstrong told a podcast that mass layoffs are coming to "every company."
