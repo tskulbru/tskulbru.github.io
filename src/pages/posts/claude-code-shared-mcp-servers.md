@@ -10,6 +10,7 @@ image:
   src: '/images/claude-code-shared-mcps-hero.webp'
   alt: 'Many Claude Code sessions connecting to a small set of shared MCP daemons instead of each forking its own'
 tags: ['claude-code', 'mcp', 'ai', 'developer-tools', 'systemd', 'launchd', 'linux', 'macos', 'productivity']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mlqxxjwxuk2j'
 ---
 
 My workstation started running out of memory, and it wasn't from anything I was actually doing.
