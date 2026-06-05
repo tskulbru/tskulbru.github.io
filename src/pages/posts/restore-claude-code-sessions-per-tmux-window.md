@@ -10,6 +10,7 @@ image:
   src: '/images/tmux-assistant-resurrect-demo.gif'
   alt: 'Demo of tmux-assistant-resurrect saving and restoring assistant sessions across a tmux restart'
 tags: ['claude-code', 'tmux', 'ai', 'developer-tools', 'linux', 'productivity', 'workflow']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mnkb26hldk2n'
 ---
 
 I run a lot of Claude Code sessions, and I run them all inside tmux. On any given day I have a dozen windows open, each one a different project, each with a long-running Claude conversation that has built up real context — the kind you do not want to throw away. tmux-resurrect has handled the layout side of this for years: reboot the machine, press `prefix + Ctrl-r`, and my windows, panes, and working directories come right back.
