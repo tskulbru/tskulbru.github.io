@@ -10,6 +10,7 @@ image:
   src: '/images/claude-codex-otel-grafana-hero.webp'
   alt: 'Claude Code and Codex sessions on developer laptops exporting OpenTelemetry to a central Alloy collector and a shared Grafana usage dashboard'
 tags: ['claude-code', 'codex', 'opentelemetry', 'observability', 'grafana', 'alloy', 'ai', 'developer-tools', 'kubernetes']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mp4tii4ayk2o'
 ---
 
 I wanted a single number on a dashboard: how hard is each developer on my team actually leaning on Claude Code and Codex? I am not trying to police anyone. I want to know whether the tools are landing, where adoption is thin, and roughly what the intensity is across people and models.
