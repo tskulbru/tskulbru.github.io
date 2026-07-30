@@ -1,0 +1,106 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Arcana - Support';
+const description = 'Support and help for Arcana: Tarot & Palm Reader';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Arcana Support</h1>
+			<p class="text-lg text-gray-600 dark:text-gray-400">
+				Get help with Arcana: Tarot & Palm Reader
+			</p>
+
+			<h2>Getting Started</h2>
+
+			<h3>How do I draw my daily card?</h3>
+			<p>
+				Open the app, set an intention if you like (or skip it), and tap the deck. It shuffles, cuts, and deals your card — tap the card to turn it over. One card per day; it resets at midnight.
+			</p>
+
+			<h3>What's the difference between the daily card and a spread?</h3>
+			<p>
+				The daily card is a quick one-card reflection. A spread lays several cards on the table — past/present/future, a decision, love — and reads them together as one story, written for your specific question.
+			</p>
+
+			<h3>I'm new to tarot. Where do I start?</h3>
+			<p>
+				The Library tab has a short primer that explains how tarot works as a reflection tool, plus plain-language meanings for all 78 cards. You don't need to know anything to start — every reading explains its cards.
+			</p>
+
+			<h2>Readings</h2>
+
+			<h3>My personalized reading says "pondering" or failed. What happened?</h3>
+			<p>
+				Personalized readings are written live by an AI service. If your connection drops or the service is briefly busy, the app shows the traditional card meanings instead, with a retry button for the personalized version. Your draw is never lost.
+			</p>
+
+			<h3>Is there a limit on readings?</h3>
+			<p>
+				Generated readings have daily fair-use limits because each one has a real cost. The traditional card meanings are always available, offline, without limits.
+			</p>
+
+			<h2>Palm Reading</h2>
+
+			<h3>How do I get a good palm scan?</h3>
+			<ul>
+				<li>Use bright, even light — near a window works well</li>
+				<li>Hold your palm flat, fingers slightly apart, filling the frame</li>
+				<li>The app guides you and captures automatically when the shot is good</li>
+			</ul>
+			<p>
+				You can also pick an existing photo from your library.
+			</p>
+
+			<h3>Where do my palm photos go?</h3>
+			<p>
+				They're stored only on your iPhone. Generating a reading sends the photo through our server to the AI service and it is immediately discarded — never stored, never shareable. Details in the <a href="/apps/arcana-privacy">Privacy Policy</a>.
+			</p>
+
+			<h2>Purchases &amp; Subscriptions</h2>
+
+			<h3>What's free and what's paid?</h3>
+			<p>
+				The daily card and your first full spread reading are completely free. Arcana Plus unlocks unlimited spread readings and personalized palm readings. Deck editions are one-time purchases you keep forever.
+			</p>
+
+			<h3>How do I cancel my subscription?</h3>
+			<p>
+				Open your device Settings → your Apple Account → Subscriptions → Arcana, and tap Cancel. You keep access until the end of the paid period. Deleting the app does not cancel a subscription.
+			</p>
+
+			<h3>How do I restore my purchases?</h3>
+			<p>
+				On the paywall or in the app's settings, tap "Restore Purchases" while signed into the same Apple Account you bought with.
+			</p>
+
+			<h3>How do I get a refund?</h3>
+			<p>
+				Apple handles all payments and refunds: visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a>.
+			</p>
+
+			<h2>Data &amp; Privacy</h2>
+
+			<h3>How do I delete my data?</h3>
+			<p>
+				Everything — journal, palm photos, streaks — lives on your device. Deleting the app deletes it all. There is no account and no server-side profile.
+			</p>
+
+			<h2>Still Need Help?</h2>
+			<p>
+				Contact us through the App Store listing's support link, and include your iOS version and a description of the issue. We aim to respond within 48 hours.
+			</p>
+
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">&larr; Back to tskulbru.dev</a> |
+					<a href="/apps/arcana-privacy" class="hover:text-orange-600 transition-colors">Privacy Policy</a> |
+					<a href="/apps/arcana-terms" class="hover:text-orange-600 transition-colors">Terms of Service</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>

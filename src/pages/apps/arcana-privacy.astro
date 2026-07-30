@@ -1,0 +1,111 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Arcana - Privacy Policy';
+const description = 'Privacy Policy for Arcana: Tarot & Palm Reader';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Privacy Policy for Arcana</h1>
+			<p class="text-sm text-gray-600 dark:text-gray-400">
+				Last updated: July 30, 2026
+			</p>
+
+			<h2>Overview</h2>
+			<p>
+				Arcana: Tarot & Palm Reader ("we", "our", or "the app") is a tarot and palmistry app built around a simple privacy principle: your readings belong on your device, not on our servers. This policy explains exactly what leaves your iPhone, why, and what happens to it.
+			</p>
+
+			<h2>No Account, No Sign-Up</h2>
+			<p>
+				Arcana does not require — or offer — an account. We never ask for your email, phone number, or any login. The app generates a random installation identifier on first launch, which is used only for abuse prevention (rate limiting) and purchase management. It is not linked to your identity.
+			</p>
+
+			<h2>What Stays on Your Device</h2>
+			<ul>
+				<li><strong>Your reading journal</strong> — every reading, note, and mood entry is stored locally on your iPhone. We have no copy.</li>
+				<li><strong>Your palm photos</strong> — saved only on your device, never on our servers, and deliberately excluded from the app's sharing features.</li>
+				<li><strong>Your streaks and preferences</strong> — stored locally.</li>
+			</ul>
+			<p>
+				Deleting the app deletes all of this data permanently.
+			</p>
+
+			<h2>What Is Sent to Generate a Reading</h2>
+			<p>
+				Personalized readings are written by an AI language model (Anthropic's Claude). To generate one, the app sends the minimum needed through our own server (a Firebase Cloud Function hosted in the EU, region europe-west1):
+			</p>
+			<ul>
+				<li><strong>Tarot readings:</strong> the cards you drew, the spread, your question (if you typed one), and optionally the first name and themes you chose during setup</li>
+				<li><strong>Palm readings:</strong> a photo of your palm, and optionally your first name and chosen themes</li>
+			</ul>
+			<p>
+				This data is used only to generate your reading and is not stored on our servers. Palm photos are processed in memory and discarded — they are never written to server storage. Per <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank" rel="noopener noreferrer">Anthropic's commercial terms</a>, API data is not used to train their models.
+			</p>
+			<p>
+				Our server keeps a daily request counter per installation identifier (for rate limiting). That counter contains no reading content.
+			</p>
+
+			<h2>Analytics and Crash Reporting</h2>
+			<h3>Firebase Analytics</h3>
+			<p>
+				We use Firebase Analytics to understand which features are used — draws completed, screens visited, purchases started. This data is aggregated and does not include reading content, questions, notes, or palm photos. Arcana does not use the advertising identifier (IDFA) and does not show ads. You can turn analytics off entirely in the app's settings.
+			</p>
+			<h3>Firebase Crashlytics</h3>
+			<p>
+				If the app crashes, a report with the device model, OS version, app version, and stack trace may be sent so we can fix it. Crash reports never contain reading content.
+			</p>
+
+			<h2>Purchases</h2>
+			<p>
+				All payments are processed by Apple through the App Store. We never see your payment details. We use RevenueCat to manage subscription status; RevenueCat receives your installation identifier and purchase receipts — no personal information. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat's privacy policy</a>.
+			</p>
+
+			<h2>Third-Party Services</h2>
+			<ul>
+				<li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase</a> — backend hosting (EU region), analytics, crash reporting, app integrity (App Check)</li>
+				<li><a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">Anthropic</a> — AI reading generation</li>
+				<li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat</a> — subscription management</li>
+			</ul>
+
+			<h2>Camera Access</h2>
+			<p>
+				The camera is used only when you choose to scan your palm. The permission prompt appears the first time you start a palm reading, and the app works fully without it (you can pick a photo from your library instead, or skip palmistry entirely).
+			</p>
+
+			<h2>Children's Privacy</h2>
+			<p>
+				Arcana is rated 17+ and is not intended for children. We do not knowingly collect personal information from children.
+			</p>
+
+			<h2>Your Rights</h2>
+			<ul>
+				<li>Delete the app at any time — your journal, palm photos, and preferences are removed with it</li>
+				<li>Disable analytics in the app's settings</li>
+				<li>Manage or cancel subscriptions in your device Settings → Apple Account → Subscriptions</li>
+				<li>EU/EEA users: because reading generation is transient and tied only to a random installation identifier, there is no server-side profile to access or export; contact us with any GDPR request and we will honor it</li>
+			</ul>
+
+			<h2>Changes to This Policy</h2>
+			<p>
+				We may update this Privacy Policy from time to time. Changes are reflected in the "Last updated" date at the top of this page.
+			</p>
+
+			<h2>Contact</h2>
+			<p>
+				Questions about this policy? Contact us through the <a href="/apps/arcana-support">support page</a> or via the App Store listing.
+			</p>
+
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">&larr; Back to tskulbru.dev</a> |
+					<a href="/apps/arcana-support" class="hover:text-orange-600 transition-colors">Support</a> |
+					<a href="/apps/arcana-terms" class="hover:text-orange-600 transition-colors">Terms of Service</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>
