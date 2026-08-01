@@ -1,0 +1,106 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'PadelIQ - Privacy Policy';
+const description = 'Privacy Policy for PadelIQ: AI Match Analysis';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Privacy Policy for PadelIQ</h1>
+			<p class="text-sm text-gray-600 dark:text-gray-400">
+				Last updated: August 1, 2026
+			</p>
+
+			<h2>Overview</h2>
+			<p>
+				PadelIQ: AI Match Analysis ("we", "our", or "the app") analyzes padel match videos to show you positioning patterns and weaknesses. It is built around one privacy principle: <strong>your match videos never leave your iPhone.</strong> All video analysis runs on your device. This policy explains exactly what does leave your phone, why, and what happens to it.
+			</p>
+
+			<h2>No Account, No Sign-Up</h2>
+			<p>
+				PadelIQ does not require — or offer — an account. We never ask for your email, phone number, or any login. The app uses a random anonymous identifier for purchase management only; it is not linked to your identity.
+			</p>
+
+			<h2>Your Videos Stay on Your Device</h2>
+			<p>
+				When you analyze a match clip, the entire computer-vision pipeline — finding the court, tracking players, building heatmaps — runs locally on your iPhone's chip. The video is read from your photo library, processed on the device, and never uploaded anywhere. We could not look at your footage if we wanted to; there is no server that receives it.
+			</p>
+			<ul>
+				<li><strong>Match videos</strong> — remain in your photo library; the app reads them only to analyze them on-device.</li>
+				<li><strong>Analysis results</strong> — heatmaps, positioning statistics, and verdicts are stored locally on your iPhone. We have no copy.</li>
+				<li><strong>Your survey answers and saved filming spots</strong> — stored locally.</li>
+			</ul>
+			<p>
+				Deleting the app deletes all of this data permanently.
+			</p>
+
+			<h2>What Is Sent to Generate the Coach Verdict</h2>
+			<p>
+				The written coaching feedback is worded by an AI language model (Anthropic's Claude). To generate it, the app sends <strong>numbers only</strong> through our own server (a Firebase Cloud Function hosted in the EU, region europe-west1): the measured statistics from your analysis — for example "time at net: 22%", "middle open: 41%" — together with the detected weakness categories and your app language. No video, no images, no frames, and no personal information are ever included.
+			</p>
+			<p>
+				This data is used only to word your verdict and is not stored on our servers. Per <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank" rel="noopener noreferrer">Anthropic's commercial terms</a>, API data is not used to train their models. If the request fails or you are offline, the app writes the verdict locally instead — the feature degrades, your data does not.
+			</p>
+
+			<h2>Other People in Your Videos</h2>
+			<p>
+				Padel is played four to a court, so your clips will usually show other players. Because analysis is on-device and videos are never uploaded, nobody's footage reaches us. The app tracks players as anonymous positions on a court diagram — it does not recognize faces or identify anyone. You are responsible for filming in line with your club's rules and local law, and for letting the people you film know; see the filming guide in the app.
+			</p>
+
+			<h2>Analytics</h2>
+			<p>
+				We use Firebase Analytics to understand which features are used — analyses completed, drills marked done, screens visited. These events carry numbers and flags only (for example "analysis completed, 4 players tracked") and never include video, positions, statistics, or verdict content. PadelIQ does not use the advertising identifier (IDFA) and does not show ads.
+			</p>
+
+			<h2>Purchases</h2>
+			<p>
+				All payments are processed by Apple through the App Store. We never see your payment details. We use RevenueCat to manage subscription status; RevenueCat receives an anonymous identifier and purchase receipts — no personal information. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat's privacy policy</a>.
+			</p>
+
+			<h2>Third-Party Services</h2>
+			<ul>
+				<li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase</a> — backend hosting (EU region), analytics, app integrity (App Check)</li>
+				<li><a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">Anthropic</a> — AI verdict wording (receives statistics only, never video)</li>
+				<li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat</a> — subscription management</li>
+			</ul>
+
+			<h2>Photo Library Access</h2>
+			<p>
+				The app uses Apple's photo picker to let you choose a match clip. With this picker, PadelIQ only ever receives the specific video you select — it cannot browse your library, and no library permission prompt is needed. The app does not use your camera; you film with your normal Camera app.
+			</p>
+
+			<h2>Children's Privacy</h2>
+			<p>
+				PadelIQ is not directed at children under 13, and we do not knowingly collect personal information from children.
+			</p>
+
+			<h2>Your Rights</h2>
+			<ul>
+				<li>Delete the app at any time — your analyses, statistics, and preferences are removed with it</li>
+				<li>Manage or cancel subscriptions in your device Settings → Apple Account → Subscriptions</li>
+				<li>EU/EEA users: because verdict generation is transient and videos never leave your device, there is no server-side profile to access or export; contact us with any GDPR request and we will honor it</li>
+			</ul>
+
+			<h2>Changes to This Policy</h2>
+			<p>
+				We may update this Privacy Policy from time to time. Changes are reflected in the "Last updated" date at the top of this page.
+			</p>
+
+			<h2>Contact</h2>
+			<p>
+				Questions about this policy? Contact us through the <a href="/apps/padeliq-support">support page</a> or via the App Store listing.
+			</p>
+
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">&larr; Back to tskulbru.dev</a> |
+					<a href="/apps/padeliq-support" class="hover:text-orange-600 transition-colors">Support</a> |
+					<a href="/apps/padeliq-terms" class="hover:text-orange-600 transition-colors">Terms of Service</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>

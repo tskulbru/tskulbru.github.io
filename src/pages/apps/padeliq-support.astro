@@ -1,0 +1,115 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'PadelIQ - Support';
+const description = 'Support and help for PadelIQ: AI Match Analysis';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>PadelIQ Support</h1>
+			<p class="text-lg text-gray-600 dark:text-gray-400">
+				Get help with PadelIQ: AI Match Analysis
+			</p>
+
+			<h2>Filming Your Match</h2>
+
+			<h3>How do I film so the analysis works?</h3>
+			<ul>
+				<li>Prop your phone <strong>behind the court, centred on the back glass</strong> — the classic "phone against the fence" spot</li>
+				<li>About <strong>2 meters high</strong> — chest height minimum</li>
+				<li><strong>Landscape</strong>, with the main 1&times; camera — not ultra-wide (0.5&times;), which bends the court lines</li>
+				<li>One continuous take, phone propped and still, 1–10 minutes of play</li>
+			</ul>
+			<p>
+				Film with your normal Camera app; PadelIQ reads the clip afterwards. The full guide with pictures is in the app under Settings → Filming guide.
+			</p>
+
+			<h3>The app says my clip can't be analyzed. Why?</h3>
+			<p>
+				The most common reasons, in order: the clip is portrait (both side walls get cut off — film landscape), the resolution is below 720p (players get too small to track), or the clip is under 20 seconds (not enough play to read patterns from). The app tells you which one it hit and what to change.
+			</p>
+
+			<h3>Far-side players are missing from my results.</h3>
+			<p>
+				Usually resolution — film in 1080p or higher. Players on the far side are seen through the net, so they need the extra pixels.
+			</p>
+
+			<h3>What does "camera moved" mean?</h3>
+			<p>
+				The analysis is tied to one camera position for the whole clip. If the phone was picked up, bumped, or re-propped mid-recording, the court mapping stops matching. Prop the phone, press record, and don't touch it until the rally is over.
+			</p>
+
+			<h2>Analysis &amp; Results</h2>
+
+			<h3>Do my videos get uploaded?</h3>
+			<p>
+				No. The entire analysis runs on your iPhone — your footage never leaves your device. Only the measured statistics (numbers like "time at net: 22%") are sent to word your coaching verdict. Details in the <a href="/apps/padeliq-privacy">Privacy Policy</a>.
+			</p>
+
+			<h3>What is the sample match?</h3>
+			<p>
+				If you haven't filmed a match yet, the onboarding can show you a pre-analyzed demo match so you see exactly what you'll get. It replays stored analysis data — your own clips are always analyzed for real, on your device.
+			</p>
+
+			<h3>How accurate are the numbers?</h3>
+			<p>
+				Positioning statistics are computed from computer-vision tracking and are approximate — good enough to show patterns (where you spend your time, what's left open), not measurements to the centimeter. Longer clips give steadier numbers; a 30-second clip shows a snapshot, a 10-minute clip shows habits.
+			</p>
+
+			<h3>The verdict feels generic or didn't load.</h3>
+			<p>
+				The written verdict is worded live by an AI service. If you're offline or the service is briefly busy, the app writes it locally from the same measured findings — nothing is lost. The numbers behind it are identical either way.
+			</p>
+
+			<h2>Purchases &amp; Subscriptions</h2>
+
+			<h3>What's free and what's paid?</h3>
+			<p>
+				Your first analysis (or the sample match) runs before any payment, so you always see the product working first. PadelIQ Pro unlocks unlimited match analysis, the full verdict breakdown, and drill recommendations — available as an annual plan (with a 3-day free trial) or monthly.
+			</p>
+
+			<h3>How do I cancel my subscription?</h3>
+			<p>
+				Open your device Settings → your Apple Account → Subscriptions → PadelIQ, and tap Cancel. You keep access until the end of the paid period. Deleting the app does not cancel a subscription.
+			</p>
+
+			<h3>How do I restore my purchases?</h3>
+			<p>
+				On the paywall or in the app's settings, tap "Restore purchases" while signed into the same Apple Account you bought with.
+			</p>
+
+			<h3>How do I get a refund?</h3>
+			<p>
+				Apple handles all payments and refunds: visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a>.
+			</p>
+
+			<h2>Data &amp; Privacy</h2>
+
+			<h3>How do I delete my data?</h3>
+			<p>
+				Everything — analyses, heatmaps, statistics, saved filming spots — lives on your device. Deleting the app deletes it all. There is no account and no server-side profile.
+			</p>
+
+			<h3>Do I need permission to film other players?</h3>
+			<p>
+				You should always tell the people on court that you're filming, and follow your club's rules and local law. PadelIQ never uploads the footage and doesn't identify anyone in it, but the recording itself is your responsibility.
+			</p>
+
+			<h2>Still Need Help?</h2>
+			<p>
+				Contact us through the App Store listing's support link, and include your iOS version and a description of the issue. We aim to respond within 48 hours.
+			</p>
+
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">&larr; Back to tskulbru.dev</a> |
+					<a href="/apps/padeliq-privacy" class="hover:text-orange-600 transition-colors">Privacy Policy</a> |
+					<a href="/apps/padeliq-terms" class="hover:text-orange-600 transition-colors">Terms of Service</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>
