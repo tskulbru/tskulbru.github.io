@@ -10,6 +10,7 @@ image:
   src: '/images/portfolio/padeliq-icon-small.png'
   alt: 'PadelIQ app icon'
 tags: ['swift', 'ios', 'coreml', 'computer-vision', 'ai', 'side-project']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mtmnclhsn326'
 ---
 
 Walk past any padel court and you'll see the same thing: a phone propped against the back glass, recording. Players film their matches all the time. Then the clip sits in the camera roll, gets watched once, maybe gets sent to the group chat, and that's it.
