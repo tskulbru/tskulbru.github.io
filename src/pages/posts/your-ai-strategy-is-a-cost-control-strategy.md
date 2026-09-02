@@ -10,6 +10,7 @@ image:
   src: '/images/ai-cost-control-hero.webp'
   alt: 'Split office scene: on the left a manager padlocks an AI orb inside a glass box next to a usage meter, on the right one person works at a desk while AI orbs move freely around the room reading notes and diagrams'
 tags: ['ai', 'leadership', 'business', 'strategy', 'llm', 'commentary']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3muknjrfk5s2p'
 ---
 
 Nobody at my company thinks about what a token costs. Not the engineers. Not the people outside engineering who use the same tools. I do, once a month, when I open the dashboard. That is deliberate. It is closer to an AI strategy than most of what I hear described as one.
