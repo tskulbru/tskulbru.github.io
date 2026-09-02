@@ -20,3 +20,14 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# local notes / scratch
+IMAGE_GENERATION_GUIDE.md
+SEO_IMPROVEMENTS.md
+linkedin-post-*.md
+
+# editor / tooling
+.cursor/
+
+# firebase
+firebase-debug.log
