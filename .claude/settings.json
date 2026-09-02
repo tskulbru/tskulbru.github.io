@@ -1,0 +1,6 @@
+{
+  "enabledPlugins": {
+    "seo-technical-optimization@claude-code-workflows": true,
+    "seo-content-creation@claude-code-workflows": true
+  }
+}

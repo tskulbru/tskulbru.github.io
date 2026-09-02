@@ -44,6 +44,9 @@ export const AppConfig = {
 		'Azure Cloud Architecture',
 		'DevOps & GitOps Practices',
 		'Database Design & Migrations',
-		'Production System Reliability'
+		'Production System Reliability',
+		'AI Coding Agents & Agentic Workflows',
+		'LLM Application Development',
+		'Model Context Protocol (MCP)'
 	]
 };
