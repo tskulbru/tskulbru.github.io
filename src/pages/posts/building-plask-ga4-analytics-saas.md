@@ -31,7 +31,7 @@ GA4 is powerful. It tracks everything. But it has a fundamental gap: **it doesn'
 
 You can set up custom alerts in GA4, but they're threshold-based. "Alert me when sessions drop below 500." The problem is that 500 sessions might be perfectly normal on a Sunday but catastrophic on a Monday. Static thresholds don't account for natural variation—day-of-week patterns, seasonal trends, gradual growth.
 
-What I wanted was statistical anomaly detection. Not "is this number below X?" but "is this number unusual given the historical pattern?"
+What I wanted was statistical [anomaly detection](https://plask.dev/features/alerts). Not "is this number below X?" but "is this number unusual given the historical pattern?"
 
 I also wanted a single dashboard for all my properties. I run several apps across iOS, Android, and web. Checking each one individually in GA4 is tedious. I wanted one screen that shows all of them with at-a-glance comparison metrics.
 
@@ -46,7 +46,7 @@ The stack:
 - **Next.js 16** with React 19 and Turbopack
 - **Supabase Postgres** via Drizzle ORM
 - **Auth.js v5** with Google OAuth
-- **Claude Haiku** for AI-generated digests and root cause analysis
+- **Claude Haiku** for AI-generated [weekly digests](https://plask.dev/features/digest) and [root cause analysis](https://plask.dev/features/insights)
 - **Stripe** for subscriptions
 - **Resend** with React Email for transactional emails
 - **Recharts** for sparkline charts
@@ -155,7 +155,7 @@ The anomaly detection runs on pure statistics with zero AI cost. Claude is only 
 
 The core insight that drove the whole project: **analytics tools show you what happened, but they don't tell you when something unusual happened.** That's the gap Plask fills. Connect your GA4 properties, and stop manually scanning dashboards every morning. Let the statistics do the watching.
 
-Plask is live at [plask.dev](https://plask.dev).
+Plask is live at [plask.dev](https://plask.dev). The [free tier](https://plask.dev/pricing) covers two GA4 properties, and if you use Claude Code or Cursor you can query your data straight from the editor through the [Plask MCP server](https://plask.dev/mcp). I also wrote up the difference between [GA4's built-in anomaly detection and a dedicated monitor](https://plask.dev/guides/ga4-anomaly-detection) if you want the details.
 
 ---
 
