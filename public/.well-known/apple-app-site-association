@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["ENU8MJCMXV.dev.tskulbru.linetris"],
+        "components": [
+          { "/": "/linetris/c/*" },
+          { "/": "/linetris/r/*" }
+        ]
+      }
+    ]
+  }
+}
