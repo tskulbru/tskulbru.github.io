@@ -3,10 +3,11 @@ import Base from '@/layouts/Base.astro';
 import Section from '@/components/Section.astro';
 
 const title = 'Portfolio';
-const description = '14 shipped apps and projects by Torstein Skulbru — from analytics dashboards and API monitoring tools to mobile apps for iOS and Android, built with Go, TypeScript, Swift, and Kotlin.';
+const description = '15 apps and projects by Torstein Skulbru — from private Git hosting and analytics dashboards to API monitoring tools and mobile apps for iOS and Android, built with Go, Rust, TypeScript, Swift, and Kotlin.';
 
 const siteURL = 'https://tskulbru.dev';
 const portfolioItems = [
+	{ name: 'Smia', description: 'Private Git hosting and CI for European companies. A dedicated Forgejo instance per company on European providers, encrypted at rest, with CI jobs running in isolated Firecracker microVMs. In the making, invite-only.', category: 'DeveloperApplication', os: 'Web', url: 'https://smia.dev' },
 	{ name: 'PadelIQ', description: 'AI match analysis for padel players. Film one rally through the court glass and get a positioning heatmap and three concrete fixes — all computer vision runs on-device, video never leaves the iPhone.', category: 'SportsApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/padeliq-ai-match-analysis/id6796823937' },
 	{ name: 'Plask', description: 'Analytics dashboard with AI insights. Multi-property GA4 dashboard with anomaly detection, AI weekly digests, and root cause analysis.', category: 'BusinessApplication', os: 'Web', url: 'https://plask.dev' },
 	{ name: 'APIDrift', description: 'API breaking change alerts and migration guides. Monitors 25+ APIs daily, uses AI to classify changes by severity, and generates step-by-step migration guides.', category: 'DeveloperApplication', os: 'Web', url: 'https://apidrift.dev' },
@@ -59,6 +60,118 @@ const portfolioSchema = {
 		<p class="text-sm text-gray-600 dark:text-gray-400 pb-8">
 			Apps and projects I've built
 		</p>
+
+		<!-- Smia -->
+		<article class="mb-16">
+			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
+				<h2 class="text-2xl font-bold">Smia</h2>
+				<p class="text-orange-600 font-medium">Your company's Git &amp; CI. Here in Europe.</p>
+			</div>
+
+			<!-- App Icon and Feature Highlights -->
+			<div class="mb-6 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
+				<div class="flex flex-col md:flex-row items-center gap-6">
+					<!-- App Icon -->
+					<div class="flex-shrink-0">
+						<img
+							src="/images/portfolio/smia-icon.png"
+							alt="Smia icon: a dwarf smith with crossed forge hammers"
+							class="w-24 h-24 rounded-2xl shadow-lg"
+						/>
+					</div>
+					<!-- Feature Highlights -->
+					<div class="flex-1 grid grid-cols-2 gap-3 text-sm">
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Dedicated instance per company</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Hosted in the EU or Norway</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Isolated microVM CI jobs</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Backups you hold the key to</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Description with Screenshot -->
+			<div class="text-sm space-y-4 mb-6">
+				<img
+					src="/images/portfolio/smia-hero.png"
+					alt="A repository on a Smia forge: file tree, commit messages and a green CI check on the latest commit"
+					class="float-right ml-4 mb-4 w-48 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+				/>
+				<p>
+					<span class="font-bold text-orange-600">Smia</span> (Norwegian for "the forge") is managed,
+					private Git hosting and CI for European companies. Each company gets its own Forgejo
+					instance on its own VM, hosted by European providers with the EU or Norway as the location,
+					encrypted at rest, and priced per company rather than per seat. It started with a question
+					I kept hearing in security questionnaires: where does our source code live, and who
+					operates the platform? An EU region on a US platform answers the first half only.
+				</p>
+				<p>
+					The parts I build sit around an unmodified Forgejo: a Rust runner that boots a fresh
+					Firecracker microVM for every CI job and destroys it afterwards, a Go control plane that
+					provisions, backs up, restore-tests and offboards instances, and per-company backup keys so a
+					customer's history opens with their key, not ours. Smia runs on Smia: its own source code
+					and CI live on the forge it sells. Currently in the making and invite-only.
+				</p>
+			</div>
+
+			<!-- Tech Stack -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Built with</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Forgejo</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Go</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Rust</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Firecracker</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">KVM</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">OpenTofu</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Caddy</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Stripe</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">bunny.net</span>
+				</div>
+			</div>
+
+			<!-- Platforms -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Platforms</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">Web</span>
+				</div>
+			</div>
+
+			<!-- Links -->
+			<div class="flex flex-wrap gap-4">
+				<a
+					href="https://smia.dev"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+					</svg>
+					Visit smia.dev
+				</a>
+			</div>
+		</article>
 
 		<!-- PadelIQ -->
 		<article class="mb-16">

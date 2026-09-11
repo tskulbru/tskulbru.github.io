@@ -31,7 +31,9 @@ Technical deep-dives on cloud-native architecture, DevOps practices, and mobile 
 - What is fitSystemWindows: https://tskulbru.dev/posts/what-is-and-how-do-i-even-fitsystemwindows/
 
 ### Portfolio
-13 shipped apps and projects: https://tskulbru.dev/portfolio/
+15 apps and projects: https://tskulbru.dev/portfolio/
+- Smia: Private Git hosting & CI for European companies, dedicated Forgejo instance per company, Firecracker microVM CI (Go, Rust) — in the making, invite-only: https://smia.dev
+- PadelIQ: On-device AI match analysis for padel players (iOS, Core ML)
 - Plask: Analytics dashboard with AI insights (Next.js, Supabase, Claude AI)
 - APIDrift: API breaking change alerts & migration guides
 - Linetris: Mobile puzzle game
