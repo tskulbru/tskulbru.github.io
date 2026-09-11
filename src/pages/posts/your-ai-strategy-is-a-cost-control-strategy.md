@@ -4,7 +4,7 @@ title: 'Your AI Strategy Is a Cost-Control Strategy'
 pubDate: 2026-09-02
 description: 'Token budgets, sandboxes, and who gets the frontier model. The three things leaders ask about most are the three signs a company is running AI as a cost centre. Here is what it looks like when the business runs on it instead.'
 author: 'Torstein Skulbru'
-isPinned: true
+isPinned: false
 excerpt: 'Most companies are measuring AI by how little it costs. The ones pulling ahead are measuring it by how much of the company it can run.'
 image:
   src: '/images/ai-cost-control-hero.webp'

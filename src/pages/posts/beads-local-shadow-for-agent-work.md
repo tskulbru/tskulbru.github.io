@@ -4,7 +4,7 @@ title: 'I Lost Track of What My Agents Were Doing, So I Gave Them a Shared Noteb
 pubDate: 2026-09-11
 description: 'Running parallel Claude Code sessions across a dozen repos, I kept losing the thread of long efforts that branched into many PRs and months of blockers. GitHub was the wrong place for in-flight state, a knowledge base like gbrain answered the wrong question, and a dashboard would only have fixed one of three problems. What I needed was something in between. This is how I landed on Beads, added mardi-gras on top, and why Gas Town is on the horizon but not on the roadmap.'
 author: 'Torstein Skulbru'
-isPinned: false
+isPinned: true
 excerpt: "My agents weren't the bottleneck. I was, holding the dependency graph of six months of branching work in my head. The fix wasn't a better wiki or more GitHub comments. It was a private work graph that sits between the two."
 image:
   src: '/images/beads-local-shadow-hero.webp'

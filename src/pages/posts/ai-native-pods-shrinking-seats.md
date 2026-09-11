@@ -4,7 +4,7 @@ title: 'AI-Native Pods and the Shrinking Number of Seats'
 pubDate: 2026-05-08
 description: 'This week''s tech layoffs aren''t just about cost-cutting. They''re a structural reorganization toward AI-native pods — the working shape solo builders have lived in for years. The seats disappearing belong to people who can''t operate the system.'
 author: 'Torstein Skulbru'
-isPinned: true
+isPinned: false
 excerpt: 'Coinbase, Microsoft, Oracle. Same week, same explanation. The headline is layoffs. The actual story is the team being rebuilt around the agent.'
 image:
   src: '/images/ai-pods-hero.webp'
