@@ -10,6 +10,7 @@ image:
   src: '/images/beads-local-shadow-hero.webp'
   alt: 'A dense pile of brightly coloured beads in red, pink, yellow, blue, green and white, seen from above'
 tags: ['claude-code', 'ai', 'agents', 'beads', 'developer-tools', 'productivity', 'workflow']
+blueskyUri: 'at://did:plc:rmnykyqh3zleost7ii4qe5nc/app.bsky.feed.post/3mvbck2lxnc2l'
 ---
 
 I live in tmux. On a normal day I have four tmux sessions open, roughly one per area of work, and each of them holds somewhere between twenty and thirty windows with a Claude Code chat in it. That's close to a hundred conversations, spread over a platform of 30-plus Go services, a mobile app, infrastructure repos and a data pipeline. At any moment a handful are actively working: one implementing, one reviewing PRs, one babysitting a deploy, one halfway through an investigation I'll get back to after lunch. The rest are parked, each holding context I don't want to lose. The agents are fine with this. The part that broke was me.
