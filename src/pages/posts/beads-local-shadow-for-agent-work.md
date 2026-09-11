@@ -94,11 +94,11 @@ Or in Claude's words: GitHub issues are for the world. Beads is your private not
 
 A few decisions made this work in practice:
 
-- **One shared database.** I start every session from an umbrella directory that isn't itself a git repo, so the per-repo discovery Beads does by default didn't fit. One `BEADS_DIR` environment variable in the Claude Code settings points every session, subagent and worktree at the same database. Local only, no sync.
-- **Efforts and tasks.** Long-running efforts are top-level beads. Tasks hang under them with a `repo:<name>` label and an external ref to the GitHub issue or PR. A few extra labels (`human-gate`, `needs-verification`, `destructive`, `deadline`) mark the things I actually need to act on.
-- **The database is the one in charge.** I'd wanted an "agent in charge" per repo. Claude pointed out that can't exist in Claude Code, because every agent dies with its session. What survives is the database. So every agent run is bookended instead: at the start it finds the bead, checks `bd blocked` and claims it with `bd update --claim`; at the end it writes what happened into the bead's notes and closes it or marks it blocked.
-- **GitHub gets one comment.** Each issue gets a single status comment with a hidden marker, edited in place. Stakeholders get a current summary without a comment per session.
-- **A handful of verbs.** After the first hour I admitted "i dont quite understand how to use all of this." Day to day it comes down to a few `bd` commands: `bd ready` for what can move now, `bd blocked` for what can't and why, `bd show <id>` to load a bead's history into a fresh session, and `bd note` and `bd close` to leave the trail behind.
+- **One shared database:** I start every session from an umbrella directory that isn't itself a git repo, so the per-repo discovery Beads does by default didn't fit. One `BEADS_DIR` environment variable in the Claude Code settings points every session, subagent and worktree at the same database. Local only, no sync.
+- **Efforts and tasks:** long-running efforts are top-level beads. Tasks hang under them with a `repo:<name>` label and an external ref to the GitHub issue or PR. A few extra labels (`human-gate`, `needs-verification`, `destructive`, `deadline`) mark the things I actually need to act on.
+- **The database is the one in charge:** I'd wanted an "agent in charge" per repo. Claude pointed out that can't exist in Claude Code, because every agent dies with its session. What survives is the database. So every agent run is bookended instead: at the start it finds the bead, checks `bd blocked` and claims it with `bd update --claim`; at the end it writes what happened into the bead's notes and closes it or marks it blocked.
+- **GitHub gets one comment:** each issue gets a single status comment with a hidden marker, edited in place. Stakeholders get a current summary without a comment per session.
+- **A handful of verbs:** after the first hour I admitted "i dont quite understand how to use all of this." Day to day it comes down to a few `bd` commands: `bd ready` for what can move now, `bd blocked` for what can't and why, `bd show <id>` to load a bead's history into a fresh session, and `bd note` and `bd close` to leave the trail behind.
 
 Seeding ten efforts, about 130 beads so far, was done by parallel subagents reading memory and live GitHub. Even that was useful: it surfaced a PR that had been in conflict for a month and a rollout that was a month further along than I remembered.
 
@@ -115,11 +115,11 @@ The biggest open question is that my setup is local. It's one database on one la
 
 My first assumption was that Beads simply can't share, short of pointing everyone at the same SQLite file somehow. That turns out to be out of date. Current Beads stores everything in [Dolt](https://github.com/dolthub/dolt), a SQL database with Git-style version control built in, and sharing is part of the design:
 
-- **Remotes.** `bd dolt remote add`, then `bd dolt push` and `bd dolt pull`, with Git-like merges of the issue data. A shared remote on DoltHub, a self-hosted server or cloud storage turns a personal database into a team one.
-- **A shared server.** Beads already talks to a `dolt sql-server` under the hood. Point everyone's `host` setting at one shared server and you have one live database instead of copies to sync.
-- **Federation.** `bd federation` syncs separate workspaces as peers, each keeping its own database but exchanging updates.
+- **Remotes:** `bd dolt remote add`, then `bd dolt push` and `bd dolt pull`, with Git-like merges of the issue data. A shared remote on DoltHub, a self-hosted server or cloud storage turns a personal database into a team one.
+- **A shared server:** Beads already talks to a `dolt sql-server` under the hood. Point everyone's `host` setting at one shared server and you have one live database instead of copies to sync.
+- **Federation:** `bd federation` syncs separate workspaces as peers, each keeping its own database but exchanging updates.
 
-I haven't tried any of these. I kept it local on purpose while testing, so I can't say how well merges behave when two people edit the same effort. And the harder question isn't technical. My notes were written for me: half-formed doubts, "blocked until I decide," links to chats. Sharing the database means deciding which parts of the in-between layer belong to the team and which stay in my own notebook. That's the next experiment, not something this post can answer.
+I haven't tried any of these. I kept it local on purpose while testing, so I can't say how well merges behave when two people edit the same effort. The harder question is what to share. My notes were written for me: half-formed doubts, "blocked until I decide," links to chats. Sharing the database means deciding which parts of the in-between layer belong to the team and which stay in my own notebook. That's the next experiment.
 
 ## Adding mardi-gras
 
@@ -136,7 +136,7 @@ mg can do more than look, though. It can "sling" a bead straight to an agent, an
 
 [Gas Town](https://github.com/gastownhall/gastown) is Yegge's multi-agent orchestrator built on the same Beads underneath, plus resident processes. When I asked how it fit, Claude's answer was that it's the fully built version of what we'd assembled by hand in an afternoon. Our effort bead is a convoy. The bookkeeping around each agent run is the Witness. Handing an issue to implementation is slinging to a polecat. Shepherding a PR to merge is the Refinery.
 
-It's not for now, and the reasons are specific:
+It's not for now, for three reasons:
 
 - **It replaces the session model I work in.** I drive my sessions. Gas Town runs them.
 - **It's built for unattended throughput**, twenty or thirty workers. My problem was visibility across a few dozen tmux windows I'm steering myself.
@@ -146,11 +146,11 @@ But the reason it's on the horizon at all goes back to the autonomy problem from
 
 Put together, that's something I couldn't honestly say before: if I wanted to, I could fire off a batch of work overnight and be more confident it would come out right than I would have been doing it half-supervised during the day. The agents wouldn't be guessing about the context. They'd be reading it.
 
-The signal I'm watching for is simple. Right now the bottleneck is me *understanding* where things are, and Beads fixes that. If in a few weeks the bottleneck has shifted to me *dispatching* work, if I find myself wishing efforts would advance while I sleep, that's the point to try Gas Town (or Gas City, which mg can also target) on one project. Nothing I've built would be thrown away. The beads carry over.
+What I'm watching for is the bottleneck moving. Right now it's me *understanding* where things are, and Beads fixes that. If in a few weeks the bottleneck has shifted to me *dispatching* work, if I find myself wishing efforts would advance while I sleep, that's the point to try Gas Town (or Gas City, which mg can also target) on one project. Nothing I've built would be thrown away. The beads carry over.
 
 ## What I learned
 
-The honest limit is the one Claude named on day one: the graph is only as good as the habit of adding steps to it. A work graph nobody updates is just a sadder wiki. That's why the updates happen at the start and end of every agent run, not by me remembering.
+The main limit is the one Claude named on day one: the graph is only as good as the habit of adding steps to it. A work graph nobody updates is just a sadder wiki. That's why the updates happen at the start and end of every agent run, not by me remembering.
 
 The bigger lesson is about layers. I went looking for one tool to fix "losing track," and the right answer was to notice it was three problems. A wiki can't know what's blocked. GitHub shouldn't hold my scratch state. A dashboard can only show what's already recorded somewhere. The missing piece was the boring middle: a private, agent-writable notebook that points at GitHub on one side and my memory on the other.
 
