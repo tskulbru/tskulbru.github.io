@@ -1,0 +1,52 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Gutrude - Health Data Policy';
+const description = 'How Gutrude handles your gut-health data: everything stays on your phone';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Gutrude Consumer Health Data Privacy Policy</h1>
+			<p><strong>Version 1.0 · Effective 2026-10-02 · Last updated 2026-10-02</strong></p>
+			<p>This policy is for everyone who uses Gutrude. It meets the Washington My Health My Data Act and similar Nevada and Connecticut rules. It sits beside our <a href="https://tskulbru.dev/gutrude/privacy">Privacy Policy</a>.</p>
+			<p>Published by Torstein Skulbru, Norway (sole proprietor). Contact: <a href="mailto:privacy@tskulbru.dev">privacy@tskulbru.dev</a>.</p>
+			<h2>What we do with health data</h2>
+			<p><strong>Your health data stays on your iPhone.</strong> Gutrude stores it on your device so the app can work for you. It is not sent to us, to our service providers or to anyone else.</p>
+			<h2>1. The consumer health data the app stores on your device</h2>
+			<ul>
+			<li>stool type and colour, the blood question and your answer, urgency, pain and other log fields</li>
+			<li>symptom check-ins</li>
+			<li>meals and food groups</li>
+			<li>your goal answer</li>
+			<li>Trigger Finder (a self-guided food journal) answers, safety-check answers, program progress and results</li>
+			<li>the suspect foods you choose and the patterns found in your own logs</li>
+			</ul>
+			<h2>2. Why the app stores it</h2>
+			<p>Only to run the features you use: logging, the Report Card, patterns, the Trigger Finder, the Doctor Report PDF you choose to make (when available), and export. We do not use it for advertising, profiling for sale, or any other purpose.</p>
+			<h2>3. Sources</h2>
+			<p>You. You enter every item yourself. Gutrude does not read it from HealthKit, other apps, a camera, photos or any other source.</p>
+			<h2>4. Who we share it with</h2>
+			<p><strong>Nobody.</strong> We do not collect this data on a server, so we have no consumer health data to share with a third party, a processor or a service provider. We do not sell it. We do not use geofencing around health facilities.</p>
+			<p>Non-health data reaches our service providers only if you allow it: Google (Analytics, Crashlytics, Remote Config) and RevenueCat. That data never includes a health value. See the Privacy Policy for the exact list.</p>
+			<h2>5. Your consent and how to withdraw it</h2>
+			<p>When you first open Gutrude you confirm you are 16 or older and let the app store this health information on your device. That is your consent to collect it.</p>
+			<p>You can withdraw consent at any time by choosing <strong>Settings &gt; Privacy &gt; Delete all my data</strong>. This removes the health data from your device. You can also delete the app.</p>
+			<p>Usage stats and crash reports are a separate choice. Turn them off in <strong>Settings &gt; Privacy</strong>.</p>
+			<h2>6. Your rights</h2>
+			<p>You can:</p>
+			<ul>
+			<li><strong>Access</strong> your data and get a copy: Settings &gt; Privacy &gt; Export my data.</li>
+			<li><strong>Delete</strong> it: Settings &gt; Privacy &gt; Delete all my data.</li>
+			<li><strong>Correct</strong> it: every log can be edited.</li>
+			<li><strong>Withdraw consent</strong>: as above.</li>
+			<li><strong>Ask us anything</strong> about this policy: <a href="mailto:privacy@tskulbru.dev">privacy@tskulbru.dev</a>. We respond within 45 days.</li>
+			</ul>
+			<p>Because we hold no copy of your health data, access and deletion work on your device. If a request involves the analytics ID or purchase records, we handle it with Google and RevenueCat.</p>
+			<h2>7. Changes</h2>
+			<p>We will date and version every change and ask for your consent again before any new sharing of consumer health data.</p>
+		</article>
+	</Section>
+</Base>

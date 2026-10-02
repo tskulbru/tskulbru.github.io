@@ -1,0 +1,86 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Gutrude - Privacy Policy';
+const description = 'Privacy Policy for Gutrude: Poop Tracker & IBS';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Gutrude Privacy Policy</h1>
+			<p><strong>Version 1.0 · Effective 2026-10-02 · Last updated 2026-10-02</strong></p>
+			<p>Washington, Nevada and Connecticut residents: our <a href="https://tskulbru.dev/gutrude/health-data">Consumer Health Data Privacy Policy</a> explains your health data rights. It applies to everyone.</p>
+			<h2>1. Who we are</h2>
+			<p>Gutrude is published by Torstein Skulbru, Norway (sole proprietor). We are the controller of your data under the GDPR. Privacy contact: <a href="mailto:privacy@tskulbru.dev">privacy@tskulbru.dev</a>.</p>
+			<h2>2. The short version</h2>
+			<ul>
+			<li>Your logs never leave your phone.</li>
+			<li>No ads, no selling, no tracking.</li>
+			<li>Usage stats and crash reports are optional.</li>
+			<li>You can export or delete everything in the app.</li>
+			<li>The app is for ages 16 and up.</li>
+			</ul>
+			<h2>3. Health data the app stores on your device</h2>
+			<p>Gutrude keeps the following on your iPhone, and only there:</p>
+			<ul>
+			<li>stool type and colour, the blood question and your answer, urgency, pain and other fields you add to a log</li>
+			<li>symptom check-ins</li>
+			<li>meals and the food groups they contain, and your portion and time-of-day choices</li>
+			<li>your goal answer from onboarding</li>
+			<li>Trigger Finder answers, safety-check answers, program progress and results</li>
+			<li>the foods you blame as suspects, and the patterns Gutrude finds in your own logs</li>
+			</ul>
+			<p><strong>None of this is sent to us or to anyone else.</strong> There is no account, no cloud copy and no server that holds it. The app does not use HealthKit or iCloud, and it never uses your camera or photos.</p>
+			<p>The data sits in the app's protected storage on your device. It is included in your own encrypted iPhone backup if you have device backups turned on. That backup belongs to you and Apple, not to us. Export or delete it at any time in Settings.</p>
+			<p>We store this data because you ask the app to. The first time you open Gutrude you confirm you are 16 or older and you let the app store this health information on your device. That tap is your consent.</p>
+			<h2>4. Analytics and crash reports</h2>
+			<p>If you allow it, Gutrude uses Google Analytics for Firebase and Firebase Crashlytics. They are off until you answer the first-run screen. In the EEA, the UK and Switzerland they are off by default. In the US they are on by default and you can turn them off. You can change this at any time in Settings &gt; Privacy.</p>
+			<p>What is sent when they are on:</p>
+			<ul>
+			<li>a random app-instance ID (not your name, email or Apple ID) and the app version, device model, iOS version and language</li>
+			<li>a short list of events: onboarding finished; your first entry; that an entry was added (only whether it was a log, a check-in or a meal, and whether it came from the app, the widget or a notification); that you used the quick symptom button (never what you entered); that you shared a card (only which template); which button opened the paywall; that you exported a PDF (only whether the range was 7, 30 or 90 days or custom); that you added a suspect or opened a colour explainer (never which food or colour); which program step you finished (a number)</li>
+			<li>when your 21 Plus days end: whether you were tracking more than three food suspects and whether Gutrude had shown you at least one pattern. Never which food, how many, or how strong</li>
+			<li>purchase events: which product and whether you bought during your 21 Plus days</li>
+			<li>crash reports: the technical trace of a crash. We do not add notes, keys or log lines that contain anything you entered</li>
+			</ul>
+			<p><strong>Never health values.</strong> No stool type, colour, blood answer, symptom, food, food group, grade, result or free text is ever sent. The app can only send events from a fixed list, and every release is tested to prove it.</p>
+			<p>Retention: Google Analytics events are kept for 2 months. Crash reports are kept for about 90 days. To have your analytics data erased from Google's servers, email us the Analytics ID shown in Settings &gt; Privacy. We use Google's deletion API.</p>
+			<p>The app also works fully with usage stats and crash reports turned off.</p>
+			<h2>5. App configuration</h2>
+			<p>Gutrude fetches settings from Firebase Remote Config (for example a kill switch for a broken feature). That request carries a Firebase installation ID, the app version and your language. It does not reveal any hidden feature and it carries nothing you entered.</p>
+			<h2>6. Purchases</h2>
+			<p>Subscriptions are sold through Apple. We use RevenueCat to check what you own. RevenueCat sees an anonymous user ID, your receipt and your subscription status. We do not set any other information about you in RevenueCat: no email, name or health detail.</p>
+			<p>Plus is on for your first 21 days. No card, nothing to cancel. That period is counted on your device. A keychain marker records when your 21 Plus days started; it survives reinstalling and holds nothing else. "Delete all my data" leaves that one marker in place so the 21 days cannot restart. It is never sent anywhere.</p>
+			<h2>7. Who else sees data</h2>
+			<ul>
+			<li><strong>Google</strong> (Firebase Analytics, Crashlytics, Remote Config) and <strong>RevenueCat</strong> process the data in sections 4 to 6 for us, under data processing agreements that give your data the same protection as ours.</li>
+			<li><strong>Apple</strong> handles payments as its own controller.</li>
+			<li>We use <strong>no advertising SDKs and no AI services</strong>. We do not sell or share your data for advertising and we do not track you across apps or websites.</li>
+			<li>We do not receive your health data, so we have nothing health-related to give to anyone else.</li>
+			</ul>
+			<h2>8. Legal bases and transfers</h2>
+			<p>Google and RevenueCat may process data in the United States. They rely on the EU-US Data Privacy Framework or standard contractual clauses.</p>
+			<h2>9. Retention</h2>
+			<h2>10. Your rights</h2>
+			<p>You can ask for access, a copy, correction, erasure, restriction or portability, and you can object to processing. You can withdraw consent at any time.</p>
+			<ul>
+			<li><strong>Access and portability:</strong> Settings &gt; Privacy &gt; Export my data gives you a ZIP of your logs, check-ins, meals and program.</li>
+			<li><strong>Erasure:</strong> Settings &gt; Privacy &gt; Delete all my data wipes the app's data on your device and resets the analytics and purchase identifiers.</li>
+			<li><strong>Correction:</strong> every log can be edited.</li>
+			<li><strong>Withdraw consent:</strong> the toggles in Settings &gt; Privacy take effect immediately. Withdrawing the health consent means deleting your data.</li>
+			<li><strong>Anything else:</strong> email <a href="mailto:privacy@tskulbru.dev">privacy@tskulbru.dev</a>. We answer within 30 days.</li>
+			</ul>
+			<p>You may complain to Datatilsynet (the Norwegian Data Protection Authority) or to your local data protection authority. US residents have the rights described in our <a href="https://tskulbru.dev/gutrude/health-data">Consumer Health Data Privacy Policy</a> and their state's privacy law.</p>
+			<h2>11. Security</h2>
+			<p>Health data stays on your device in protected storage. Everything that does leave the device travels over TLS. We hold no server-side health data, so there is nothing of that kind to breach on our side.</p>
+			<h2>12. Children</h2>
+			<p>Gutrude is for ages 16 and up. If you tap "I'm under 16" on the first screen, nothing is written to the app. The Trigger Finder program is for adults aged 18 and over.</p>
+			<h2>13. If something goes wrong</h2>
+			<p>If personal data is ever exposed by us, we will notify Datatilsynet within 72 hours where the law requires it, and we will tell affected people without undue delay when the risk to them is high.</p>
+			<h2>14. Changes</h2>
+			<p>We version and date this policy. If we ever add a new kind of sharing, such as a new service that receives data, we will ask for your consent again before it starts.</p>
+		</article>
+	</Section>
+</Base>
