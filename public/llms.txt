@@ -34,7 +34,7 @@ Technical deep-dives on cloud-native architecture, DevOps practices, and mobile 
 15 apps and projects: https://tskulbru.dev/portfolio/
 - Smia: Private Git hosting & CI for European companies, dedicated Forgejo instance per company, Firecracker microVM CI (Go, Rust) — in the making, invite-only: https://smia.dev
 - PadelIQ: On-device AI match analysis for padel players (iOS, Core ML)
-- Plask: Analytics dashboard with AI insights (Next.js, Supabase, Claude AI)
+- Plask: Private P&L for makers who run several apps and sites: revenue, ad spend, costs and weekly Focus cards (Next.js, Supabase, Claude AI, MCP): https://plask.dev
 - APIDrift: API breaking change alerts & migration guides
 - Linetris: Mobile puzzle game
 - Stao: Standing desk companion app (iOS)

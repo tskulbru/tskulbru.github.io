@@ -9,7 +9,7 @@ const siteURL = 'https://tskulbru.dev';
 const portfolioItems = [
 	{ name: 'Smia', description: 'Private Git hosting and CI for European companies. A dedicated Forgejo instance per company on European providers, encrypted at rest, with CI jobs running in isolated Firecracker microVMs. In the making, invite-only.', category: 'DeveloperApplication', os: 'Web', url: 'https://smia.dev' },
 	{ name: 'PadelIQ', description: 'AI match analysis for padel players. Film one rally through the court glass and get a positioning heatmap and three concrete fixes — all computer vision runs on-device, video never leaves the iPhone.', category: 'SportsApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/padeliq-ai-match-analysis/id6796823937' },
-	{ name: 'Plask', description: 'Analytics dashboard with AI insights. Multi-property GA4 dashboard with anomaly detection, AI weekly digests, and root cause analysis.', category: 'BusinessApplication', os: 'Web', url: 'https://plask.dev' },
+	{ name: 'Plask', description: 'A private P&L for makers who run more than one product. Revenue from Stripe, RevenueCat and the app stores next to GA4 traffic, minus ad spend and fixed costs, with up to three weekly Focus cards on the products that need you.', category: 'BusinessApplication', os: 'Web', url: 'https://plask.dev' },
 	{ name: 'APIDrift', description: 'API breaking change alerts and migration guides. Monitors 25+ APIs daily, uses AI to classify changes by severity, and generates step-by-step migration guides.', category: 'DeveloperApplication', os: 'Web', url: 'https://apidrift.dev' },
 	{ name: 'Linetris', description: 'Daily line puzzle game. Fill lines on a grid to score combos in a daily puzzle challenge.', category: 'GameApplication', os: ['iOS', 'Android'], url: `${siteURL}/portfolio/` },
 	{ name: 'Neimr', description: 'Norwegian Emergency Info and Map Reporting. Find the perfect name together with your partner.', category: 'UtilitiesApplication', os: ['iOS', 'Android'], url: `${siteURL}/portfolio/` },
@@ -303,7 +303,7 @@ const portfolioSchema = {
 		<article class="mb-16">
 			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
 				<h2 class="text-2xl font-bold">Plask</h2>
-				<p class="text-orange-600 font-medium">Analytics dashboard with AI insights</p>
+				<p class="text-orange-600 font-medium">A private P&amp;L for makers who run more than one product</p>
 			</div>
 
 			<!-- Logo and Feature Highlights -->
@@ -323,25 +323,25 @@ const portfolioSchema = {
 							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 							</svg>
-							<span>Multi-property GA4 dashboard</span>
+							<span>Revenue, costs and profit per product</span>
 						</div>
 						<div class="flex items-center gap-2">
 							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 							</svg>
-							<span>Anomaly detection alerts</span>
+							<span>Weekly Focus cards</span>
 						</div>
 						<div class="flex items-center gap-2">
 							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 							</svg>
-							<span>AI weekly digests</span>
+							<span>Money alerts and digests</span>
 						</div>
 						<div class="flex items-center gap-2">
 							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 							</svg>
-							<span>AI root cause analysis</span>
+							<span>MCP server for AI agents</span>
 						</div>
 					</div>
 				</div>
@@ -349,21 +349,24 @@ const portfolioSchema = {
 
 			<!-- Description with Screenshot -->
 			<div class="text-sm space-y-4 mb-6">
+				<p>
+					<span class="font-bold text-orange-600">Plask</span> is one private profit-and-loss view for every
+					app and site you run. Revenue comes in from Stripe, RevenueCat, App Store Connect and Google Play,
+					traffic from GA4, and ad spend from Apple Search Ads, Meta and Google Ads. Fixed costs come out, and
+					you see revenue, costs and profit per product and for the whole portfolio.
+				</p>
+				<p>
+					Every Monday, up to three Focus cards point at the products that need you, each with the numbers
+					behind it: revenue falling while traffic holds, a product that earns well but gets no attention,
+					ads that cost more than they bring in. Markers on releases and campaigns answer "did it work?", and
+					an MCP server lets Claude Code or Cursor read the P&amp;L and log ad spend.
+				</p>
 				<img
 					src="/images/portfolio/plask-hero.png"
-					alt="Plask dashboard showing GA4 properties with active users and session trends"
-					class="float-right ml-4 mb-4 w-48 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+					alt="Plask portfolio view with sample data: revenue, ad spend, fixed costs and profit across six products, with three Focus cards for the products that need attention this week"
+					class="w-full rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+					loading="lazy"
 				/>
-				<p>
-					<span class="font-bold text-orange-600">Plask</span> turns your Google Analytics 4 data into
-					an intelligent dashboard. Sign in with Google, auto-discover all your GA4 properties, and get a
-					unified view with daily active users, sessions, traffic channels, and period-over-period comparisons.
-				</p>
-				<p>
-					Statistical anomaly detection monitors your metrics and alerts you within 24 hours when something
-					shifts. Every Monday, an AI-generated digest summarizes your week's trends in plain English. When
-					anomalies are detected, AI explains the likely root cause. Alerts route to email, Slack, or Discord.
-				</p>
 			</div>
 
 			<!-- Tech Stack -->
@@ -377,7 +380,9 @@ const portfolioSchema = {
 					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Drizzle ORM</span>
 					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Claude AI</span>
 					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Stripe</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">RevenueCat</span>
 					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">GA4 Data API</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">MCP</span>
 				</div>
 			</div>
 
@@ -404,12 +409,12 @@ const portfolioSchema = {
 					Visit Plask
 				</a>
 				<a
-					href="https://plask.dev/features/alerts"
+					href="https://plask.dev/methodology"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-700 hover:border-orange-600 hover:text-orange-600 transition-colors"
 				>
-					How the anomaly alerts work
+					How the numbers are calculated
 				</a>
 				<a
 					href="/posts/building-plask-ga4-analytics-saas"
