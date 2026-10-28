@@ -31,23 +31,21 @@ Technical deep-dives on cloud-native architecture, DevOps practices, and mobile 
 - What is fitSystemWindows: https://tskulbru.dev/posts/what-is-and-how-do-i-even-fitsystemwindows/
 
 ### Portfolio
-16 apps and projects: https://tskulbru.dev/portfolio/
+14 apps and projects: https://tskulbru.dev/portfolio/
 - follow.fast: Social media posts made from your real app screens and notifications, auto-published to TikTok, Instagram, Facebook, Threads and Bluesky (Next.js, Postgres, Playwright, Claude AI) — private beta: https://follow.fast
 - Smia: Private Git hosting & CI for European companies, dedicated Forgejo instance per company, Firecracker microVM CI (Go, Rust) — in the making, invite-only: https://smia.dev
-- PadelIQ: On-device AI match analysis for padel players (iOS, Core ML)
+- PadelIQ: On-device AI match analysis for padel players (iOS, Core ML): https://apps.apple.com/us/app/padeliq-ai-match-analysis/id6796823937
 - Plask: Private P&L for makers who run several apps and sites: revenue, ad spend, costs and weekly Focus cards (Next.js, Supabase, Claude AI, MCP): https://plask.dev
-- APIDrift: API breaking change alerts & migration guides
-- Linetris: Mobile puzzle game
-- Stao: Standing desk companion app (iOS)
-- MyVisualRoutine: Visual routine planner
-- BiblieWise: Bible study app with AI
-- Mockingjay: Secure video recorder (iOS)
-- NEIMR: Norwegian Emergency Info & Map Reporting
-- Kvile: Lightweight HTTP client library (Go)
-- GraceLock: App lock for Android
-- StartRemoteWork: Remote work resources
-- BuzzBlast: Group notification app
-- IssueFlow: Slack-to-GitHub issue creator
+- APIDrift: API breaking change alerts & migration guides: https://apidrift.dev
+- Linetris: Daily block puzzle game (iOS): https://apps.apple.com/us/app/linetris-daily-block-puzzle/id6759858457
+- Neimr: Baby name matcher for couples, both parents swipe and see the names they both like (iOS): https://apps.apple.com/us/app/neimr-baby-name-matcher/id6758278121
+- BibleWise: Bible quiz game with multiple game modes (iOS): https://apps.apple.com/us/app/biblewise-bible-quiz-game/id6758916009
+- Mockingjay: Secure bodycam with encrypted cloud backup (iOS): https://apps.apple.com/us/app/mockingjay-secure-bodycam/id6758616261
+- GraceLock: Pray before you scroll, locks distracting apps via Screen Time (iOS): https://apps.apple.com/us/app/gracelock-pray-screen-time/id6758113098
+- MyVisualRoutine: Visual schedules and choice boards for autistic and ADHD children (iOS): https://myvisualroutine.com
+- BuzzBlast: Quiz game buzzer for group trivia nights (iOS): https://apps.apple.com/us/app/buzzblast-quiz-buzzer-app/id6757406066
+- Stao: Standing desk reminder (iOS, macOS, Android, Windows, Linux): https://www.stao.app/
+- Kvile: Lightweight desktop HTTP client for .http files (Tauri, Rust; macOS, Windows, Linux): https://kvile.app/
 
 ## Links
 - Website: https://tskulbru.dev

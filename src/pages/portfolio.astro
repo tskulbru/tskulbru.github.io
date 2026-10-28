@@ -3,26 +3,26 @@ import Base from '@/layouts/Base.astro';
 import Section from '@/components/Section.astro';
 
 const title = 'Portfolio';
-const description = '16 apps and projects by Torstein Skulbru — from private Git hosting, social media automation and analytics dashboards to API monitoring tools and mobile apps for iOS and Android, built with Go, Rust, TypeScript, Swift, and Kotlin.';
+const description = '14 apps and projects by Torstein Skulbru — from private Git hosting, social media automation and analytics dashboards to API monitoring tools and mobile apps for iOS and Android, built with Go, Rust, TypeScript, Swift, and Kotlin.';
 
 const siteURL = 'https://tskulbru.dev';
+// JSON-LD only. Keep in sync with the App Store listings (name, genre, platforms, price).
+// Sunset or offline products (StartRemoteWork, IssueFlow) are left out on purpose.
 const portfolioItems = [
-	{ name: 'follow.fast', description: 'Social media posts made from your real app screens. AI drafts slideshows from your screenshots and push notifications every day, then publishes them to TikTok, Instagram, Facebook, Threads and Bluesky. In private beta.', category: 'BusinessApplication', os: 'Web', url: 'https://follow.fast' },
-	{ name: 'Smia', description: 'Private Git hosting and CI for European companies. A dedicated Forgejo instance per company on European providers, encrypted at rest, with CI jobs running in isolated Firecracker microVMs. In the making, invite-only.', category: 'DeveloperApplication', os: 'Web', url: 'https://smia.dev' },
-	{ name: 'PadelIQ', description: 'AI match analysis for padel players. Film one rally through the court glass and get a positioning heatmap and three concrete fixes — all computer vision runs on-device, video never leaves the iPhone.', category: 'SportsApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/padeliq-ai-match-analysis/id6796823937' },
-	{ name: 'Plask', description: 'A private P&L for makers who run more than one product. Revenue from Stripe, RevenueCat and the app stores next to GA4 traffic, minus ad spend and fixed costs, with up to three weekly Focus cards on the products that need you.', category: 'BusinessApplication', os: 'Web', url: 'https://plask.dev' },
-	{ name: 'APIDrift', description: 'API breaking change alerts and migration guides. Monitors 25+ APIs daily, uses AI to classify changes by severity, and generates step-by-step migration guides.', category: 'DeveloperApplication', os: 'Web', url: 'https://apidrift.dev' },
-	{ name: 'Linetris', description: 'Daily line puzzle game. Fill lines on a grid to score combos in a daily puzzle challenge.', category: 'GameApplication', os: ['iOS', 'Android'], url: `${siteURL}/portfolio/` },
-	{ name: 'Neimr', description: 'Norwegian Emergency Info and Map Reporting. Find the perfect name together with your partner.', category: 'UtilitiesApplication', os: ['iOS', 'Android'], url: `${siteURL}/portfolio/` },
-	{ name: 'Biblewise', description: 'Test your Biblical knowledge through fun trivia quizzes with multiple game modes.', category: 'EducationalApplication', os: ['iOS', 'Android'], url: `${siteURL}/portfolio/` },
-	{ name: 'Mockingjay', description: 'Secure video recording with AES-256-GCM encrypted cloud backup. Records video with real-time encryption and secure cloud storage.', category: 'UtilitiesApplication', os: 'iOS', url: `${siteURL}/portfolio/` },
-	{ name: 'GraceLock', description: 'Pray Before You Scroll. App lock that encourages mindful phone usage.', category: 'LifestyleApplication', os: 'Android', url: `${siteURL}/portfolio/` },
-	{ name: 'MyVisualRoutine', description: 'Visual schedules and choice boards for families. Helps children follow daily routines with visual aids.', category: 'EducationalApplication', os: ['iOS', 'Android'], url: `${siteURL}/portfolio/` },
-	{ name: 'StartRemoteWork', description: 'Find your dream remote job worldwide. Aggregates remote job listings from multiple sources.', category: 'BusinessApplication', os: 'Web', url: `${siteURL}/portfolio/` },
-	{ name: 'BuzzBlast', description: 'Turn your iPhone into the ultimate quiz game buzzer for group trivia nights.', category: 'GameApplication', os: 'iOS', url: `${siteURL}/portfolio/` },
-	{ name: 'Stao', description: 'Standing desk companion app. Uses the 20-8-2 pattern to remind you to alternate between standing, sitting, and moving.', category: 'HealthApplication', os: 'iOS', url: `${siteURL}/portfolio/` },
-	{ name: 'Kvile', description: 'Lightweight HTTP debugging client library for Go developers. Simple, composable API for HTTP testing.', category: 'DeveloperApplication', os: 'Web', url: 'https://github.com/tskulbru/kvile' },
-	{ name: 'IssueFlow', description: 'AI-powered Slack to GitHub integration. Turns Slack conversations into structured GitHub issues using AI.', category: 'DeveloperApplication', os: 'Web', url: `${siteURL}/portfolio/` },
+	{ name: 'follow.fast', type: 'WebApplication', description: 'Social media posts made from your real app screens. AI drafts slideshows from your screenshots and push notifications every day, then publishes them to TikTok, Instagram, Facebook, Threads and Bluesky. In private beta.', category: 'BusinessApplication', os: 'Web', url: 'https://follow.fast' },
+	{ name: 'Smia', type: 'WebApplication', description: 'Private Git hosting and CI for European companies. A dedicated Forgejo instance per company on European providers, encrypted at rest, with CI jobs running in isolated Firecracker microVMs. In the making, invite-only.', category: 'DeveloperApplication', os: 'Web', url: 'https://smia.dev' },
+	{ name: 'PadelIQ', type: 'MobileApplication', description: 'AI match analysis for padel players. Film one rally through the court glass and get a positioning heatmap and three concrete fixes — all computer vision runs on-device, video never leaves the iPhone.', category: 'SportsApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/padeliq-ai-match-analysis/id6796823937', price: '0' },
+	{ name: 'Plask', type: 'WebApplication', description: 'A private P&L for makers who run more than one product. Revenue from Stripe, RevenueCat and the app stores next to GA4 traffic, minus ad spend and fixed costs, with up to three weekly Focus cards on the products that need you.', category: 'BusinessApplication', os: 'Web', url: 'https://plask.dev' },
+	{ name: 'APIDrift', type: 'WebApplication', description: 'API breaking change alerts and migration guides. Monitors 25+ APIs daily, uses AI to classify changes by severity, and generates step-by-step migration guides.', category: 'DeveloperApplication', os: 'Web', url: 'https://apidrift.dev' },
+	{ name: 'Linetris', type: 'MobileApplication', description: 'Daily block puzzle game. Place pieces to clear lines and chain combos in a new puzzle every day.', category: 'GameApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/linetris-daily-block-puzzle/id6759858457', price: '0' },
+	{ name: 'Neimr', type: 'MobileApplication', description: 'Baby name matcher for couples. Both parents swipe through names on their own phones, and Neimr shows the names you both like.', category: 'LifestyleApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/neimr-baby-name-matcher/id6758278121', price: '0' },
+	{ name: 'BibleWise', type: 'MobileApplication', description: 'Bible quiz game. Test your Biblical knowledge through trivia quizzes with multiple game modes and levels.', category: 'GameApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/biblewise-bible-quiz-game/id6758916009', price: '0' },
+	{ name: 'Mockingjay', type: 'MobileApplication', description: 'Secure bodycam app. Records video with real-time AES-256-GCM encryption and encrypted cloud backup, so recordings survive even if the phone is taken.', category: 'MultimediaApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/mockingjay-secure-bodycam/id6758616261', price: '0' },
+	{ name: 'GraceLock', type: 'MobileApplication', description: 'Pray before you scroll. Locks distracting apps until you have taken a moment to pray, using Apple Screen Time.', category: 'LifestyleApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/gracelock-pray-screen-time/id6758113098', price: '0' },
+	{ name: 'MyVisualRoutine', type: 'MobileApplication', description: 'Visual schedules and choice boards for autistic and ADHD children. Helps kids follow daily routines with picture-based steps.', category: 'HealthApplication', os: 'iOS', url: 'https://myvisualroutine.com', installUrl: 'https://apps.apple.com/us/app/myvisualroutine-autism-adhd/id6757563805', price: '0' },
+	{ name: 'BuzzBlast', type: 'MobileApplication', description: 'Turn your iPhone into a quiz game buzzer for group trivia nights.', category: 'EntertainmentApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/buzzblast-quiz-buzzer-app/id6757406066', price: '0' },
+	{ name: 'Stao', type: 'SoftwareApplication', description: 'Standing desk reminder. Uses the 20-8-2 pattern to remind you to alternate between sitting, standing and moving.', category: 'HealthApplication', os: ['iOS', 'macOS', 'Android', 'Windows', 'Linux'], url: 'https://www.stao.app/', installUrl: 'https://apps.apple.com/us/app/stao-standing-desk-reminder/id6756825085', price: '2.99' },
+	{ name: 'Kvile', type: 'SoftwareApplication', description: 'Lightweight desktop HTTP client built around plain-text .http files. Offline-first, no account, open source. Built with Tauri and Rust.', category: 'DeveloperApplication', os: ['macOS', 'Windows', 'Linux'], url: 'https://kvile.app/', sameAs: 'https://github.com/tskulbru/kvile', price: '0' },
 ];
 
 const portfolioSchema = {
@@ -35,20 +35,25 @@ const portfolioSchema = {
 		"@type": "ListItem",
 		"position": index + 1,
 		"item": {
-			"@type": "SoftwareApplication",
+			"@type": item.type,
 			"name": item.name,
 			"description": item.description,
 			"applicationCategory": item.category,
 			"operatingSystem": Array.isArray(item.os) ? item.os.join(', ') : item.os,
 			"url": item.url,
+			...(item.installUrl && { "installUrl": item.installUrl }),
+			...(item.sameAs && { "sameAs": item.sameAs }),
 			"author": {
 				"@id": `${siteURL}/#person`
 			},
-			"offers": {
-				"@type": "Offer",
-				"price": "0",
-				"priceCurrency": "USD"
-			}
+			// Only claim a price where one is published; SaaS pricing lives on each product site.
+			...(item.price && {
+				"offers": {
+					"@type": "Offer",
+					"price": item.price,
+					"priceCurrency": "USD"
+				}
+			})
 		}
 	}))
 };
@@ -128,7 +133,7 @@ const portfolioSchema = {
 				</p>
 				<img
 					src="/images/portfolio/followfast-hero.png"
-					alt="follow.fast calendar: a week of scheduled and published carousels, reels and TikTok photo posts for BibleWise, GraceLock, Mockingjay and MyVisualRoutine"
+					alt="follow.fast landing page: &quot;Your app screens, turned into posts that post themselves&quot;, above a fan of real slideshow posts for BibleWise, Mockingjay and MyVisualRoutine"
 					class="w-full rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
 					loading="lazy"
 				/>
@@ -1298,102 +1303,6 @@ const portfolioSchema = {
 			</div>
 		</article>
 
-		<!-- StartRemoteWork -->
-		<article class="mb-16">
-			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
-				<h2 class="text-2xl font-bold">StartRemoteWork</h2>
-				<p class="text-orange-600 font-medium">Find your dream remote job worldwide</p>
-			</div>
-
-			<!-- Logo and Feature Highlights -->
-			<div class="mb-6 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
-				<div class="flex flex-col md:flex-row items-center gap-6">
-					<!-- Logo -->
-					<div class="flex-shrink-0">
-						<img
-							src="/images/portfolio/startremotework-logo.svg"
-							alt="StartRemoteWork logo"
-							class="w-24 h-24 rounded-2xl shadow-lg bg-white p-2"
-						/>
-					</div>
-					<!-- Feature Highlights -->
-					<div class="flex-1 grid grid-cols-2 gap-3 text-sm">
-						<div class="flex items-center gap-2">
-							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-							</svg>
-							<span>196+ remote job listings</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-							</svg>
-							<span>15 job categories</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-							</svg>
-							<span>Multi-source aggregation</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-							</svg>
-							<span>Location-based filtering</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Description with Screenshot -->
-			<div class="text-sm space-y-4 mb-6">
-				<img
-					src="/images/portfolio/startremotework-preview.png"
-					alt="StartRemoteWork homepage showing remote job listings and search functionality"
-					class="float-right ml-4 mb-4 max-w-sm rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
-				/>
-				<p>
-					<span class="font-bold text-orange-600">StartRemoteWork</span> is a remote job board
-					that aggregates remote work opportunities from companies worldwide. With an intuitive
-					search interface and category filters, job seekers can easily find positions in
-					development, design, marketing, customer service, and more.
-				</p>
-				<p>
-					The platform features real-time job aggregation from multiple sources, location-based
-					filtering by country, and a clean, fast interface optimized for job discovery. Built
-					with a focus on performance and SEO to help remote workers find their next opportunity.
-				</p>
-			</div>
-
-			<!-- Tech Stack -->
-			<div class="mb-6">
-				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Built with</h3>
-				<div class="flex flex-wrap gap-2">
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Astro</span>
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">TypeScript</span>
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Cloudflare Pages</span>
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Cloudflare D1</span>
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Cloudflare Workers</span>
-				</div>
-			</div>
-
-			<!-- Links -->
-			<div class="flex flex-wrap gap-4">
-				<a
-					href="https://startremote.work"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors"
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-					</svg>
-					Visit StartRemoteWork
-				</a>
-			</div>
-		</article>
-
 		<!-- BuzzBlast -->
 		<article class="mb-16">
 			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
@@ -1472,7 +1381,6 @@ const portfolioSchema = {
 				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Platforms</h3>
 				<div class="flex flex-wrap gap-2">
 					<span class="px-3 py-1 text-xs rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">iOS</span>
-					<span class="px-3 py-1 text-xs rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">Android (Beta)</span>
 				</div>
 			</div>
 
@@ -1488,17 +1396,6 @@ const portfolioSchema = {
 						<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
 					</svg>
 					App Store
-				</a>
-				<a
-					href="https://groups.google.com/g/buzzblast-testers"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-green-600 hover:text-green-600 transition-colors"
-				>
-					<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-						<path d="M18.4395 5.5586c-.675 1.1664-1.352 2.3318-2.0274 3.498-.0366-.0155-.0742-.0286-.1113-.043-1.8249-.6957-3.484-.8-4.42-.787-1.8551.0185-3.3544.4643-4.2597.8203-.084-.1494-1.7526-3.021-2.0215-3.4864a1.1451 1.1451 0 0 0-.1406-.1914c-.3312-.364-.9054-.4859-1.379-.203-.475.282-.7136.9361-.3886 1.5019 1.9466 3.3696-.0966-.2158 1.9473 3.3593.0172.031-.4946.2642-1.3926 1.0177C2.8987 12.176.452 14.772 0 18.9902h24c-.119-1.1108-.3686-2.099-.7461-3.0683-.7438-1.9118-1.8435-3.2928-2.7402-4.1836a12.1048 12.1048 0 0 0-2.1309-1.6875c.6594-1.122 1.312-2.2559 1.9649-3.3848.2077-.3615.1886-.7956-.0079-1.1191a1.1001 1.1001 0 0 0-.8515-.5332c-.5225-.0536-.9392.3128-1.0488.5449zm-.0391 8.461c.3944.5926.324 1.3306-.1563 1.6503-.4799.3197-1.188.0985-1.582-.4941-.3944-.5927-.324-1.3307.1563-1.6504.4727-.315 1.1812-.1086 1.582.4941zM7.207 13.5273c.4803.3197.5506 1.0577.1563 1.6504-.394.5926-1.1038.8138-1.584.4941-.48-.3197-.5503-1.0577-.1563-1.6504.4008-.6021 1.1087-.8106 1.584-.4941z"/>
-					</svg>
-					Android Beta
 				</a>
 			</div>
 		</article>
@@ -1731,132 +1628,6 @@ const portfolioSchema = {
 				</a>
 				<a
 					href="/posts/building-kvile-lightweight-http-client"
-					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-orange-600 hover:text-orange-600 transition-colors"
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-					</svg>
-					Read the story
-				</a>
-			</div>
-		</article>
-
-		<!-- IssueFlow -->
-		<article class="mb-16">
-			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
-				<h2 class="text-2xl font-bold">IssueFlow</h2>
-				<p class="text-orange-600 font-medium">AI-powered Slack to GitHub integration</p>
-			</div>
-
-			<!-- Visual Flow Diagram -->
-			<div class="mb-6 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
-				<div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-					<!-- Slack Icon -->
-					<div class="flex flex-col items-center">
-						<div class="w-16 h-16 bg-white dark:bg-gray-700 rounded-xl shadow-md flex items-center justify-center">
-							<svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
-								<path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" fill="#E01E5A"/>
-							</svg>
-						</div>
-						<span class="mt-2 text-xs text-gray-500 dark:text-gray-400">Slack</span>
-					</div>
-					<!-- Arrow -->
-					<div class="text-orange-600">
-						<svg class="w-8 h-8 rotate-90 md:rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-						</svg>
-					</div>
-					<!-- AI/Brain Icon -->
-					<div class="flex flex-col items-center">
-						<div class="w-16 h-16 bg-orange-600 rounded-xl shadow-md flex items-center justify-center">
-							<svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-							</svg>
-						</div>
-						<span class="mt-2 text-xs text-gray-500 dark:text-gray-400">AI</span>
-					</div>
-					<!-- Arrow -->
-					<div class="text-orange-600">
-						<svg class="w-8 h-8 rotate-90 md:rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-						</svg>
-					</div>
-					<!-- GitHub Icon -->
-					<div class="flex flex-col items-center">
-						<div class="w-16 h-16 bg-white dark:bg-gray-700 rounded-xl shadow-md flex items-center justify-center">
-							<svg class="w-10 h-10 text-gray-900 dark:text-white" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-							</svg>
-						</div>
-						<span class="mt-2 text-xs text-gray-500 dark:text-gray-400">GitHub</span>
-					</div>
-				</div>
-			</div>
-
-			<!-- Description -->
-			<div class="text-sm space-y-4 mb-6">
-				<p>
-					<span class="font-bold text-orange-600">IssueFlow</span> transforms your team's Slack
-					discussions into perfectly structured GitHub issues with the power of AI. Simply mention
-					the bot in any Slack thread, and it analyzes the conversation context to generate
-					production-ready issues in seconds.
-				</p>
-				<p>
-					The platform eliminates manual context-switching between Slack and GitHub, ensuring no
-					ideas get lost in chat history. Features include intelligent AI analysis of conversation
-					threads, one-click issue creation with human approval, and detailed analytics to track
-					team productivity.
-				</p>
-			</div>
-
-			<!-- Tech Stack -->
-			<div class="mb-6">
-				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Built with</h3>
-				<div class="flex flex-wrap gap-2">
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Next.js 15</span>
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">TypeScript</span>
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Supabase</span>
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">OpenAI</span>
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Slack API</span>
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">GitHub API</span>
-					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Stripe</span>
-				</div>
-			</div>
-
-			<!-- Key Stats -->
-			<div class="mb-6">
-				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Key metrics</h3>
-				<div class="flex flex-wrap gap-4 text-sm">
-					<div class="flex items-center gap-2">
-						<span class="text-orange-600 font-bold">95%</span>
-						<span class="text-gray-600 dark:text-gray-400">success rate</span>
-					</div>
-					<div class="flex items-center gap-2">
-						<span class="text-orange-600 font-bold">&lt;10s</span>
-						<span class="text-gray-600 dark:text-gray-400">processing time</span>
-					</div>
-					<div class="flex items-center gap-2">
-						<span class="text-orange-600 font-bold">99.9%</span>
-						<span class="text-gray-600 dark:text-gray-400">uptime SLA</span>
-					</div>
-				</div>
-			</div>
-
-			<!-- Links -->
-			<div class="flex flex-wrap gap-4">
-				<a
-					href="https://issueflow.io/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors"
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-					</svg>
-					Visit IssueFlow
-				</a>
-				<a
-					href="/posts/how-i-built-issueflow-turn-slack-conversations-into-github-issues-with-ai"
 					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-orange-600 hover:text-orange-600 transition-colors"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
