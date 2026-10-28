@@ -3,10 +3,11 @@ import Base from '@/layouts/Base.astro';
 import Section from '@/components/Section.astro';
 
 const title = 'Portfolio';
-const description = '15 apps and projects by Torstein Skulbru — from private Git hosting and analytics dashboards to API monitoring tools and mobile apps for iOS and Android, built with Go, Rust, TypeScript, Swift, and Kotlin.';
+const description = '16 apps and projects by Torstein Skulbru — from private Git hosting, social media automation and analytics dashboards to API monitoring tools and mobile apps for iOS and Android, built with Go, Rust, TypeScript, Swift, and Kotlin.';
 
 const siteURL = 'https://tskulbru.dev';
 const portfolioItems = [
+	{ name: 'follow.fast', description: 'Social media posts made from your real app screens. AI drafts slideshows from your screenshots and push notifications every day, then publishes them to TikTok, Instagram, Facebook, Threads and Bluesky. In private beta.', category: 'BusinessApplication', os: 'Web', url: 'https://follow.fast' },
 	{ name: 'Smia', description: 'Private Git hosting and CI for European companies. A dedicated Forgejo instance per company on European providers, encrypted at rest, with CI jobs running in isolated Firecracker microVMs. In the making, invite-only.', category: 'DeveloperApplication', os: 'Web', url: 'https://smia.dev' },
 	{ name: 'PadelIQ', description: 'AI match analysis for padel players. Film one rally through the court glass and get a positioning heatmap and three concrete fixes — all computer vision runs on-device, video never leaves the iPhone.', category: 'SportsApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/padeliq-ai-match-analysis/id6796823937' },
 	{ name: 'Plask', description: 'A private P&L for makers who run more than one product. Revenue from Stripe, RevenueCat and the app stores next to GA4 traffic, minus ad spend and fixed costs, with up to three weekly Focus cards on the products that need you.', category: 'BusinessApplication', os: 'Web', url: 'https://plask.dev' },
@@ -60,6 +61,120 @@ const portfolioSchema = {
 		<p class="text-sm text-gray-600 dark:text-gray-400 pb-8">
 			Apps and projects I've built
 		</p>
+
+		<!-- follow.fast -->
+		<article class="mb-16">
+			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
+				<h2 class="text-2xl font-bold">follow.fast</h2>
+				<p class="text-orange-600 font-medium">Your app screens, turned into posts that post themselves</p>
+			</div>
+
+			<!-- Logo and Feature Highlights -->
+			<div class="mb-6 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
+				<div class="flex flex-col md:flex-row items-center gap-6">
+					<!-- Logo -->
+					<div class="flex-shrink-0">
+						<img
+							src="/images/portfolio/followfast-icon.png"
+							alt="follow.fast logo: two white chevrons on a pink rounded square"
+							class="w-24 h-24 rounded-2xl shadow-lg"
+						/>
+					</div>
+					<!-- Feature Highlights -->
+					<div class="flex-1 grid grid-cols-2 gap-3 text-sm">
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Slideshows from real app screens</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Publishes to 5 platforms</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Approve in bulk or autopilot</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Learns which formats work</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Description with Screenshot -->
+			<div class="text-sm space-y-4 mb-6">
+				<p>
+					<span class="font-bold text-orange-600">follow.fast</span> runs social media for apps. Paste an
+					App Store link and it pulls in the name, icon, description and screenshots. Every day it drafts
+					slideshow posts from the app's real screens and the push notifications the app really sends,
+					rendered on a phone in the scene, and publishes them to TikTok, Instagram, Facebook, Threads and
+					Bluesky. Approve the queue with one click, or switch on autopilot.
+				</p>
+				<p>
+					I built it because I ship apps and never had time to post about them. It has posted daily for
+					four of my own apps since October 2026, across twelve slideshow formats: persona stories,
+					notification stories, listicles, myth vs fact and more. Formats that beat the median get picked
+					more often and the rest get retired. Any slide can be edited before it goes out, and the 4:5 feed
+					and 9:16 TikTok versions update together. Currently in private beta.
+				</p>
+				<img
+					src="/images/portfolio/followfast-hero.png"
+					alt="follow.fast calendar: a week of scheduled and published carousels, reels and TikTok photo posts for BibleWise, GraceLock, Mockingjay and MyVisualRoutine"
+					class="w-full rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+					loading="lazy"
+				/>
+			</div>
+
+			<!-- Tech Stack -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Built with</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Next.js 16</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">React 19</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">TypeScript</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Postgres</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Drizzle ORM</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">pg-boss</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Playwright</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Claude AI</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Stripe</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Cloudflare R2</span>
+				</div>
+			</div>
+
+			<!-- Platforms -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Platforms</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">Web</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">SaaS</span>
+				</div>
+			</div>
+
+			<!-- Links -->
+			<div class="flex flex-wrap gap-4">
+				<a
+					href="https://follow.fast"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+					</svg>
+					Visit follow.fast
+				</a>
+			</div>
+		</article>
 
 		<!-- Smia -->
 		<article class="mb-16">

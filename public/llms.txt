@@ -31,7 +31,8 @@ Technical deep-dives on cloud-native architecture, DevOps practices, and mobile 
 - What is fitSystemWindows: https://tskulbru.dev/posts/what-is-and-how-do-i-even-fitsystemwindows/
 
 ### Portfolio
-15 apps and projects: https://tskulbru.dev/portfolio/
+16 apps and projects: https://tskulbru.dev/portfolio/
+- follow.fast: Social media posts made from your real app screens and notifications, auto-published to TikTok, Instagram, Facebook, Threads and Bluesky (Next.js, Postgres, Playwright, Claude AI) — private beta: https://follow.fast
 - Smia: Private Git hosting & CI for European companies, dedicated Forgejo instance per company, Firecracker microVM CI (Go, Rust) — in the making, invite-only: https://smia.dev
 - PadelIQ: On-device AI match analysis for padel players (iOS, Core ML)
 - Plask: Private P&L for makers who run several apps and sites: revenue, ad spend, costs and weekly Focus cards (Next.js, Supabase, Claude AI, MCP): https://plask.dev
