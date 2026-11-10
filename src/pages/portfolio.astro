@@ -3,13 +3,14 @@ import Base from '@/layouts/Base.astro';
 import Section from '@/components/Section.astro';
 
 const title = 'Portfolio';
-const description = '15 apps and projects by Torstein Skulbru — from private Git hosting, social media automation and analytics dashboards to API monitoring tools and mobile apps for iOS and Android, built with Go, Rust, TypeScript, Swift, and Kotlin.';
+const description = '16 apps and projects by Torstein Skulbru — from private Git hosting, social media automation and analytics dashboards to API monitoring tools and mobile apps for iOS and Android, built with Go, Rust, TypeScript, Swift, and Kotlin.';
 
 const siteURL = 'https://tskulbru.dev';
 // JSON-LD only. Keep in sync with the App Store listings (name, genre, platforms, price).
 // Sunset or offline products (StartRemoteWork, IssueFlow) are left out on purpose.
 const portfolioItems = [
 	{ name: 'follow.fast', type: 'WebApplication', description: 'Social media posts made from your real app screens. AI drafts slideshows from your screenshots and push notifications every day, then publishes them to TikTok, Instagram, Facebook, Threads and Bluesky. In private beta.', category: 'BusinessApplication', os: 'Web', url: 'https://follow.fast' },
+	{ name: 'Puddlekin', type: 'MobileApplication', description: 'Shared baby tracker for feeds, sleep and diapers. Log in a few taps, then invite a partner, grandparent or nanny so everyone sees the same day. Records care, never prescribes it.', category: 'HealthApplication', os: 'iOS', url: 'https://puddlekin.app', installUrl: 'https://apps.apple.com/us/app/puddlekin-baby-tracker/id6818778934', price: '0' },
 	{ name: 'Gutrude', type: 'MobileApplication', description: 'Poop tracker and trigger food log. Blame a food in one tap and Gutrude, your cranky gut in a cardigan, keeps score on your hunches. Logs stay on the phone; a record to bring to your doctor or dietitian.', category: 'HealthApplication', os: 'iOS', url: 'https://gutrude.com', installUrl: 'https://apps.apple.com/us/app/gutrude-poop-tracker-ibs/id6818510934', price: '0' },
 	{ name: 'Smia', type: 'WebApplication', description: 'Private Git hosting and CI for European companies. A dedicated Forgejo instance per company on European providers, encrypted at rest, with CI jobs running in isolated Firecracker microVMs. In the making, invite-only.', category: 'DeveloperApplication', os: 'Web', url: 'https://smia.dev' },
 	{ name: 'PadelIQ', type: 'MobileApplication', description: 'AI match analysis for padel players. Film one rally through the court glass and get a positioning heatmap and three concrete fixes — all computer vision runs on-device, video never leaves the iPhone.', category: 'SportsApplication', os: 'iOS', url: 'https://apps.apple.com/us/app/padeliq-ai-match-analysis/id6796823937', price: '0' },
@@ -178,6 +179,129 @@ const portfolioSchema = {
 						<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
 					</svg>
 					Visit follow.fast
+				</a>
+			</div>
+		</article>
+
+		<!-- Puddlekin -->
+		<article class="mb-16">
+			<div class="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
+				<h2 class="text-2xl font-bold">Puddlekin</h2>
+				<p class="text-orange-600 font-medium">A little less to remember.</p>
+			</div>
+
+			<!-- App Icon and Feature Highlights -->
+			<div class="mb-6 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
+				<div class="flex flex-col md:flex-row items-center gap-6">
+					<!-- App Icon -->
+					<div class="flex-shrink-0">
+						<img
+							src="/images/portfolio/puddlekin-icon.png"
+							alt="Puddlekin app icon"
+							class="w-24 h-24 rounded-2xl shadow-lg"
+						/>
+					</div>
+					<!-- Feature Highlights -->
+					<div class="flex-1 grid grid-cols-2 gap-3 text-sm">
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Log feeds, sleep and diapers in a few taps</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Share the log with every caregiver</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Handover summary for whoever takes over</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span>Free logging, no account needed</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Description with Screenshot -->
+			<div class="text-sm space-y-4 mb-6">
+				<img
+					src="/images/portfolio/puddlekin-hero.png"
+					alt="Puddlekin Today screen: a running sleep timer, Feed, Sleep and Diaper buttons with duckling illustrations, and the last feed, sleep and diaper"
+					class="float-right ml-4 mb-4 w-48 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+					loading="lazy"
+				/>
+				<p>
+					<span class="font-bold text-orange-600">Puddlekin</span> is a baby tracker built for the people
+					taking turns. Feeds, naps, diapers, pumping, tummy time and notes go in with a few taps, timers keep
+					running when the app is closed, and anything can be backdated. Today shows what's running and when
+					the last feed, sleep and diaper happened, so nobody has to remember at 3 am.
+				</p>
+				<p>
+					All logging is free and stays on the phone, no account needed. Puddlekin Premium adds shared care:
+					invite a partner, grandparent or nanny, approve every request, and see who did each feed. It also
+					adds cloud restore, a 6, 12 or 24 hour Handover summary, and 7 and 30 day trends. It records care
+					and never prescribes it: no ideal ranges, no "overdue", no predictions.
+				</p>
+			</div>
+
+			<!-- Tech Stack -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Built with</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">SwiftUI</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Swift 6</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">SwiftData</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Firebase</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Cloud Firestore</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Cloud Functions</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">Sign in with Apple</span>
+					<span class="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700">RevenueCat</span>
+				</div>
+			</div>
+
+			<!-- Platforms -->
+			<div class="mb-6">
+				<h3 class="text-sm font-bold mb-2 text-gray-600 dark:text-gray-400">Platforms</h3>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 text-xs rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">iOS</span>
+				</div>
+			</div>
+
+			<!-- Links -->
+			<div class="flex flex-wrap gap-4">
+				<a
+					href="https://apps.apple.com/us/app/puddlekin-baby-tracker/id6818778934"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-colors"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+					</svg>
+					App Store
+				</a>
+				<a
+					href="https://puddlekin.app"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-orange-600 hover:text-orange-600 transition-colors"
+				>
+					Website
+				</a>
+				<a
+					href="https://puddlekin.app/support"
+					class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-orange-600 hover:text-orange-600 transition-colors"
+				>
+					Support &amp; FAQ
 				</a>
 			</div>
 		</article>

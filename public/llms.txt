@@ -31,8 +31,9 @@ Technical deep-dives on cloud-native architecture, DevOps practices, and mobile 
 - What is fitSystemWindows: https://tskulbru.dev/posts/what-is-and-how-do-i-even-fitsystemwindows/
 
 ### Portfolio
-15 apps and projects: https://tskulbru.dev/portfolio/
+16 apps and projects: https://tskulbru.dev/portfolio/
 - follow.fast: Social media posts made from your real app screens and notifications, auto-published to TikTok, Instagram, Facebook, Threads and Bluesky (Next.js, Postgres, Playwright, Claude AI) — private beta: https://follow.fast
+- Puddlekin: Shared baby tracker for feeds, sleep and diapers, invite every caregiver to the same log; records care, never prescribes it (iOS, SwiftUI, SwiftData, Firebase): https://puddlekin.app
 - Gutrude: Poop tracker and trigger food log, blame a food and your cranky gut keeps score; on-device, a record for your doctor or dietitian (iOS, SwiftUI, SwiftData): https://gutrude.com
 - Smia: Private Git hosting & CI for European companies, dedicated Forgejo instance per company, Firecracker microVM CI (Go, Rust) — in the making, invite-only: https://smia.dev
 - PadelIQ: On-device AI match analysis for padel players (iOS, Core ML): https://apps.apple.com/us/app/padeliq-ai-match-analysis/id6796823937
