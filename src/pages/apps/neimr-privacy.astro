@@ -56,7 +56,7 @@ const description = 'Privacy Policy for Neimr - Find the Perfect Name Together';
 			<ul>
 				<li>Survey and swipe data is associated with your anonymous user ID</li>
 				<li>Data is encrypted in transit and at rest</li>
-				<li>We use Firebase Security Rules to ensure users can only access their own data</li>
+				<li>We use Firebase Security Rules to ensure users can only access their own data and the sessions they have joined</li>
 			</ul>
 
 			<h2>Analytics and Crash Reporting</h2>
@@ -69,13 +69,13 @@ const description = 'Privacy Policy for Neimr - Find the Perfect Name Together';
 				We use Firebase Analytics to understand how the app is used. This includes:
 			</p>
 			<ul>
-				<li>Feature usage statistics (anonymized)</li>
+				<li>Feature usage statistics, linked to your account identifier</li>
 				<li>App launch frequency</li>
 				<li>Screen views and user flows</li>
 				<li>Device type and OS version</li>
 			</ul>
 			<p>
-				We use this data in aggregate to improve the app. We don't use it to identify you personally.
+				We use this data to understand usage and improve the app. It is linked to your account identifier and device identifiers, not to your name or email.
 			</p>
 
 			<h3>Firebase Crashlytics</h3>
@@ -86,7 +86,7 @@ const description = 'Privacy Policy for Neimr - Find the Perfect Name Together';
 				<li>Device model and OS version</li>
 				<li>App version</li>
 				<li>Crash stack traces</li>
-				<li>Anonymous installation UUID</li>
+				<li>Installation ID and your account identifier</li>
 			</ul>
 
 			<h2>Advertising</h2>
@@ -137,7 +137,7 @@ const description = 'Privacy Policy for Neimr - Find the Perfect Name Together';
 
 			<h2>Children's Privacy</h2>
 			<p>
-				Neimr is not intended for children under 13. We don't knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us.
+				Neimr is intended for adults (18+). We don't knowingly collect personal information from anyone under 18. If you believe a minor has given us information, contact us and we will delete it.
 			</p>
 
 			<h2>Your Rights</h2>
@@ -148,7 +148,7 @@ const description = 'Privacy Policy for Neimr - Find the Perfect Name Together';
 				<li>Delete your account and all associated data from within the app</li>
 				<li>Export your favorite names</li>
 				<li>Leave any survey you've joined</li>
-				<li>Disable analytics collection in your device settings</li>
+				<li>Reset or delete your advertising ID in your device settings</li>
 			</ul>
 
 			<h2>Data Retention</h2>
@@ -163,14 +163,14 @@ const description = 'Privacy Policy for Neimr - Find the Perfect Name Together';
 
 			<h2 id="delete-account">Deleting Your Account and Data</h2>
 			<p>
-				You can delete your account and all associated data at any time:
+				This applies to <strong>Neimr: Baby Name Matcher</strong>, published by <strong>tskulbru</strong> on Google Play and the App Store. You can delete your account and all associated data at any time, whether you signed in or used the app as a guest:
 			</p>
 			<ul>
 				<li><strong>In the app:</strong> open Settings and tap <strong>Delete account</strong>. Deletion happens immediately.</li>
 				<li><strong>By email:</strong> if you no longer have the app installed, email <a href="mailto:neimr@tskulbru.dev">neimr@tskulbru.dev</a> from the address linked to your account, or include your share code, and we will delete your data within 30 days.</li>
 			</ul>
 			<p>
-				Deletion removes your profile, swipes, favorites and the lists you created. Crash reports and aggregated analytics are kept for up to 90 days by Firebase and are not linked to your account after deletion.
+				Deletion removes your profile, swipes, favorites, the lists you created (including other participants' swipes on them) and your participation in lists others created. Crash reports are kept for up to 90 days and analytics events for up to 14 months by Firebase; they are no longer linked to an account after deletion. Purchase records are retained by Google Play or Apple and by RevenueCat as required for billing and tax.
 			</p>
 
 			<h2>Data Security</h2>
@@ -198,7 +198,7 @@ const description = 'Privacy Policy for Neimr - Find the Perfect Name Together';
 				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
 					<a href="/" class="hover:text-orange-600 transition-colors">&larr; Back to tskulbru.dev</a> |
 					<a href="/apps/neimr-support" class="hover:text-orange-600 transition-colors">Support</a> |
-					<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" class="hover:text-orange-600 transition-colors">Terms of Use (EULA)</a>
+					<a href="/apps/neimr-terms" class="hover:text-orange-600 transition-colors">Terms of Use</a>
 				</p>
 			</div>
 		</article>
