@@ -11,7 +11,7 @@ const description = 'Privacy Policy for BibleWise - Bible Quiz & Trivia App';
 		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
 			<h1>Privacy Policy for BibleWise</h1>
 			<p class="text-sm text-gray-600 dark:text-gray-400">
-				Last updated: September 30, 2026
+				Last updated: November 25, 2026
 			</p>
 
 			<h2>Overview</h2>
@@ -75,24 +75,31 @@ const description = 'Privacy Policy for BibleWise - Bible Quiz & Trivia App';
 				<li>Anonymous installation UUID</li>
 			</ul>
 
+			<p>
+				On Android, Firebase Analytics and Crashlytics (provided by Google) collect the same kinds of information, including app interactions, device and app information, crash logs and an app-instance ID.
+			</p>
+
 			<h2>Advertising Measurement (Meta)</h2>
 			<p>
 				We advertise BibleWise on Facebook and Instagram. To learn which ads lead to people installing and using the app, BibleWise includes the Meta (Facebook) SDK. It is used only to measure our own ads. It does not show ads in the app, and it does not use Facebook Login.
 			</p>
 			<p>
-				On first launch, iOS asks whether BibleWise may track you. Nothing is sent to Meta before you answer. After that, the app sends Meta:
+				<strong>On iOS</strong>, the app asks on first launch whether BibleWise may track you. Nothing is sent to Meta before you answer. <strong>On Android</strong>, there is no such prompt: the app sends Meta the events below, including your Android advertising ID, from the first launch. After that, the app sends Meta:
 			</p>
 			<ul>
 				<li>App installs and app launches</li>
 				<li>A few milestone events: completing your third level, finishing the free levels, and seeing an offer to upgrade</li>
-				<li>In-app purchases made through the App Store</li>
+				<li>In-app purchases made through the App Store or Google Play</li>
 				<li>Device information such as model, OS version and app version</li>
 			</ul>
 			<p>
-				<strong>If you allow tracking</strong>, these events also include your device's advertising identifier (IDFA), which Meta may link to your Facebook or Instagram account to measure and improve ads. <strong>If you ask the app not to track</strong>, no advertising identifier is sent, and Meta receives only the events above without it, for aggregated ad measurement through Apple's SKAdNetwork.
+				<strong>On iOS, if you allow tracking</strong>, these events also include your device's advertising identifier (IDFA), which Meta may link to your Facebook or Instagram account to measure and improve ads. <strong>If you ask the app not to track</strong>, no advertising identifier is sent, and Meta receives only the events above without it, for aggregated ad measurement through Apple's SKAdNetwork.
 			</p>
 			<p>
-				We never send your quiz answers, scores, progress, name or email to Meta. You can change your choice at any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking. Meta's use of this data is covered by the <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a>.
+				<strong>On Android</strong>, events include your device's Android advertising ID, which Meta may link to your Facebook or Instagram account to measure and improve ads. The Android app declares Google Play's advertising ID permission for this purpose. You can reset or delete your advertising ID in Android Settings &rarr; Privacy &rarr; Ads (or Settings &rarr; Google &rarr; Ads). If you choose "Delete advertising ID", it is no longer shared with the app or with Meta.
+			</p>
+			<p>
+				We never send your quiz answers, scores, progress, name or email to Meta. On iOS you can change your choice at any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking. Meta's use of this data is covered by the <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a>.
 			</p>
 
 			<h2>In-App Purchases</h2>
@@ -100,11 +107,11 @@ const description = 'Privacy Policy for BibleWise - Bible Quiz & Trivia App';
 				BibleWise offers hint packs and question packs through in-app purchases. Purchase processing is handled by:
 			</p>
 			<ul>
-				<li><strong>Apple App Store</strong> for all transactions</li>
-				<li><strong>RevenueCat</strong> for purchase management</li>
+				<li><strong>Apple App Store</strong> (iOS) and <strong>Google Play Billing</strong> (Android) for all transactions</li>
+				<li><strong>RevenueCat</strong> for purchase management, which processes purchase receipts and an anonymous app user ID on both platforms</li>
 			</ul>
 			<p>
-				We don't store payment information. All transactions are processed securely by Apple and RevenueCat.
+				We don't store payment information. All transactions are processed securely by Apple, Google and RevenueCat.
 			</p>
 
 			<h2>Notifications</h2>
@@ -124,7 +131,7 @@ const description = 'Privacy Policy for BibleWise - Bible Quiz & Trivia App';
 
 			<h2>Children's Privacy</h2>
 			<p>
-				BibleWise is suitable for all ages. We don't knowingly collect personal information from children under 13. The app doesn't require any personal information to function.
+				BibleWise is intended for a general audience aged 13 and over and is not directed at children under 13, including under Google Play's Families policy. We don't knowingly collect personal information from children under 13. The app doesn't require any personal information to function.
 			</p>
 
 			<h2>Your Rights</h2>
@@ -135,12 +142,13 @@ const description = 'Privacy Policy for BibleWise - Bible Quiz & Trivia App';
 				<li>Delete the app at any time to remove all local data</li>
 				<li>Disable analytics collection in your device settings</li>
 				<li>Disable notifications in your device settings</li>
-				<li>Turn off tracking for BibleWise in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking</li>
+				<li>On iOS, turn off tracking for BibleWise in Settings &rarr; Privacy &amp; Security &rarr; Tracking</li>
+				<li>On Android, reset or delete your advertising ID in Settings &rarr; Privacy &rarr; Ads (or Settings &rarr; Google &rarr; Ads)</li>
 			</ul>
 
 			<h3>Deleting Your Data</h3>
 			<p>
-				BibleWise has no accounts, so everything stored by the app lives on your device and is removed when you delete the app. To stop sending advertising data, turn off tracking as described above. If you have a Facebook or Instagram account, you can view and clear activity that apps have shared with Meta in Accounts Center under "Your activity off Meta technologies".
+				BibleWise has no accounts, so everything stored by the app lives on your device and is removed when you delete the app. To stop sending advertising data, turn off tracking or delete your advertising ID as described above. If you have a Facebook or Instagram account, you can view and clear activity that apps have shared with Meta in Accounts Center under "Your activity off Meta technologies".
 			</p>
 
 			<h2>Data Security</h2>
@@ -149,7 +157,7 @@ const description = 'Privacy Policy for BibleWise - Bible Quiz & Trivia App';
 			</p>
 			<ul>
 				<li>All data transmission uses HTTPS encryption</li>
-				<li>Local data is protected by iOS device security</li>
+				<li>Local data is protected by your device's built-in security</li>
 			</ul>
 
 			<h2>Changes to This Policy</h2>
@@ -159,7 +167,7 @@ const description = 'Privacy Policy for BibleWise - Bible Quiz & Trivia App';
 
 			<h2>Contact</h2>
 			<p>
-				If you have questions about this Privacy Policy or how BibleWise handles data, please contact us through the App Store where you downloaded the app.
+				If you have questions about this Privacy Policy or how BibleWise handles data, please contact us at <a href="mailto:biblewise@tskulbru.dev">biblewise@tskulbru.dev</a>.
 			</p>
 
 			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
