@@ -11,7 +11,7 @@ const description = 'Privacy Policy for GraceLock - Prayer-Based Screen Time App
 		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
 			<h1>Privacy Policy for GraceLock</h1>
 			<p class="text-sm text-gray-600 dark:text-gray-400">
-				Last updated: October 3, 2026
+				Last updated: November 25, 2026
 			</p>
 
 			<h2>Overview</h2>
@@ -30,9 +30,9 @@ const description = 'Privacy Policy for GraceLock - Prayer-Based Screen Time App
 				<li>We don't read or store the content of your blocked apps</li>
 			</ul>
 
-			<h2>Screen Time and App Blocking</h2>
+			<h2>App Blocking on iPhone and iPad</h2>
 			<p>
-				GraceLock uses Apple's Screen Time APIs (FamilyControls, ManagedSettings, and DeviceActivity) to provide app blocking functionality. This means:
+				On iOS, GraceLock uses Apple's Screen Time APIs (FamilyControls, ManagedSettings, and DeviceActivity) to provide app blocking functionality. This means:
 			</p>
 			<ul>
 				<li>Your selection of which apps to block is stored locally on your device</li>
@@ -40,6 +40,20 @@ const description = 'Privacy Policy for GraceLock - Prayer-Based Screen Time App
 				<li>App blocking works entirely on-device through Apple's frameworks</li>
 				<li>We receive only anonymous, aggregate information about app blocking events</li>
 			</ul>
+
+			<h2>App Blocking on Android</h2>
+			<p>
+				Android has no Screen Time API, so GraceLock uses Android's <strong>Accessibility service</strong> to block apps. You turn it on yourself in Android Settings after GraceLock explains what it does, and you can turn it off at any time.
+			</p>
+			<ul>
+				<li>The service is used for one thing only: noticing which app has just opened, so GraceLock can show the prayer screen when it is one of the apps you chose to block</li>
+				<li>It does not read what is on your screen, what you type, or what you do inside your apps</li>
+				<li>Nothing the service sees is stored beyond the moment, sent to our servers, or shared with anyone</li>
+				<li>Your list of blocked apps is stored only on your device</li>
+			</ul>
+			<p>
+				If you can't use the Accessibility service, GraceLock can instead use <strong>Usage Access</strong> and <strong>Display over other apps</strong> for the same purpose: checking on your device which app is in the foreground and showing the prayer screen over a blocked app. This information also stays on your device. Analytics events about blocking (for example that the prayer screen was shown) do not include which app you blocked.
+			</p>
 
 			<h2>Prayer and Usage Data</h2>
 			<p>
@@ -90,19 +104,22 @@ const description = 'Privacy Policy for GraceLock - Prayer-Based Screen Time App
 				We advertise GraceLock on Facebook and Instagram. To learn which ads lead to people installing and using the app, GraceLock includes the Meta (Facebook) SDK. It is used only to measure our own ads. It does not show ads in the app, and it does not use Facebook Login.
 			</p>
 			<p>
-				On first launch, iOS asks whether GraceLock may track you. Nothing is sent to Meta before you answer. After that, the app sends Meta:
+				On iOS, the app asks on first launch whether GraceLock may track you, and nothing is sent to Meta before you answer. After that, the app sends Meta:
 			</p>
 			<ul>
 				<li>App installs and app launches</li>
 				<li>A few milestone events: finishing setup, completing your first prayer to unlock an app, and seeing an offer to upgrade</li>
-				<li>Subscriptions, free trials and other purchases made through the App Store</li>
+				<li>Subscriptions, free trials and other purchases made through the App Store or Google Play</li>
 				<li>Device information such as model, OS version and app version</li>
 			</ul>
 			<p>
 				<strong>If you allow tracking</strong>, these events also include your device's advertising identifier (IDFA), which Meta may link to your Facebook or Instagram account to measure and improve ads. <strong>If you ask the app not to track</strong>, no advertising identifier is sent, and Meta receives only the events above without it, for aggregated ad measurement through Apple's SKAdNetwork.
 			</p>
 			<p>
-				We never send your prayers, moods, journal entries, streaks, blocked apps or any Screen Time data to Meta. You can change your choice at any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking. Meta's use of this data is covered by the <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a>.
+				<strong>On Android</strong>, the same events are sent together with your device's advertising ID, which Meta may link to your Facebook or Instagram account to measure ads. You can reset or delete the advertising ID in Android Settings &rarr; Privacy &rarr; Ads (or Google &rarr; Ads), after which it is no longer sent.
+			</p>
+			<p>
+				We never send your prayers, moods, journal entries, streaks, blocked apps or any Screen Time or Accessibility data to Meta. You can change your choice at any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking. Meta's use of this data is covered by the <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a>.
 			</p>
 
 			<h2>Prayer Library</h2>
@@ -115,11 +132,11 @@ const description = 'Privacy Policy for GraceLock - Prayer-Based Screen Time App
 				GraceLock offers premium features through subscriptions. Purchase processing is handled by:
 			</p>
 			<ul>
-				<li><strong>Apple App Store</strong> for all transactions</li>
+				<li><strong>Apple App Store</strong> on iPhone and iPad, and <strong>Google Play</strong> on Android</li>
 				<li><strong>RevenueCat</strong> for subscription management</li>
 			</ul>
 			<p>
-				We don't store payment information. All transactions are processed securely by Apple and RevenueCat.
+				We don't store payment information. All transactions are processed securely by Apple or Google and RevenueCat.
 			</p>
 
 			<h2>Third-Party Services</h2>
@@ -145,8 +162,8 @@ const description = 'Privacy Policy for GraceLock - Prayer-Based Screen Time App
 				<li>Delete the app at any time to remove all local data</li>
 				<li>Disable analytics collection in your device settings</li>
 				<li>Clear your prayer journal and history within the app</li>
-				<li>Revoke Screen Time permissions at any time in iOS Settings</li>
-				<li>Turn off tracking for GraceLock in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking</li>
+				<li>Revoke Screen Time permissions at any time in iOS Settings, or turn off GraceLock in Android Settings &rarr; Accessibility</li>
+				<li>Turn off tracking for GraceLock in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking, or reset or delete your advertising ID on Android</li>
 			</ul>
 
 			<h3>Deleting Your Data</h3>
@@ -160,8 +177,8 @@ const description = 'Privacy Policy for GraceLock - Prayer-Based Screen Time App
 			</p>
 			<ul>
 				<li>All data transmission uses HTTPS encryption</li>
-				<li>Local data is protected by iOS device security</li>
-				<li>We follow Apple's privacy guidelines for Screen Time APIs</li>
+				<li>Local data is protected by your device's security</li>
+				<li>We follow Apple's privacy guidelines for Screen Time APIs and Google Play's policies for the Accessibility API</li>
 			</ul>
 
 			<h2>Changes to This Policy</h2>
@@ -171,14 +188,14 @@ const description = 'Privacy Policy for GraceLock - Prayer-Based Screen Time App
 
 			<h2>Contact</h2>
 			<p>
-				If you have questions about this Privacy Policy or how GraceLock handles data, please contact us through the App Store where you downloaded the app.
+				If you have questions about this Privacy Policy or how GraceLock handles data, email <a href="mailto:gracelock@tskulbru.dev">gracelock@tskulbru.dev</a>.
 			</p>
 
 			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
 				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
 					<a href="/" class="hover:text-orange-600 transition-colors">&larr; Back to tskulbru.dev</a> |
 					<a href="/apps/gracelock-support" class="hover:text-orange-600 transition-colors">Support</a> |
-					<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" class="hover:text-orange-600 transition-colors">Terms of Use (EULA)</a>
+					<a href="/apps/gracelock-terms" class="hover:text-orange-600 transition-colors">Terms of Use</a>
 				</p>
 			</div>
 		</article>
