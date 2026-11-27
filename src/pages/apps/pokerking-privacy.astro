@@ -1,0 +1,109 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Poker King - Privacy Policy';
+const description = 'Privacy Policy for Poker King: Video Poker for Android TV';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Privacy Policy for Poker King</h1>
+			<p class="text-sm text-gray-600 dark:text-gray-400">
+				Last updated: November 27, 2026
+			</p>
+
+			<h2>Overview</h2>
+			<p>
+				Poker King: Video Poker ("Poker King", "the app") is a video poker game for Android TV and Google TV, made by tskulbru (T Skulbru Development). This policy explains what information the app handles and why.
+			</p>
+			<p>
+				Poker King is a social casino game for adults (18+). It does not offer real-money gambling, and coins have no cash value. They cannot be cashed out or transferred.
+			</p>
+
+			<h2>What we don't collect</h2>
+			<ul>
+				<li>No user accounts, names, email addresses or phone numbers</li>
+				<li>No contacts, photos, microphone or camera access</li>
+				<li>No precise location</li>
+				<li>No advertising ID. The app has no ads and does not use the advertising ID</li>
+				<li>No payment card details. Google Play handles payments</li>
+			</ul>
+
+			<h2>Analytics (Firebase)</h2>
+			<p>
+				We use Google Firebase Analytics to understand how the game is played, so we can balance it and fix problems. The app sends:
+			</p>
+			<ul>
+				<li>Game events, such as a session starting or ending, levelling up, unlocking a room, opening the shop, claiming a bonus, and completing a purchase (with the product ID)</li>
+				<li>Game numbers attached to those events, such as level, coin balance, room and hands played</li>
+				<li>A random ID created for this install of the app (not linked to your Google account and not the advertising ID)</li>
+				<li>Basic device information, such as device model, Android version and language. Google may derive an approximate region from the IP address; the IP address itself is not stored</li>
+			</ul>
+			<p>
+				This data is used for analytics only. It is not used for advertising, and it is not sold.
+			</p>
+
+			<h2>Game settings (Firebase Remote Config)</h2>
+			<p>
+				The app may download game balance settings (for example bonus amounts) from Firebase Remote Config. This request includes the same random install ID. New settings take effect the next time you open the app.
+			</p>
+
+			<h2>In-app purchases</h2>
+			<p>
+				Poker King sells coin packs and a starter pack through Google Play. Purchases are processed by:
+			</p>
+			<ul>
+				<li><strong>Google Play</strong>, which handles payment</li>
+				<li><strong>RevenueCat</strong>, which records purchases against an anonymous app user ID so coins are granted correctly</li>
+			</ul>
+			<p>
+				We never see or store your payment information.
+			</p>
+
+			<h2>Data stored on your device</h2>
+			<p>
+				Your coin balance, level, unlocked rooms, settings and purchase records are stored on your device. Uninstalling the app or clearing its data removes them.
+			</p>
+
+			<h2>Third-party services</h2>
+			<ul>
+				<li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Firebase</a> - analytics and remote settings</li>
+				<li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat</a> - purchase management</li>
+				<li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play</a> - app distribution and payments</li>
+			</ul>
+
+			<h2>Children</h2>
+			<p>
+				Poker King is intended for adults (18+) only. It is not directed at children, and we do not knowingly collect information from children.
+			</p>
+
+			<h2>Data retention and your choices</h2>
+			<p>
+				Firebase Analytics data is kept for a limited period (Google's retention setting for the project) and then deleted. Because we don't collect your name, email or account, we have no way to link analytics data to you personally. You can:
+			</p>
+			<ul>
+				<li>Uninstall the app or clear its data to remove everything stored on your device</li>
+				<li>Reset the install ID by clearing the app's data</li>
+				<li>Contact us with any request about your data</li>
+			</ul>
+
+			<h2>Changes to this policy</h2>
+			<p>
+				We may update this policy. Changes are shown by the "Last updated" date at the top.
+			</p>
+
+			<h2>Contact</h2>
+			<p>
+				Questions about this policy or your data can be sent through the developer contact details on the app's Google Play page.
+			</p>
+
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">← Back to tskulbru.dev</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>
