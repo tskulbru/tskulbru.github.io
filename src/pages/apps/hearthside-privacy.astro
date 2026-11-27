@@ -1,0 +1,100 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+
+const title = 'Hearthside - Privacy Policy';
+const description = 'Privacy Policy for Hearthside: Cozy Fireplace for Android TV';
+---
+
+<Base head={{ title, description }}>
+	<Section>
+		<article class="prose prose-gray dark:prose-invert max-w-4xl mx-auto">
+			<h1>Privacy Policy for Hearthside</h1>
+			<p class="text-sm text-gray-600 dark:text-gray-400">
+				Last updated: November 27, 2026
+			</p>
+
+			<h2>Overview</h2>
+			<p>
+				Hearthside: Cozy Fireplace ("Hearthside", "the app") is a fireplace ambience app for Android TV, Google TV and Android phones and tablets, made by tskulbru (T Skulbru Development). This policy explains what information the app handles and why.
+			</p>
+
+			<h2>What we don't collect</h2>
+			<ul>
+				<li>No user accounts, names, email addresses or phone numbers</li>
+				<li>No contacts, photos, microphone or camera access</li>
+				<li>No precise location</li>
+				<li>No advertising ID. The app has no ads and does not use the advertising ID</li>
+				<li>No payment card details. Google Play handles payments</li>
+			</ul>
+
+			<h2>Analytics (Firebase)</h2>
+			<p>
+				We use Google Firebase Analytics to understand which scenes and features people use, so we can improve the app. The app sends:
+			</p>
+			<ul>
+				<li>App events, such as starting a scene, opening the menu, viewing or buying a scene, and setting the sleep timer (with the scene or product ID)</li>
+				<li>A random ID created for this install of the app (not linked to your Google account and not the advertising ID)</li>
+				<li>Basic device information, such as device model, Android version and language. Google may derive an approximate region from the IP address; the IP address itself is not stored</li>
+			</ul>
+			<p>
+				This data is used for analytics only. It is not used for advertising, and it is not sold.
+			</p>
+
+			<h2>In-app purchases</h2>
+			<p>
+				Hearthside sells extra fireplace scenes through Google Play. Purchases are processed by:
+			</p>
+			<ul>
+				<li><strong>Google Play</strong>, which handles payment</li>
+				<li><strong>RevenueCat</strong>, which records purchases against an anonymous app user ID so your unlocked scenes can be restored</li>
+			</ul>
+			<p>
+				We never see or store your payment information.
+			</p>
+
+			<h2>Data stored on your device</h2>
+			<p>
+				Your last scene, volume levels, sleep timer and other settings are stored on your device. Uninstalling the app or clearing its data removes them. Purchased scenes can be restored from the app's menu.
+			</p>
+
+			<h2>Third-party services</h2>
+			<ul>
+				<li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Firebase</a> - analytics</li>
+				<li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat</a> - purchase management</li>
+				<li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play</a> - app distribution and payments</li>
+			</ul>
+
+			<h2>Children</h2>
+			<p>
+				Hearthside is a general audience app and is not directed at children. We do not knowingly collect personal information from children.
+			</p>
+
+			<h2>Data retention and your choices</h2>
+			<p>
+				Firebase Analytics data is kept for a limited period (Google's retention setting for the project) and then deleted. Because we don't collect your name, email or account, we have no way to link analytics data to you personally. You can:
+			</p>
+			<ul>
+				<li>Uninstall the app or clear its data to remove everything stored on your device</li>
+				<li>Reset the install ID by clearing the app's data</li>
+				<li>Email <a href="mailto:hearthside@tskulbru.dev">hearthside@tskulbru.dev</a> with any request about your data</li>
+			</ul>
+
+			<h2>Changes to this policy</h2>
+			<p>
+				We may update this policy. Changes are shown by the "Last updated" date at the top.
+			</p>
+
+			<h2>Contact</h2>
+			<p>
+				Questions about this policy or your data: email <a href="mailto:hearthside@tskulbru.dev">hearthside@tskulbru.dev</a>.
+			</p>
+
+			<div class="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+				<p class="text-sm text-center text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-orange-600 transition-colors">← Back to tskulbru.dev</a>
+				</p>
+			</div>
+		</article>
+	</Section>
+</Base>
