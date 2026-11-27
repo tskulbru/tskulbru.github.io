@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "dev.tskulbru.linetris",
+      "sha256_cert_fingerprints": [
+        "EC:AE:E8:D9:09:0A:8A:89:A6:5B:58:48:CE:08:E9:00:58:5F:3A:4F:9B:D6:FE:0C:7D:32:F5:CA:F6:BF:00:37"
+      ]
+    }
+  }
+]

@@ -7,11 +7,15 @@
     <title>Page not found · tskulbru.dev</title>
     <script>
       // Linetris universal links (/linetris/c/{code}, /linetris/r/{code}) open the app
-      // on devices that have it; everyone else lands here and goes to the App Store.
+      // on devices that have it; everyone else lands here and goes to their store
+      // (Google Play on Android, the App Store everywhere else).
       (function () {
         var p = window.location.pathname;
         if (p.indexOf("/linetris/c/") === 0 || p.indexOf("/linetris/r/") === 0) {
-          window.location.replace("https://apps.apple.com/app/id6759858457");
+          var android = /Android/i.test(navigator.userAgent);
+          window.location.replace(android
+            ? "https://play.google.com/store/apps/details?id=dev.tskulbru.linetris"
+            : "https://apps.apple.com/app/id6759858457");
         }
       })();
     </script>
